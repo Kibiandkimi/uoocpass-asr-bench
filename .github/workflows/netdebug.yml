@@ -1,0 +1,14 @@
+name: net debug
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl 各源
+        run: |
+          set -x
+          curl -sS -o /dev/null -w 'vosk: %{http_code} time=%{time_total}\n' --max-time 30 https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip || echo "vosk curl rc=$?"
+          curl -sS -o /dev/null -w 'hf: %{http_code} time=%{time_total}\n' --max-time 30 -L https://huggingface.co/api/models/ggerganov/whisper.cpp || echo "hf curl rc=$?"
+          curl -sS -o /dev/null -w 'github: %{http_code}\n' --max-time 30 -L https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-zh-2023-09-14.tar.bz2 || echo "gh curl rc=$?"
+          echo "--- 环境里的代理变量 ---"
+          env | grep -iE 'proxy|http_' || echo "（无）"
