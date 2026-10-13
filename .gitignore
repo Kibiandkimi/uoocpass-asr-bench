@@ -1,0 +1,7 @@
+venv/
+models/
+*.bin
+*.onnx
+*.gguf
+results/*.json
+!results/.gitkeep
