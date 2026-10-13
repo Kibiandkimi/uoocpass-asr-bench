@@ -101,6 +101,37 @@ def load_clips() -> list[Clip]:
 # --------------------------------------------------------------------------
 
 
+#: 阿拉伯数字 → 中文读法（ASR 输出常是汉字数字，而字幕原文常用阿拉伯数字）
+_DIGITS = {"0": "零", "1": "一", "2": "二", "3": "三", "4": "四",
+           "5": "五", "6": "六", "7": "七", "8": "八", "9": "九"}
+
+
+def digits_to_chinese(text: str) -> str:
+    """把阿拉伯数字逐位转成汉字，统一「10种人」vs「十种人」这类差异。
+
+    官方基准用的 ``normalize_zh`` 就含这一步。**不做它会让 CER 系统性虚高**：
+    实测某段字幕写「世界上一共有 10 种人」，而 ASR 输出「一共有二进制人」——
+    「10」对「二进制」在字符级编辑距离里是 3 个错误，其实语义是同一处。
+    逐位映射不是完美（「10」读「十」而非「一零」），但比不处理公平得多。
+    """
+    # 先处理「整十/整百/整千/整万」这类会读成一个字的常见形态，
+    # 剩下的一律逐位映射。不求完备（「12」读「十二」这里会变「一二」），
+    # 但把最高频的 10/100/1000 对齐，已经能消掉大部分虚假错误。
+    special = {"10": "十", "100": "一百", "1000": "一千", "10000": "一万"}
+    out, i = [], 0
+    while i < len(text):
+        for length in (5, 4, 3, 2):
+            chunk = text[i:i + length]
+            if chunk in special:
+                out.append(special[chunk])
+                i += length
+                break
+        else:
+            out.append(_DIGITS.get(text[i], text[i]))
+            i += 1
+    return "".join(out)
+
+
 def normalize(text: str) -> str:
     """归一化：只留中文与字母数字。
 
@@ -109,11 +140,12 @@ def normalize(text: str) -> str:
     另外统一成**简体**：whisper 在无引导时会输出繁体，
     不归一化会把「繁体 vs 简体」误算成识别错误。
     """
+    text = digits_to_chinese(to_simplified(text))
     keep = []
     for ch in text:
         if "\u4e00" <= ch <= "\u9fff" or ch.isalnum():
             keep.append(ch)
-    return "".join(keep)
+    return "".join(keep).lower()
 
 
 try:  # 繁→简（可选依赖）
@@ -189,6 +221,10 @@ class Candidate:
     text: str = ""
     #: 每段的结果：{clip_id: {"cer": …, "verified": …, "hyp": …}}
     per_clip: dict = field(default_factory=dict)
+    #: 各段 CER 的**算术平均**（macro）。官方基准（FunASR / whisper.cpp）用的是
+    #: 这个口径，而 ``cer`` 是 micro（总编辑距离/总参考长度）。
+    #: 两者差别在于长音频的权重 —— 短片段错得多时 macro 会更差，更不容易被长音频掩盖。
+    macro_cer: float = -1.0
     #: 数据集规模（段数 / 总秒数 / 最弱可信度），防止「拿 1 段 60 秒就下结论」
     clips: int = 0
     clip_seconds: float = 0.0
@@ -237,6 +273,7 @@ def build_candidates(which: list[str] | None) -> list[Candidate]:
         ("sherpa-paraformer", "sherpa-onnx paraformer-zh (2023-09)", 230),
         ("sherpa-paraformer-2024", "sherpa-onnx paraformer-zh (2024-03)", 230),
         ("sherpa-sensevoice", "sherpa-onnx SenseVoice-Small", 250),
+        ("sherpa-sensevoice-noitn", "sherpa-onnx SenseVoice (itn=off)", 250),
         ("sherpa-fire-red", "sherpa-onnx FireRedASR", 1500),
         ("sherpa-zipformer-ctc", "sherpa-onnx Zipformer-CTC-zh", 160),
         ("sherpa-funasr-nano", "sherpa-onnx Fun-ASR-Nano", 700),
@@ -314,6 +351,7 @@ def run_candidate(c: Candidate, repeats: int, log=print) -> Candidate:
     c.text = payload.get("text", "")
     # 这几个以前漏拷了 —— 于是子进程算好的每段明细在父进程里全丢，
     # 报告只剩一个 micro-CER，看不出「在哪类音频上崩」。
+    c.macro_cer = float(payload.get("macro_cer") or -1.0)
     c.per_clip = payload.get("per_clip") or {}
     c.clips = int(payload.get("clips") or 0)
     c.clip_seconds = float(payload.get("clip_seconds") or 0.0)
@@ -412,8 +450,9 @@ def write_outputs(cands: list[Candidate], outdir: Path) -> None:
         if c.ok:
             mark = "★" if c in front else " "
             warn = "" if c.weakest_verified in ("human", "subtitle") else f" ⚠{c.weakest_verified}"
+            macro = f"{c.macro_cer*100:.2f}%" if c.macro_cer >= 0 else "—"
             rows.append(
-                f"| {mark}{warn} | {c.label} | {c.cer*100:.2f}% | {c.size_mb:.0f} | "
+                f"| {mark}{warn} | {c.label} | {c.cer*100:.2f}% | {macro} | {c.size_mb:.0f} | "
                 f"{c.rtf:.2f}x | {c.load_s:.1f}s | {c.clips}/{c.clip_seconds:.0f}s |"
             )
         else:
@@ -437,8 +476,8 @@ def write_outputs(cands: list[Candidate], outdir: Path) -> None:
         "- CER = 字符错误率（micro：总编辑距离/总参考长度，越低越准）；"
         "size = 包 + 模型实际占用；rtf = 实时倍率（越大越快）",
         "",
-        "| ★ | 方案 | CER ↓ | 体积 MB ↓ | RTF ↑ | 加载 | 段/秒 |",
-        "| --- | --- | --- | --- | --- | --- | --- |",
+        "| ★ | 方案 | CER(micro) ↓ | CER(macro) ↓ | 体积 MB ↓ | RTF ↑ | 加载 | 段/秒 |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- |",
         *rows,
         "",
         "## 帕累托前沿",
@@ -545,13 +584,14 @@ def worker(key: str, repeats: int) -> dict:
             tot_err = sum(v["errors"] for v in ok)
             tot_len = sum(v["ref_len"] for v in ok)
             micro = tot_err / tot_len if tot_len else -1.0
+            macro = sum(v["cer"] for v in ok) / len(ok)
         else:
-            micro = -1.0
+            micro = macro = -1.0
         ranks = {"human": 3, "subtitle": 2, "asr": 1, "": 0}
         weakest = min((c.verified for c, _ in decoded), key=lambda v: ranks.get(v, 0))
         return {"status": status, "note": note, "text": text, "rtf": rtf,
                 "load_s": load_s, "size_mb": size_mb, "cer": micro,
-                "per_clip": per_clip, "clips": len(clips),
+                "macro_cer": macro, "per_clip": per_clip, "clips": len(clips),
                 "clip_seconds": total_seconds, "weakest_verified": weakest}
 
     if key.startswith("fw-"):
@@ -686,6 +726,8 @@ def worker(key: str, repeats: int) -> dict:
                 "sherpa-onnx-paraformer-zh-2024-03-09", "paraformer"),
             "sherpa-sensevoice": (
                 "sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17", "sensevoice"),
+            "sherpa-sensevoice-noitn": (
+                "sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17", "sensevoice-noitn"),
             "sherpa-fire-red": ("sherpa-onnx-fire-red-asr-large-zh_en-2025-02-16", "fire-red"),
             "sherpa-zipformer-ctc": (
                 "sherpa-onnx-zipformer-ctc-zh-int8-2025-07-03", "zipformer-ctc"),
@@ -709,14 +751,21 @@ def worker(key: str, repeats: int) -> dict:
                     paraformer=str(onnx), tokens=str(tokens),
                     num_threads=2, sample_rate=16000, feature_dim=80,
                     decoding_method="greedy_search")
-            elif kind == "sensevoice":
+            elif kind in ("sensevoice", "sensevoice-noitn"):
                 model = next((p for p in model_dir.glob("model*.onnx")), None)
                 tokens = next(model_dir.glob("tokens*.txt"), None)
                 if not model or not tokens:
                     return finish("missing", "缺 model.onnx / tokens.txt")
+                # use_itn=True 会把「一百」写成「100」。参考文本是**字幕原文**
+                # （数字形态不统一），所以 ITN 开/关要与参考口径匹配，
+                # 否则会把「格式差异」算成识别错误 —— 这就是为什么两个变体都测。
+                # 语言必须按片段走 —— 之前写死 "zh"，英文段会被强行按中文解码。
+                # sherpa 的 SenseVoice 支持 "auto"/"en"/"zh" 等。
+                langs = sorted({getattr(c, "language", "zh") or "zh" for c, _ in decoded})
+                sv_lang = langs[0] if len(langs) == 1 else "auto"
                 rec = sherpa_onnx.OfflineRecognizer.from_sense_voice(
                     model=str(model), tokens=str(tokens),
-                    num_threads=2, use_itn=True, language="zh")
+                    num_threads=2, use_itn=(kind == "sensevoice"), language=sv_lang)
             elif kind == "zipformer-ctc":
                 model = next(model_dir.glob("*.onnx"), None)
                 tokens = next(model_dir.glob("tokens*.txt"), None)
