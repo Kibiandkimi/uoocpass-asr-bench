@@ -64,7 +64,9 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"合并了 {len(cands)} 个候选：")
     for c in sorted(cands, key=lambda x: x.cer):
-        print(f"  {c.label:<36} CER {c.cer*100:5.2f}%  {c.size_mb:>6.0f}MB  {c.rtf:5.2f}x")
+        warn = "" if c.weakest_verified in ("human", "subtitle") else f"  ⚠ 参考可信度={c.weakest_verified}"
+        print(f"  {c.label:<38} CER {c.cer*100:5.2f}%  {c.size_mb:>6.0f}MB  "
+              f"{c.rtf:5.2f}x  {c.clips}段/{c.clip_seconds:.0f}s{warn}")
 
     write_outputs(cands, out)
     front = pareto_front(cands)

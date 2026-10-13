@@ -219,14 +219,23 @@ def build_candidates(which: list[str] | None) -> list[Candidate]:
                 size_mb=PACKAGE_MB["vosk"] + (66 if size == "small" else 1800),
             )
         )
-    out.append(
-        Candidate(
-            key="sherpa-paraformer",
-            backend="sherpa-onnx",
-            label="sherpa-onnx paraformer-zh",
-            size_mb=PACKAGE_MB["sherpa-onnx"] + 230,
+    # sherpa-onnx 系：模型体积按实测目录大小在 worker 里覆盖
+    for key, label, mb in (
+        ("sherpa-paraformer", "sherpa-onnx paraformer-zh (2023-09)", 230),
+        ("sherpa-paraformer-2024", "sherpa-onnx paraformer-zh (2024-03)", 230),
+        ("sherpa-sensevoice", "sherpa-onnx SenseVoice-Small", 250),
+        ("sherpa-fire-red", "sherpa-onnx FireRedASR", 1500),
+        ("sherpa-zipformer-ctc", "sherpa-onnx Zipformer-CTC-zh", 160),
+        ("sherpa-funasr-nano", "sherpa-onnx Fun-ASR-Nano", 700),
+    ):
+        out.append(
+            Candidate(
+                key=key,
+                backend="sherpa-onnx",
+                label=label,
+                size_mb=PACKAGE_MB["sherpa-onnx"] + mb,
+            )
         )
-    )
     for size in ("tiny", "base", "small"):
         out.append(
             Candidate(
@@ -609,24 +618,60 @@ def worker(key: str, repeats: int) -> dict:
         return finish("ok", "", "\n".join(texts), rtf, 0.0,
                       PACKAGE_MB["whisper.cpp"] + _measure_mb(model), per_clip)
 
-    if key.startswith("sherpa"):
-        model_dir = MODELS / "sherpa-onnx-paraformer-zh-2023-09-14"
-        if not model_dir.exists():
-            return finish("missing", f"缺模型目录 {model_dir.name}")
+    if key.startswith("sherpa-"):
         try:
             import sherpa_onnx
         except ImportError as exc:
             return finish("missing", f"sherpa-onnx 未安装：{exc}")
-        onnx = next(model_dir.glob("*.onnx"), None)
-        tokens = next(model_dir.glob("tokens*.txt"), None)
-        if not onnx or not tokens:
-            return finish("missing", "模型目录里缺 .onnx / tokens.txt")
+
+        # 各模型目录与构造方式都不同 —— 显式列出来，比猜文件好
+        SPECS = {
+            "sherpa-paraformer": (
+                "sherpa-onnx-paraformer-zh-2023-09-14", "paraformer"),
+            "sherpa-paraformer-2024": (
+                "sherpa-onnx-paraformer-zh-2024-03-09", "paraformer"),
+            "sherpa-sensevoice": (
+                "sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17", "sensevoice"),
+            "sherpa-fire-red": ("sherpa-onnx-fire-red-asr-large-zh_en-2025-02-16", "fire-red"),
+            "sherpa-zipformer-ctc": (
+                "sherpa-onnx-zipformer-ctc-zh-int8-2025-07-03", "zipformer-ctc"),
+            "sherpa-funasr-nano": ("sherpa-onnx-funasr-nano-zh-2025-11-25", "funasr-nano"),
+        }
+        dirname, kind = SPECS.get(key, (None, None))
+        if not dirname:
+            return finish("missing", f"未配置的 sherpa 候选：{key}")
+        model_dir = MODELS / dirname
+        if not model_dir.is_dir():
+            return finish("missing", f"缺模型目录 {dirname}（跑 scripts/fetch_models.py）")
+
         t0 = time.time()
-        rec = sherpa_onnx.OfflineRecognizer.from_paraformer(
-            paraformer=str(onnx), tokens=str(tokens),
-            num_threads=2, sample_rate=16000, feature_dim=80,
-            decoding_method="greedy_search",
-        )
+        try:
+            if kind == "paraformer":
+                onnx = next(model_dir.glob("*.onnx"), None)
+                tokens = next(model_dir.glob("tokens*.txt"), None)
+                if not onnx or not tokens:
+                    return finish("missing", "缺 .onnx / tokens.txt")
+                rec = sherpa_onnx.OfflineRecognizer.from_paraformer(
+                    paraformer=str(onnx), tokens=str(tokens),
+                    num_threads=2, sample_rate=16000, feature_dim=80,
+                    decoding_method="greedy_search")
+            elif kind == "sensevoice":
+                model = next((p for p in model_dir.glob("model*.onnx")), None)
+                tokens = next(model_dir.glob("tokens*.txt"), None)
+                if not model or not tokens:
+                    return finish("missing", "缺 model.onnx / tokens.txt")
+                rec = sherpa_onnx.OfflineRecognizer.from_sense_voice(
+                    model=str(model), tokens=str(tokens),
+                    num_threads=2, use_itn=True, language="zh")
+            elif kind == "zipformer-ctc":
+                model = next(model_dir.glob("*.onnx"), None)
+                tokens = next(model_dir.glob("tokens*.txt"), None)
+                rec = sherpa_onnx.OfflineRecognizer.from_zipformer_ctc(
+                    model=str(model), tokens=str(tokens), num_threads=2)
+            else:
+                return finish("missing", f"kind={kind} 的构造还没接（缺参考用法）")
+        except Exception as exc:  # noqa: BLE001
+            return finish("missing", f"构造识别器失败（{kind}）：{type(exc).__name__}: {exc}")
         load_s = time.time() - t0
         per_clip: dict = {}
         elapsed: list[float] = []

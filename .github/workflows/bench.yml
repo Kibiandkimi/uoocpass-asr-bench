@@ -30,6 +30,9 @@ jobs:
           - wcpp-base
           - wcpp-small
           - sherpa-paraformer
+          - sherpa-paraformer-2024
+          - sherpa-sensevoice
+          - sherpa-zipformer-ctc
     steps:
       - uses: actions/checkout@v4
 
@@ -58,10 +61,12 @@ jobs:
           echo "WHISPER_CLI=/tmp/wcpp/build/bin/whisper-cli" >> "$GITHUB_ENV"
 
       - name: 取模型
-        # 不再 `|| true` 吞失败：上一版把 404 静默掉，三个 wcpp 候选全白跑
+        # 换成 Python 下载器：bash+curl 在 runner 上会「秒失败且无输出」，
+        # 而同一 runner 直接 curl 下载 190MB 却正常（见 NOTES.md）。
+        # 现在每个 URL 的失败原因都会打进日志。
         run: |
-          bash scripts/fetch_models.sh
-          du -sh models/* 2>/dev/null | head -20
+          python scripts/fetch_models.py
+          du -sh models/* 2>/dev/null | head -25
 
       - name: 跑基准
         env:
