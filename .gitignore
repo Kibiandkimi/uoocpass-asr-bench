@@ -5,3 +5,4 @@ models/
 *.gguf
 results/*.json
 !results/.gitkeep
+models/

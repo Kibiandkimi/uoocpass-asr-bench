@@ -1,0 +1,100 @@
+name: ASR benchmark
+
+# 目的：在 GitHub 的机器上**并排**跑一批 ASR 候选，产出帕累托前沿。
+# 本地磁盘只有几百 MB，放不下 medium / float32 / big-cn 这些配置。
+on:
+  workflow_dispatch:
+    inputs:
+      repeats:
+        description: '每个候选重复次数'
+        required: false
+        default: '3'
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      # 每个候选一个 job 并排跑 —— 「多建几个并排跑」的形态，
+      # 而且天然隔离（不同框架抢线程/内存互不影响）。
+      matrix:
+        engine:
+          - fw-tiny-int8
+          - fw-base-int8
+          - fw-small-int8
+          - fw-medium-int8
+          - vosk-small
+          - vosk-big
+          - wcpp-tiny
+          - wcpp-base
+          - wcpp-small
+          - sherpa-paraformer
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 系统依赖
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg unzip cmake build-essential
+
+      - name: Python 依赖
+        run: |
+          python -m pip install -q numpy opencc
+          case "${{ matrix.engine }}" in
+            fw-*)     python -m pip install -q faster-whisper ;;
+            vosk-*)   python -m pip install -q vosk ;;
+            sherpa-*) python -m pip install -q sherpa-onnx ;;
+          esac
+
+      - name: 编译 whisper.cpp（仅 wcpp-*）
+        if: startsWith(matrix.engine, 'wcpp-')
+        run: |
+          git clone --depth 1 https://github.com/ggerganov/whisper.cpp /tmp/wcpp
+          cmake -S /tmp/wcpp -B /tmp/wcpp/build -DCMAKE_BUILD_TYPE=Release -DWHISPER_BUILD_TESTS=OFF
+          cmake --build /tmp/wcpp/build -j --target whisper-cli
+          echo "WHISPER_CLI=/tmp/wcpp/build/bin/whisper-cli" >> "$GITHUB_ENV"
+
+      - name: 取模型
+        run: |
+          bash scripts/fetch_models.sh || true
+          du -sh models/* 2>/dev/null | head -20
+
+      - name: 跑基准
+        env:
+          HF_HOME: ${{ github.workspace }}/models/hf
+          HF_HUB_DISABLE_XET: '1'
+          PYTHONPATH: ${{ github.workspace }}/models/vosk-libs
+        run: |
+          python scripts/bench.py --engines "${{ matrix.engine }}" \
+            --repeats "${{ inputs.repeats || '3' }}" \
+            --out "results/${{ matrix.engine }}" 2>&1 | tail -40
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: result-${{ matrix.engine }}
+          path: results/${{ matrix.engine }}/
+          if-no-files-found: warn
+
+  # 汇总：把各 job 的结果合并，画出全局帕累托前沿
+  merge:
+    needs: bench
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          path: results
+      - name: 合并并出图
+        run: python scripts/merge_results.py --root results --out results/final
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pareto-final
+          path: results/final/
