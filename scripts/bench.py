@@ -55,12 +55,24 @@ class Clip:
     domain: str = ""
     seconds: float = 0.0
     verified: str = "human"
+    #: 这段音频的语言（BCP-47 短码：zh / en）。**必须显式给** ——
+    #: 之前一律写死 ``zh``，于是英文片段被强行按中文解码，
+    #: 所有 Whisper 系在那一律 CER 100%，属于系统性冤枉。
+    language: str = "zh"
 
 
 def load_clips() -> list[Clip]:
-    """读 ``audio/dataset.json``；没有 manifest 就退回单段旧布局。"""
+    """读数据集 manifest（``UOOC_ASR_DATASET`` 可指定，默认 ``audio/dataset.json``）。
+
+    为什么要可切换：单段切片版和整段版要能**同机对比** ——
+    单段版有对齐 bug、数字不可信，留着是为了验证「对齐修好了没」。
+    """
     import json
 
+    global DATASET
+    env = os.environ.get("UOOC_ASR_DATASET")
+    if env:
+        DATASET = ROOT / env if not Path(env).is_absolute() else Path(env)
     if not DATASET.is_file():
         return [Clip("legacy", AUDIO, REF.read_text(encoding="utf-8"), verified="human")]
     data = json.loads(DATASET.read_text(encoding="utf-8"))
@@ -78,6 +90,7 @@ def load_clips() -> list[Clip]:
                 id=raw["id"], wav=wav, reference=text,
                 source=raw.get("source", ""), domain=raw.get("domain", ""),
                 seconds=raw.get("seconds", 0.0), verified=raw.get("verified", "human"),
+                language=raw.get("language", "zh"),
             )
         )
     return clips
@@ -563,9 +576,12 @@ def worker(key: str, repeats: int) -> dict:
         for rep in range(max(1, repeats)):
             for clip, audio in decoded:
                 t0 = time.time()
+                # 中文才加「用简体转写」的引导；英文加中文引导会把它往中文带
+                prompt = ("以下是普通话课程的简体中文讲稿，请用简体中文转写。"
+                          if clip.language.startswith("zh") else None)
                 segs, _info = model.transcribe(
-                    audio, language="zh", beam_size=5, vad_filter=False,
-                    initial_prompt="以下是普通话课程的简体中文讲稿，请用简体中文转写。",
+                    audio, language=clip.language or None, beam_size=5,
+                    vad_filter=False, initial_prompt=prompt,
                 )
                 text = "".join(seg.text for seg in segs)
                 elapsed.append(time.time() - t0)
@@ -639,8 +655,9 @@ def worker(key: str, repeats: int) -> dict:
                         wf.setframerate(16000)
                         wf.writeframes((audio * 32767).astype("int16").tobytes())
                     t0 = time.time()
+                    lang = "auto" if not clip.language else clip.language
                     proc = subprocess.run(
-                        [cli, "-m", str(model), "-f", str(wav), "-l", "zh",
+                        [cli, "-m", str(model), "-f", str(wav), "-l", lang,
                          "-otxt", "-of", str(Path(tmp) / "out"), "-np"],
                         capture_output=True, text=True, timeout=1800,
                     )

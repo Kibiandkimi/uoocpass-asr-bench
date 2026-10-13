@@ -1,44 +1,105 @@
 {
-  "version": 1,
-  "note": "每段：wav + 参考文本。verified 取值与可信度：\n  human              —— 人工逐字校对，最可信\n  subtitle           —— 平台官方字幕，且已验证与音轨对齐\n  subtitle-misaligned—— 字幕内容对得上但时间轴错位，CER 不可信（待修）\n  asr                —— 模型转写草稿，未经校对（循环论证，仅作参考）",
+  "version": 2,
+  "note": "整段式：每段 = 一整节视频 + 该节完整字幕。整段没有切片对齐问题（SRT 末条时间戳与音频时长实测吻合，差 1~7 秒）。verified: human=人工校对 / subtitle=官方字幕且时长吻合 / subtitle-misaligned=时间轴错位 / asr=模型草稿",
   "clips": [
     {
-      "id": "art-intro-20-80",
-      "wav": "course_zh_60s.wav",
-      "reference": "reference_zh.txt",
-      "source": "艺术的星空·艺术美学十二讲 / 第1节 绪论（视频 0:20-1:20）",
-      "domain": "人文艺术讲课",
-      "seconds": 60,
-      "verified": "human"
+      "id": "zh-1351890321-1",
+      "wav": "zh-1351890321-1.wav",
+      "reference": "zh-1351890321-1.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机概述（整段）",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 113,
+      "verified": "subtitle",
+      "duration_diff_s": 4.1
     },
     {
-      "id": "cs-1",
-      "wav": "cs-1.wav",
-      "reference": "cs-1.ref.txt",
-      "source": "大学计算机 / 计算机基础知识·计算机概述（视频 0:30-1:58）",
+      "id": "zh-1351890321-2",
+      "wav": "zh-1351890321-2.wav",
+      "reference": "zh-1351890321-2.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机概述（整段）",
       "domain": "理工科讲课",
-      "seconds": 88,
-      "verified": "subtitle"
+      "language": "zh",
+      "seconds": 238,
+      "verified": "subtitle",
+      "duration_diff_s": 4.8
     },
     {
-      "id": "cs-2",
-      "wav": "cs-2.wav",
-      "reference": "cs-2.ref.txt",
-      "source": "大学计算机 / 算法基础·穷举法（视频 1:00-2:30）",
+      "id": "zh-1351890321-3",
+      "wav": "zh-1351890321-3.wav",
+      "reference": "zh-1351890321-3.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机概述（整段）",
       "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 91,
+      "verified": "subtitle",
+      "duration_diff_s": 7.4
+    },
+    {
+      "id": "zh-1351890321-4",
+      "wav": "zh-1351890321-4.wav",
+      "reference": "zh-1351890321-4.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机概述（整段）",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 286,
+      "verified": "subtitle",
+      "duration_diff_s": 1.4
+    },
+    {
+      "id": "zh-1351890321-5",
+      "wav": "zh-1351890321-5.wav",
+      "reference": "zh-1351890321-5.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机运算基础 / 数制及其转换（整段）",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 252,
+      "verified": "subtitle",
+      "duration_diff_s": 6.1
+    },
+    {
+      "id": "zh-1351890321-6",
+      "wav": "zh-1351890321-6.wav",
+      "reference": "zh-1351890321-6.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机运算基础 / 数制及其转换（整段）",
+      "domain": "理工科讲课",
+      "language": "zh",
       "seconds": 90,
-      "verified": "subtitle-misaligned",
-      "note": "字幕文件属于同一节视频、内容能对上，但**时间轴与 mp4 不一致**（视频有片头，SRT 从讲稿起点计时），按时间戳切的音频与字幕对不上，扫描 ±180s 固定偏移也救不回来。需要按内容对齐后重新生成参考文本。在修好之前，这段的 CER 不可信。"
+      "verified": "subtitle",
+      "duration_diff_s": 4.2
     },
     {
-      "id": "en-1",
-      "wav": "en-1.wav",
-      "reference": "en-1.ref.txt",
-      "source": "大学英语（1）A级 / Unit 4 Lead-in（视频 0:20-1:50）",
+      "id": "en-1911877932-1",
+      "wav": "en-1911877932-1.wav",
+      "reference": "en-1911877932-1.ref.txt",
+      "source": "大学英语（1）A级 / Unit 4 Ways of Learning / Lead-in: The B（整段）",
       "domain": "英文讲课",
-      "seconds": 90,
-      "verified": "subtitle-misaligned",
-      "note": "字幕文件属于同一节视频、内容能对上，但**时间轴与 mp4 不一致**（视频有片头，SRT 从讲稿起点计时），按时间戳切的音频与字幕对不上，扫描 ±180s 固定偏移也救不回来。需要按内容对齐后重新生成参考文本。在修好之前，这段的 CER 不可信。"
+      "language": "en",
+      "seconds": 208,
+      "verified": "subtitle",
+      "duration_diff_s": 3.4
+    },
+    {
+      "id": "en-1911877932-2",
+      "wav": "en-1911877932-2.wav",
+      "reference": "en-1911877932-2.ref.txt",
+      "source": "大学英语（1）A级 / Unit 4 Ways of Learning / Lead-in: The B（整段）",
+      "domain": "英文讲课",
+      "language": "en",
+      "seconds": 260,
+      "verified": "subtitle",
+      "duration_diff_s": 2.1
+    },
+    {
+      "id": "en-1911877932-3",
+      "wav": "en-1911877932-3.wav",
+      "reference": "en-1911877932-3.ref.txt",
+      "source": "大学英语（1）A级 / Unit 5 Fighting with the Forces of Natur（整段）",
+      "domain": "英文讲课",
+      "language": "en",
+      "seconds": 128,
+      "verified": "subtitle",
+      "duration_diff_s": 2.7
     }
   ]
 }

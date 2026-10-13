@@ -73,6 +73,8 @@ jobs:
           HF_HOME: ${{ github.workspace }}/models/hf
           HF_HUB_DISABLE_XET: '1'
           PYTHONPATH: ${{ github.workspace }}/models/vosk-libs
+          # 整段式数据集（无切片对齐问题）；切片版见 audio/dataset_sliced.json
+          UOOC_ASR_DATASET: audio/dataset.json
         run: |
           python scripts/bench.py --engines "${{ matrix.engine }}" \
             --repeats "${{ inputs.repeats || '3' }}" \

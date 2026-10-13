@@ -1,0 +1,105 @@
+{
+  "version": 2,
+  "note": "整段式：每段 = 一整节视频 + 该节完整字幕。整段没有切片对齐问题（SRT 末条时间戳与音频时长实测吻合，差 1~7 秒）。verified: human=人工校对 / subtitle=官方字幕且时长吻合 / subtitle-misaligned=时间轴错位 / asr=模型草稿",
+  "clips": [
+    {
+      "id": "zh-1351890321-1",
+      "wav": "zh-1351890321-1.wav",
+      "reference": "zh-1351890321-1.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机概述（整段）",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 113,
+      "verified": "subtitle",
+      "duration_diff_s": 4.1
+    },
+    {
+      "id": "zh-1351890321-2",
+      "wav": "zh-1351890321-2.wav",
+      "reference": "zh-1351890321-2.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机概述（整段）",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 238,
+      "verified": "subtitle",
+      "duration_diff_s": 4.8
+    },
+    {
+      "id": "zh-1351890321-3",
+      "wav": "zh-1351890321-3.wav",
+      "reference": "zh-1351890321-3.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机概述（整段）",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 91,
+      "verified": "subtitle",
+      "duration_diff_s": 7.4
+    },
+    {
+      "id": "zh-1351890321-4",
+      "wav": "zh-1351890321-4.wav",
+      "reference": "zh-1351890321-4.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机概述（整段）",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 286,
+      "verified": "subtitle",
+      "duration_diff_s": 1.4
+    },
+    {
+      "id": "zh-1351890321-5",
+      "wav": "zh-1351890321-5.wav",
+      "reference": "zh-1351890321-5.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机运算基础 / 数制及其转换（整段）",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 252,
+      "verified": "subtitle",
+      "duration_diff_s": 6.1
+    },
+    {
+      "id": "zh-1351890321-6",
+      "wav": "zh-1351890321-6.wav",
+      "reference": "zh-1351890321-6.ref.txt",
+      "source": "大学计算机 / 计算机基础知识 / 计算机运算基础 / 数制及其转换（整段）",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 90,
+      "verified": "subtitle",
+      "duration_diff_s": 4.2
+    },
+    {
+      "id": "en-1911877932-1",
+      "wav": "en-1911877932-1.wav",
+      "reference": "en-1911877932-1.ref.txt",
+      "source": "大学英语（1）A级 / Unit 4 Ways of Learning / Lead-in: The B（整段）",
+      "domain": "英文讲课",
+      "language": "en",
+      "seconds": 208,
+      "verified": "subtitle",
+      "duration_diff_s": 3.4
+    },
+    {
+      "id": "en-1911877932-2",
+      "wav": "en-1911877932-2.wav",
+      "reference": "en-1911877932-2.ref.txt",
+      "source": "大学英语（1）A级 / Unit 4 Ways of Learning / Lead-in: The B（整段）",
+      "domain": "英文讲课",
+      "language": "en",
+      "seconds": 260,
+      "verified": "subtitle",
+      "duration_diff_s": 2.1
+    },
+    {
+      "id": "en-1911877932-3",
+      "wav": "en-1911877932-3.wav",
+      "reference": "en-1911877932-3.ref.txt",
+      "source": "大学英语（1）A级 / Unit 5 Fighting with the Forces of Natur（整段）",
+      "domain": "英文讲课",
+      "language": "en",
+      "seconds": 128,
+      "verified": "subtitle",
+      "duration_diff_s": 2.7
+    }
+  ]
+}

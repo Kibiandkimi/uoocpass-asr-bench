@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "note": "旧的切片式数据集：180 秒标了 subtitle-misaligned（时间轴错位），CER 不可信，留作对照。",
+  "clips": [
+    {
+      "id": "art-intro-20-80",
+      "wav": "course_zh_60s.wav",
+      "reference": "reference_zh.txt",
+      "source": "艺术的星空/第1节 绪论(0:20-1:20)",
+      "domain": "人文艺术讲课",
+      "language": "zh",
+      "seconds": 60,
+      "verified": "human"
+    },
+    {
+      "id": "cs-1",
+      "wav": "cs-1.wav",
+      "reference": "cs-1.ref.txt",
+      "source": "大学计算机/计算机概述(0:30-1:58)",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 88,
+      "verified": "subtitle"
+    },
+    {
+      "id": "cs-2",
+      "wav": "cs-2.wav",
+      "reference": "cs-2.ref.txt",
+      "source": "大学计算机/穷举法(1:00-2:30)",
+      "domain": "理工科讲课",
+      "language": "zh",
+      "seconds": 90,
+      "verified": "subtitle-misaligned"
+    },
+    {
+      "id": "en-1",
+      "wav": "en-1.wav",
+      "reference": "en-1.ref.txt",
+      "source": "大学英语/Unit 4 Lead-in(0:20-1:50)",
+      "domain": "英文讲课",
+      "language": "en",
+      "seconds": 90,
+      "verified": "subtitle-misaligned"
+    }
+  ]
+}
