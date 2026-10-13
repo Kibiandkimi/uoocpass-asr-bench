@@ -28,10 +28,59 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-AUDIO = ROOT / "audio" / "course_zh_60s.wav"
+AUDIO = ROOT / "audio" / "course_zh_60s.wav"  # 兼容旧路径
+DATASET = ROOT / "audio" / "dataset.json"
 REF = ROOT / "audio" / "reference_zh.txt"
 RESULTS = ROOT / "results"
 MODELS = ROOT / "models"
+
+
+@dataclass
+class Clip:
+    """一段测试音频 + 它的参考文本。
+
+    ``verified`` 很重要，决定了这个数据点可不可信：
+
+    * ``human``    —— 人工逐字校对过，最可信
+    * ``subtitle`` —— 平台**官方字幕**，等价于官方转写，可信
+                      （注意：SRT 的时间轴和音轨一致，所以切音频时按同样时间范围切即可对齐）
+    * ``asr``      —— 某个模型转的草稿，**未经校对**
+                      ⚠️ 用 A 模型的输出测 B 模型 = 循环论证，必须标注清楚
+    """
+
+    id: str
+    wav: Path
+    reference: str
+    source: str = ""
+    domain: str = ""
+    seconds: float = 0.0
+    verified: str = "human"
+
+
+def load_clips() -> list[Clip]:
+    """读 ``audio/dataset.json``；没有 manifest 就退回单段旧布局。"""
+    import json
+
+    if not DATASET.is_file():
+        return [Clip("legacy", AUDIO, REF.read_text(encoding="utf-8"), verified="human")]
+    data = json.loads(DATASET.read_text(encoding="utf-8"))
+    clips: list[Clip] = []
+    for raw in data.get("clips") or []:
+        wav = ROOT / "audio" / raw["wav"]
+        ref_path = ROOT / "audio" / raw.get("reference", "")
+        if not wav.is_file() or not ref_path.is_file():
+            continue
+        text = ref_path.read_text(encoding="utf-8")
+        if not text.strip():
+            continue
+        clips.append(
+            Clip(
+                id=raw["id"], wav=wav, reference=text,
+                source=raw.get("source", ""), domain=raw.get("domain", ""),
+                seconds=raw.get("seconds", 0.0), verified=raw.get("verified", "human"),
+            )
+        )
+    return clips
 
 
 # --------------------------------------------------------------------------
@@ -80,6 +129,32 @@ def cer(ref: str, hyp: str) -> float:
     return prev[-1] / len(ref)
 
 
+def edit_distance(ref: str, hyp: str) -> int:
+    """Levenshtein 编辑距离（字符级）。"""
+    ref, hyp = normalize(to_simplified(ref)), normalize(to_simplified(hyp))
+    prev = list(range(len(hyp) + 1))
+    for i, rc in enumerate(ref, 1):
+        cur = [i]
+        for j, hc in enumerate(hyp, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (rc != hc)))
+        prev = cur
+    return prev[-1]
+
+
+def _clip_metrics(clip, hyp: str) -> dict:
+    """单段指标。留 errors/ref_len 是为了后面能算 micro-CER。"""
+    ref_n = normalize(to_simplified(clip.reference))
+    err = edit_distance(clip.reference, hyp)
+    return {
+        "cer": err / len(ref_n) if ref_n else -1.0,
+        "errors": err,
+        "ref_len": len(ref_n),
+        "verified": clip.verified,
+        "domain": clip.domain,
+        "hyp": normalize(hyp)[:120],
+    }
+
+
 # --------------------------------------------------------------------------
 # 候选定义
 # --------------------------------------------------------------------------
@@ -99,6 +174,12 @@ class Candidate:
     status: str = "pending"
     note: str = ""
     text: str = ""
+    #: 每段的结果：{clip_id: {"cer": …, "verified": …, "hyp": …}}
+    per_clip: dict = field(default_factory=dict)
+    #: 数据集规模（段数 / 总秒数 / 最弱可信度），防止「拿 1 段 60 秒就下结论」
+    clips: int = 0
+    clip_seconds: float = 0.0
+    weakest_verified: str = ""
 
     @property
     def ok(self) -> bool:
@@ -391,15 +472,31 @@ def worker(key: str, repeats: int) -> dict:
         )
         return np.frombuffer(proc.stdout, dtype=np.int16).astype(np.float32) / 32768.0
 
-    audio = decode(AUDIO)
-    seconds = len(audio) / 16000
-    ref = REF.read_text(encoding="utf-8")
+    clips = load_clips()
+    if not clips:
+        return {"status": "missing", "note": "数据集为空（audio/dataset.json）"}
+    # 预先解码全部音频，避免把解码时间算进 RTF
+    decoded = [(clip, decode(clip.wav)) for clip in clips]
+    total_seconds = sum(len(a) / 16000 for _c, a in decoded)
 
     def finish(status: str, note: str = "", text: str = "", rtf: float = -1.0,
-               load_s: float = 0.0, size_mb: float = 0.0) -> dict:
+               load_s: float = 0.0, size_mb: float = 0.0,
+               per_clip: dict | None = None) -> dict:
+        per_clip = per_clip or {}
+        ok = [v for v in per_clip.values() if v.get("cer", -1) >= 0]
+        # micro-CER：总编辑距离 / 总参考长度（不是各段 CER 的平均）
+        if ok:
+            tot_err = sum(v["errors"] for v in ok)
+            tot_len = sum(v["ref_len"] for v in ok)
+            micro = tot_err / tot_len if tot_len else -1.0
+        else:
+            micro = -1.0
+        ranks = {"human": 3, "subtitle": 2, "asr": 1, "": 0}
+        weakest = min((c.verified for c, _ in decoded), key=lambda v: ranks.get(v, 0))
         return {"status": status, "note": note, "text": text, "rtf": rtf,
-                "load_s": load_s, "size_mb": size_mb,
-                "cer": cer(ref, text) if text else -1.0}
+                "load_s": load_s, "size_mb": size_mb, "cer": micro,
+                "per_clip": per_clip, "clips": len(clips),
+                "clip_seconds": total_seconds, "weakest_verified": weakest}
 
     if key.startswith("fw-"):
         _, size, ct = key.split("-", 2)
@@ -414,18 +511,24 @@ def worker(key: str, repeats: int) -> dict:
             load_s = time.time() - t0
         except Exception as exc:  # noqa: BLE001
             return finish("missing", f"模型 {size}/{ct} 加载失败：{str(exc)[:80]}")
-        times, text = [], ""
+        per_clip: dict = {}
+        elapsed: list[float] = []
+        texts: list[str] = []
         for _ in range(max(1, repeats)):
-            t0 = time.time()
-            segs, _ = model.transcribe(
-                audio, language="zh", beam_size=5, vad_filter=False,
-                initial_prompt="以下是普通话课程的简体中文讲稿，请用简体中文转写。",
-            )
-            text = "".join(s.text for s in segs)
-            times.append(time.time() - t0)
-        times.sort()
-        rtf = seconds / times[len(times) // 2]
-        return finish("ok", "", text, rtf, load_s, PACKAGE_MB["faster-whisper"] + WHISPER_SIZES[size])
+            for clip, audio in decoded:
+                t0 = time.time()
+                segs, _ = model.transcribe(
+                    audio, language="zh", beam_size=5, vad_filter=False,
+                    initial_prompt="以下是普通话课程的简体中文讲稿，请用简体中文转写。",
+                )
+                text = "".join(seg.text for seg in segs)
+                elapsed.append(time.time() - t0)
+                if _ == 0:  # 只留第一次的输出做展示与比对
+                    texts.append(text)
+                    per_clip[clip.id] = _clip_metrics(clip, text)
+        rtf = total_seconds / sum(sorted(elapsed)[: len(decoded)])
+        return finish("ok", "", "\n".join(texts), rtf, load_s,
+                      PACKAGE_MB["faster-whisper"] + WHISPER_SIZES[size], per_clip)
 
     if key.startswith("vosk-"):
         size = key.split("-", 1)[1]
@@ -440,22 +543,28 @@ def worker(key: str, repeats: int) -> dict:
         t0 = time.time()
         model = Model(str(model_dir))
         load_s = time.time() - t0
-        pcm = (audio * 32767).astype("int16").tobytes()
-        times, text = [], ""
+        per_clip: dict = {}
+        elapsed: list[float] = []
+        texts: list[str] = []
         for _ in range(max(1, repeats)):
-            t0 = time.time()
-            rec = KaldiRecognizer(model, 16000)
-            parts = []
-            step = 8000
-            for i in range(0, len(pcm), step):
-                if rec.AcceptWaveform(pcm[i:i + step]):
-                    parts.append(json.loads(rec.Result()).get("text", ""))
-            parts.append(json.loads(rec.FinalResult()).get("text", ""))
-            text = "".join(parts)
-            times.append(time.time() - t0)
-        times.sort()
-        return finish("ok", "", text, seconds / times[len(times) // 2], load_s,
-                      PACKAGE_MB["vosk"] + _measure_mb(model_dir))
+            for clip, audio in decoded:
+                pcm = (audio * 32767).astype("int16").tobytes()
+                t0 = time.time()
+                rec = KaldiRecognizer(model, 16000)
+                parts = []
+                step = 8000
+                for i in range(0, len(pcm), step):
+                    if rec.AcceptWaveform(pcm[i:i + step]):
+                        parts.append(json.loads(rec.Result()).get("text", ""))
+                parts.append(json.loads(rec.FinalResult()).get("text", ""))
+                text = "".join(parts)
+                elapsed.append(time.time() - t0)
+                if _ == 0:
+                    texts.append(text)
+                    per_clip[clip.id] = _clip_metrics(clip, text)
+        rtf = total_seconds / sum(sorted(elapsed)[: len(decoded)])
+        return finish("ok", "", "\n".join(texts), rtf, load_s,
+                      PACKAGE_MB["vosk"] + _measure_mb(model_dir), per_clip)
 
     if key.startswith("wcpp-"):
         size = key.split("-", 1)[1]
@@ -471,30 +580,34 @@ def worker(key: str, repeats: int) -> dict:
         import tempfile
         import wave
 
-        times, text = [], ""
+        per_clip: dict = {}
+        elapsed: list[float] = []
+        texts: list[str] = []
         with tempfile.TemporaryDirectory() as tmp:
-            wav = Path(tmp) / "a.wav"
-            with wave.open(str(wav), "wb") as wf:
-                wf.setnchannels(1)
-                wf.setsampwidth(2)
-                wf.setframerate(16000)
-                wf.writeframes((audio * 32767).astype("int16").tobytes())
             for _ in range(max(1, repeats)):
-                t0 = time.time()
-                proc = subprocess.run(
-                    [cli, "-m", str(model), "-f", str(wav), "-l", "zh",
-                     "-otxt", "-of", str(Path(tmp) / "out"), "-np"],
-                    capture_output=True, text=True, timeout=1800,
-                )
-                times.append(time.time() - t0)
-                out_txt = Path(tmp) / "out.txt"
-                if out_txt.exists():
-                    text = out_txt.read_text(encoding="utf-8", errors="replace")
-                else:
-                    text = proc.stdout
-        times.sort()
-        return finish("ok", "", text, seconds / times[len(times) // 2], 0.0,
-                      PACKAGE_MB["whisper.cpp"] + _measure_mb(model))
+                for clip, audio in decoded:
+                    wav = Path(tmp) / "a.wav"
+                    with wave.open(str(wav), "wb") as wf:
+                        wf.setnchannels(1)
+                        wf.setsampwidth(2)
+                        wf.setframerate(16000)
+                        wf.writeframes((audio * 32767).astype("int16").tobytes())
+                    t0 = time.time()
+                    proc = subprocess.run(
+                        [cli, "-m", str(model), "-f", str(wav), "-l", "zh",
+                         "-otxt", "-of", str(Path(tmp) / "out"), "-np"],
+                        capture_output=True, text=True, timeout=1800,
+                    )
+                    elapsed.append(time.time() - t0)
+                    out_txt = Path(tmp) / "out.txt"
+                    text = (out_txt.read_text(encoding="utf-8", errors="replace")
+                            if out_txt.exists() else proc.stdout)
+                    if _ == 0:
+                        texts.append(text)
+                        per_clip[clip.id] = _clip_metrics(clip, text)
+        rtf = total_seconds / sum(sorted(elapsed)[: len(decoded)])
+        return finish("ok", "", "\n".join(texts), rtf, 0.0,
+                      PACKAGE_MB["whisper.cpp"] + _measure_mb(model), per_clip)
 
     if key.startswith("sherpa"):
         model_dir = MODELS / "sherpa-onnx-paraformer-zh-2023-09-14"
@@ -515,17 +628,23 @@ def worker(key: str, repeats: int) -> dict:
             decoding_method="greedy_search",
         )
         load_s = time.time() - t0
-        times, text = [], ""
+        per_clip: dict = {}
+        elapsed: list[float] = []
+        texts: list[str] = []
         for _ in range(max(1, repeats)):
-            t0 = time.time()
-            stream = rec.create_stream()
-            stream.accept_waveform(16000, audio)
-            rec.decode_stream(stream)
-            text = stream.result.text
-            times.append(time.time() - t0)
-        times.sort()
-        return finish("ok", "", text, seconds / times[len(times) // 2], load_s,
-                      PACKAGE_MB["sherpa-onnx"] + _measure_mb(model_dir))
+            for clip, audio in decoded:
+                t0 = time.time()
+                stream = rec.create_stream()
+                stream.accept_waveform(16000, audio)
+                rec.decode_stream(stream)
+                text = stream.result.text
+                elapsed.append(time.time() - t0)
+                if _ == 0:
+                    texts.append(text)
+                    per_clip[clip.id] = _clip_metrics(clip, text)
+        rtf = total_seconds / sum(sorted(elapsed)[: len(decoded)])
+        return finish("ok", "", "\n".join(texts), rtf, load_s,
+                      PACKAGE_MB["sherpa-onnx"] + _measure_mb(model_dir), per_clip)
 
     return finish("missing", f"未实现的候选：{key}")
 

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="system-ui,sans-serif">
+<rect width="900" height="560" fill="#fdfdfd"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="19" font-weight="600">ASR 帕累托：越靠左下越好（点越大越快）</text>
+<text x="450.0" y="546" text-anchor="middle" font-size="13">运行期占用 MB（包 + 模型）→</text>
+<text x="16" y="280.0" font-size="13" transform="rotate(-90 16 280.0)" text-anchor="middle">CER 字符错误率 ↓（越低越准）</text>
+<line x1="70" y1="490" x2="830" y2="490" stroke="#999"/>
+<line x1="70" y1="70" x2="70" y2="490" stroke="#999"/>
+<circle cx="760.9" cy="124.8" r="19.0" fill="#d62728" fill-opacity="0.55" stroke="#d62728"/>
+<text x="760.9" y="100.8" font-size="11" text-anchor="middle" fill="#333">faster-whisper small/int8</text>
+<text x="70" y="508" font-size="10" text-anchor="middle" fill="#666">0</text>
+<text x="62" y="493" font-size="10" text-anchor="end" fill="#666">-0%</text>
+<text x="222" y="508" font-size="10" text-anchor="middle" fill="#666">163</text>
+<text x="62" y="409" font-size="10" text-anchor="end" fill="#666">-23%</text>
+<text x="374" y="508" font-size="10" text-anchor="middle" fill="#666">325</text>
+<text x="62" y="325" font-size="10" text-anchor="end" fill="#666">-46%</text>
+<text x="526" y="508" font-size="10" text-anchor="middle" fill="#666">488</text>
+<text x="62" y="241" font-size="10" text-anchor="end" fill="#666">-69%</text>
+<text x="678" y="508" font-size="10" text-anchor="middle" fill="#666">650</text>
+<text x="62" y="157" font-size="10" text-anchor="end" fill="#666">-92%</text>
+<text x="830" y="508" font-size="10" text-anchor="middle" fill="#666">813</text>
+<text x="62" y="73" font-size="10" text-anchor="end" fill="#666">-115%</text>
+</svg>

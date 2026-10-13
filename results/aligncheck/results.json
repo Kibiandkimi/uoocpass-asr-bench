@@ -1,0 +1,23 @@
+{
+  "candidates": [
+    {
+      "key": "fw-small-int8",
+      "backend": "faster-whisper",
+      "label": "faster-whisper small/int8",
+      "size_mb": 739.0,
+      "cer": -1.0,
+      "rtf": 1.6459753795727137,
+      "load_s": 3.2305948734283447,
+      "status": "ok",
+      "note": "",
+      "text": "",
+      "per_clip": {},
+      "clips": 0,
+      "clip_seconds": 0.0,
+      "weakest_verified": ""
+    }
+  ],
+  "pareto": [
+    "fw-small-int8"
+  ]
+}
