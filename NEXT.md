@@ -1,60 +1,66 @@
-# 下一步（按优先级）
+# 状态与下一步
 
-## P0：数据集对齐（阻断项）
+## 已完成 ✅
 
-现在 **4 段 328 秒，但只有 148 秒可信**。两段标了 `subtitle-misaligned`。
+### 数据集（阻断项已解）
 
-**根因**：`/home/learn/getUnitLearn` 给的 `video_url`（mp4）与 `subtitle`（srt）
-**不是同一条时间轴** —— 视频带片头，SRT 从讲稿起点计时。实测「穷举法」那节：
-字幕 62s 处讲「国王的婚姻 / 旅行商问题」，而 mp4 60s 处音频在讲「3x+y+z=100」。
-扫 ±180s 固定偏移也救不回来（CER 仍 94%），所以是**非恒定偏移**。
+**整段式：9 段 / 27.8 分钟 / 2 个语种 / 理工+英文两类**（`audio/dataset.json`）
 
-**修法：按内容对齐，不按时间戳切。**
-1. 用最好的模型（SenseVoice）转写整段视频 → `hyp`；
-2. 把完整 SRT 文本当 `ref`；
-3. 用**滑动窗口 + 编辑距离**在 `ref` 上找与 `hyp` 最匹配的窗口；
-4. 以该窗口对应的时间范围反过来切音频（或直接用整段，让 CER 在整段上算）。
+整段式的关键好处：**没有切片对齐问题**。平台给的 `video_url`(mp4) 与
+`subtitle`(srt) 不是同一条时间轴（视频带片头），按时间戳切片段必然错位。
+但**整段**时 SRT 末条时间戳与音频时长实测吻合（差 1~7 秒），所以整段可比。
 
-更省事的替代：**不做切片，整段视频配整段字幕**，CER 在完整视频上算（micro），
-这样根本没有对齐问题。代价是每段音频长（几分钟 → CI 时间变长）。
+切片版留在 `audio/dataset_sliced.json`，其中 180 秒标了 `subtitle-misaligned`。
 
-## P1：把真正强的模型加进来（当前候选是「矮子里拔将军」）
+### 已修的 bug（详见 NOTES.md）
 
-已确认漏掉整个中文专用版图。按公开基准（184 段真实普通话 + 人工参考）：
+1. `for _ in range(...)` 的 `_` 被 `segs, _ = transcribe(...)` 覆盖 → per_clip 恒空、CER 恒 -100%
+2. `run_candidate` 漏拷 per_clip / clips / clip_seconds / weakest_verified
+3. artifact 未限定 run-id → 旧数据集结果混入
+4. 子进程 JSON 只取最后一行（被库的 stdout 警告挤掉）
+5. bash+curl 下载器在 runner 上秒失败 → 换 Python（错误可见 + 镜像）
+6. 语言写死 `zh` → 英文片段被强行按中文解码，Whisper 系一律 CER 100%
 
-| 模型 | 中文 CER | 速度 | 体积 | 备注 |
-| --- | --- | --- | --- | --- |
-| **SenseVoice-Small** | **7.81%** | ~20x (CPU 17.2x) | 449MB (f16) | 编码器+CTC，一次前向 |
-| Fun-ASR-Nano | 8.06–8.30% | 340x (vLLM) | enc + Qwen3-0.6B GGUF | LLM 解码，最准 |
-| Paraformer | 9.85–10.18% | ~21x | 401MB | 已在测 |
-| whisper.cpp base | **31.33%** | 9.9x | 142MB | |
-| whisper.cpp small | **22.12%** | 4.6x | 466MB | |
+## 待办
 
-**中文上 FunASR 比 whisper.cpp 准 2.7 倍**（其自带基准原话）。
-`sherpa-onnx` 已支持：`sense_voice` / `fire_red_asr_ctc` / `funasr_nano` /
-`zipformer` / `qwen3_asr` / `paraformer`。此外还有 FireRedASR（小红书，工业级）、
-Qwen3-ASR-0.6B。
+### P1：结论要复核 —— 整段结果推翻了公开基准
 
-要加的候选（按预期收益排序）：
-1. `sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17`（**必加**，预期 CER 最低）
-2. `sherpa-onnx-paraformer-zh-2024-03-09`（比现在用的 2023-09-14 新）
-3. `sherpa-onnx-fire-red-asr-large-zh_en-2025-02-16`
-4. `sherpa-onnx-funasr-nano-*`（若已发布转换版）
-5. `sherpa-onnx-zipformer-ctc-zh-int8-2025-07-03`
-6. Qwen3-ASR-0.6B int4（HF 上有人转）
+整段式 27.8 分钟的真实课程音频上：
 
-## P2：CI 模型下载失败（未解决）
+| 候选 | CER | 体积 | RTF |
+| --- | --- | --- | --- |
+| faster-whisper small/int8 | 4.20% | 739MB | 4.05x |
+| faster-whisper base/int8 | 4.79% | 400MB | 11.23x |
+| **whisper.cpp base (q5_0)** | **4.81%** | **63MB** | 5.68x |
+| **whisper.cpp tiny (q5_0)** | **7.30%** | **37MB** | 17.61x |
+| SenseVoice-Small | 15.80% | 1164MB | 10.57x |
+| paraformer-zh (2023-09) | 27.48% | 274MB | 11.30x |
+| vosk small-cn | 66.31% | 99MB | 4.78x |
 
-`fetch_models.sh` 在 GitHub runner 上失败，但**同一个 runner 直接 curl 成功**
-（`gh run view 38411380801` 的日志证明：190MB 和 43MB 都下到了）。
-脚本立即失败且无输出，`bash -x` 的跟踪也没落到日志里。排查方向见 `NOTES.md`。
+**这跟 FunASR 官方基准（SenseVoice 7.81% vs whisper.cpp base 31.33%）完全相反。**
+可能的原因（需要逐个排除）：
 
-**换个更稳的路子**：不要用 bash + curl 拼，直接让 Python 下 —— 用
-`huggingface_hub.snapshot_download` 或 `urllib` + 重试，错误信息天然可读。
+1. **领域不匹配**：FunASR 的 184 段是**口语/会议/电话**音频，语音识别难度高；
+   我们的样本是**朗读式讲课**，本就更简单 —— 简单样本上模型差距会压缩。
+2. **`normalize_zh` 口径不同**：官方用 micro-CER + normalize_zh（含数字规整等），
+   我只做了「剥标点 + 繁转简」。数字/英文混排的处理差异会显著影响 CER。
+3. **SenseVoice 用法可能不对**：`from_sense_voice(..., language="zh")` ——
+   sherpa 的 SenseVoice 需要正确的 `use_itn` / `language` 组合，配错会掉点。
+4. **分段策略**：官方用 fsmn-vad 先切段再识别；我们整段直接喂，
+   SenseVoice 是编码器+CTC，长音频可能要分段才发挥。
+5. **参数量与领域适配**：whisper.cpp 用 q5_0 量化，居然打赢 SenseVoice —— 
+   在朗读样本上不是不可能，但需要独立验证。
 
-## P3：数据集规模
+**结论**：在把 1~4 排除之前，**不要**据此换掉 UOOCPass 的 ASR 后端。
+优先做 3（查 sherpa 的 SenseVoice 正确用法）和 2（对齐 normalize 口径）。
 
-目标：**≥ 30 分钟、≥ 10 段、跨 ≥ 4 个领域**（理工 / 人文 / 英文 / 带口音或快语速）。
-- 大学计算机 192/230 节有字幕（最容易做大的来源）
-- 大学英语 13/51 节有字幕
-- 艺术美学 0/57 节 → 只能靠 ASR 转，且**不能当参考**（循环论证）
+### P2：数据集还要扩
+
+- 目标 **≥ 30 分钟 / ≥ 10 段 / ≥ 4 领域**（现在 27.8 分钟 / 9 段 / 2 领域）
+- 缺：人文艺术（艺术美学 0 字幕，只能靠 ASR 转，**不能当参考**）
+- 缺：快语速 / 带口音 / 有背景音乐 的样本（这些才拉开差距）
+
+### P3：sherpa-zipformer-ctc 在整段数据集上失败
+
+`bench (sherpa-zipformer-ctc): failure` —— 需要看日志。它其实是 CTC 模型，
+长音频可能要配 VAD 分段。

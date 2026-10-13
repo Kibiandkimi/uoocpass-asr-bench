@@ -1,0 +1,900 @@
+{
+  "candidates": [
+    {
+      "key": "vosk-big",
+      "backend": "vosk",
+      "label": "vosk big-cn",
+      "size_mb": 2078.1786851882935,
+      "cer": 0.6412753836258385,
+      "rtf": 2.507767670917924,
+      "load_s": 3.5735557079315186,
+      "status": "ok",
+      "note": "",
+      "text": "说 同学 欢迎 来到 计算机 基础 的 课堂 我们 今天 将 会 开始 第一 章 的 学习 第一 章 将 介绍 计算机 基础 的 知识第一 章 第一 节 我们 将 讲到 计算机 的 概述那么 我们 现在 就 开始 进入 计算机 概述 的 这样子 的 一个 内容 当中 去首先 什么 是 计算机 很多 人 对 计算机 有 不同 的 定义 和 有 不同 的 这个 思路 和 想法 比如说 有的 人 认为 啊 计算机 就是 一个 游戏机 你 可以 用 它 来 打 游戏 有的 人 呢 认为 计算机 是 个 打印机 因为 很多 的 文件 它 都 能够 用来 编排打印 出来 而 实际上 计算机 不仅仅 是 我们 刚才 所 说 的 那些 如果 给 个 定义 的话 那么 计算机 我们 可以 把 它 认为 是 对 各种 信息 进行 存储 和 高速 处理 的 一个 电子 的 机器 那么 对于 这个 概念 我们 想 做 两点 的 补充第一 个 我们 说 计算机 不仅仅 是 一个 计算 的 工具 而且 还是 个 信息 处理机同时 我们 也 知道 计算机 不同于 其他 的 任何 机器 它 能够 存储 程序 并 能够 按照 程序 的 引导 自动 地 存取 和 处理 数据 输出 人们 想要 的 下 一个 结果 那么 这个 就是 一个 计算机 的 基本 的 这个 概念\n那么 按着 计算机 的 分类 来讲 我们 可以 把 计算机 分为 专用 计算机 和 通用 计算机 所谓 的 专用 计算机 就是 为了 解决 一类 的 问题 而 专门 设计 的 将 一个 计算机 我们 把 它 叫做 专用 计算机 当然 了 它 的 硬件 和 它软件 是 单单 为 解决 某 一个 问题 而 设置 所以 它 在 解决 这个 问题 的 时候 它 的 处理 速度 将 会 非常 快 另外 首 讲 通用 计算机 只 通用性 计算机 是 为了 解决 各种 问题 有 较 强 的 通用性 而 设计 的 这个 计算机 我们 现在 在 家里 锁用 的 以及 在 实验室 里面 你们 看到 的 这些 我们 都 把 它 同 称之为 通用性 计算机 所以 我们 可以 用 它 来 打字 可以 用 它 来 上网 可以 用 它 来 打 游戏 等等 等等 这 就是 取决于 你 装 了 不同 的 软件 就 有 不同 的 这个 应用如果 我们 按照 计算机 的 处理 对象 来 分类 的话 那么 我们 也 可以 简单 地 把 它 分为 三 种 第一 种 数字式 的 电子 及 第二 种 模拟式 的 电子 元器 第三 种 呢 就是 把 数字 和 模拟 两 种 处理 对象 放在 一起 教会 合适 的电子 计算机数字 四 的 电子 计算机 它 是 处理 非 连续 变化 的 数据 为主 而 这些 数据 在 时间 上 它 是 一个 又 一个 离散 的 那么 它 里面 的 基本 的 部件 把 运算 部件 就是 数字 和 逻辑 电路模拟 世界 电子 计算机 啊 它 在 处理 的 数据 那 是 连续 变化 的 驾驶 数据 那么 他们 这些 数据 在 时间 上 是 相连 的 啊 基本上 它 的 运算 部件 是 由 运算 放大器 组成 的 微分 气 积分器 和 通用 的 函数 运算器 等等 等等当然 混合式 的 电子 计算机 就是 把 数字 是 计算机 和 模拟 是 计算机 合 在 一起 啊 它 可以 处理 数字 量 也 可以 处理 模拟 了那么 如果 我们 按照 它 的 规模 和 处理 能力 来 分 的话 那么 又 可以 分为 很多 种 比如说 有 句型 系 这个 我们 也 把 它 称作 为 超级 计算机 那么 这种 计算机 啊 它 的 处理 能力 相当 的 强 当然 它 要 占用 很 大 的 空间 呢那么 这种 计算机 它 的 价格 也 相当 的 昂贵那么 在 出现 巨型 计算机 之后 人们 为了 使得 它 的 价格 降 下来 又 开发 了 一 种 叫 小 巨型机 借助 小 巨型机 和 巨型 计算机 相比 的话 它 的 价格 比较 便宜再 往后 发展 又 出现 了 一 种 叫做 大型机 也 像 眉粉 同时 这个 大型机 它 具有 很 强 的 管理 和 处理 数据 的 能力 那么 目前 我们 在 中国 当中 大 企业 银行 交通 部门 很多 很多 都 在 使用 大型机为了 满足 中小型 企业 的 需要 那么 计算机 里面 含有 一 种 叫 小型机 那么 就 用 小型机 跟 我们 的 大型机 相比 呢 它 的 价格 和 它 的 体积 就 会 大大 的 减小当然 它 的 处理 速度 也 没有 打印机 那么 快我们 现在 比较 熟悉 的 还有 工作站 和 个人 计算机 工作站 就是 比较 高档 的 这个 危机 而 具有 很 强 的 图形 处理 能力 那么 应用 于 计算机 辅助 设计 上 工作 上 等等 等等而 个人 计算机 呢 就是 我们 现在 常用 的 我们 所 说 的 坏 信息 也好 我们 所 说 的 这个 蓝胖 这个 电脑 也好 都 是 个人 计算机 按照 这个 规模 和 处理 能力 来 分 就 我们 大概 可以 把 计算机 分为 这 几 种 内容\n下面 我们 再 来看 一下 计算机 它 的 特点 首先 计算机 它 的 运算 速度 非常 的 快 我们 知道 现在 的 计算机 已经 能够 达到 每 秒 数万 一 次 的 这个 计算 因为 计算机 它 的 计算 速度 相当 的 快 说 现在 普遍 应用 在 很多 很多的 领域 比如说 科学 计算 比如说 气象 预报 等等 等等 这些 方面另外 一个 特点 就是 计算机 的 精度 相当 的 高 从 理论 上 来讲 如果 这个 计算机 的 计算 能力 够 强 有 足够 的 存储 空间 的话 那么 它 在 理论 上 它 的 精确度 可以 不 受 限制还有 一个 呢 计算机 它 具有 存储 能力 比较 强 的 这样 一个 特点 一个 计算机 能够 处理 的 这个 数据 取决于 它 的 内存 有 多 大 一个 中型 规模 的 图书馆 实际上 在 计算机 处理 起来 也 是 相当 容易 的 因为 它 具备 一个 光盘 就 能够 存储 一个小型 图书馆 的 建设 内容 了计算器 还有 另外 的 特点 它 就 具有 逻辑 判断 能力 他 是 如何 做到 这 一点 的 呢 其实 啊 他 是 通过 算术 运算 逻辑 运算 进行 判断 和 比较 得出 一个 结果那么 计算机 它 还有 自动 执行 的 这个 功能 它 不 需要 人工 的 干预 你 只要 把 程序 写 好 了 它 将 会 按照 这个 程序 自动 地 去 执行 人 只要 等到 他 需要 的 时候 把 这个 结果 获得 就 可以 了\n下面 我们 来看 一下 计算机 的 应用 领域 首先 计算机 可以 用来 做 科学 计算 或者 数值 计算大家 还 记得 世界 上 第一 台 计算机 叫做 薏米 它 主要 是 美国 用来 计算 一个 炮弹 的 打 出去 的 这个 轨迹 以及 它 的 落点所以 计算机 啊 原来 开发 的 就是 为了 做 科学 计算 或者 数值 计算 那么 如何 做到 这 一点 呢 计算机 它 实际上 把 一个 实际 的 问题 进行 一个 数学 模型 的 一个 抽象 然后 把 它 转化 成为 一个 计算机 能够 处理 的 驾驭 模型然后 我们 用 计算机 大量 地 对 它 进行 计算 得出 人们 要 的 价值 结果 这个 就是 他 做 科学 计算 和 数值 计算 的 一个 原理计算机 的 第二 个 应用 领域 就是 用作 数据 处理 或者 信息 处理 那么 我们 知道 现在 都 是 在 一个 大数据 的 下 一个 时代 所以 计算机 它 能够 对 数据 进行 收集 进行 存储 整理 进行 分类统计 最后 进行 加工 检索 啊 以及 对 它 进行 传播 等等 等等 的 这些 对 数据 的 一 系列 的 活动计算机 的 第三 个 应用 领域 是 过程 控制 或者 实时 控制 我们 可以 看到 很多 很多 的 如今 在 制造业 当中 大量 的 用到 了 这个 计算机 它 是 利用 计算机 的 即时 采集 这个 检测 数据 按照 最 优子 迅速 地 进行 控制和 对 对象 的 这样子 的 一个 自动 调节 和 自动 检测 自动 控制 等等 等等我们 知道 计算机 还有 另外 一个 作用 就是 用作 计算机 的 辅助 技术 比如说 有 计算机 辅助 设计 现在 的 设计 人员 不要 再 把 这个 环境 打 出来 然后 才 来看 这个 结果 好不 好 他 现在 呢 可以 用 计算机 把 这个 电路 也好 对 艺术品 也好直接 在 计算机 里面 进行 设计 你 还 没有 做 出来 你 就 能够 看到 它 得 个 结果 另外 一个 地方 可以 用到 计算机 的 就是 计算机 辅助 制造 在 制造业 当中 一个 产品 的 成型 和 制造 过程 当中 要 有 计算机 的 参与 使得 这个 制造 能够 按照 他 的 一要求 可 按照 它 的 流程 进行我们 也 知道 计算机 集成 制造 系统 里面 也 用到 了 很多 的 计算机 啊 我们 把 这个 计算机 集成 制造 系统 叫做 CIS这个 系统 当中 计算机 呢 通过 控制 它 整个 流程 使得 这个 吉祥 这个 系统 能够 得到 完美 的 价格 集合计算机 另外 一个 领域 叫做 人工 智能 如果 大家 还 记得 的话 在 十来 年前 有 部 美国 的 片子 就是 以 人工 智能 命名 它 是 描写 一个 机器人 啊 通过 了 人工 智能 的 这个 技术 获得 了 人类 的 思想 最终 他 学习 到 人如何 去 爱 当然 这个 是 电影 当中 的 情节 那么 现在 我们 的 计算机 的 制造 人工 智能 方面 的 这个 成就 呢 已经 使得 计算机 基本上 能够 造出 一个 非常 之 像 人 的 动作 的 下 一个 机器人好 计算机 还有 更 广阔 的 领域 就是 在 我们 的 通讯 网络 相信 大家 对 互联网 已经 不 会 再 陌生 它 改变 了 人 的 很多 行为 习惯 现在 我们 可以 很 方便 地 坐 在家 里面 进行 网上 银行 的 操作 进行 网上 订票 的 操作如果 你 熬 了 一些 网络 的 课程 你 甚至 可以 不用 去 教室 就 能够 享受 网上 教学 的 这样子 的 一个 服务 同时 呢 我们 会 看到 大家 可以 通过 互联网 获得 一些 医疗 的 这样 一些 信息还有 一个 应用 叫做 网上 税收 现在 啊 我们 报税 不用 再 到 税务局 去 了 你 只要 到 税务局 的 官方 网站 录入 你 的 信息 自动 把 税务 的 信息 登记 就 可以 了还有 网上 出版 也 是 一 种 新兴 的 互联网 应用 的 这样 一个 形式 它 包括 文章 的 收集 文章 的 编排 文章 的 审核 以及 文章 的 出版 都 可以 在线 完成 我们 可以 看到 计算机 有 很多 很多 的 应用 那么 今天 我们 就 讲到 这里 我们 下杰克 再 跟 大家 分享 计算机 的 运算 基础 谢谢 大家\n我们 今天 要 讲 的 是 数字 转换 的 这个 话题 首先 我 给 大家 一道 脑筋 急转弯 请 看 这个 PPT 世界 上 一共 有 一 零 种 人 一 种 会 用 二进制 一 种 不 会 如果 停 在 这里 你 是 在 想 那 另外 的 吧个人 在 哪里 呢如果 你 是 这么 想 的话 实际上 你 还 剩 十进制 的 观点 来 看待 这个 问题 所以 在 题目 中 的 一 零 这 两 个 字 并 不 代表 十 而是 二进制 的 二 如果 你 学 过 计算机 你 再 看 一个 数 的 时候 你 不单 只是 看 这个 数 是 什么 而且 在 你 脑海 当中 马上 就要 反应 过来这个 树 到底 是 几近 知 这 就 设计 为 一个 近似 的 问题 也 就是 我们 今天 学习 的 重点 首先 要 给 大家 介绍 的 是 素质 的 基本 概念 所谓 的 数字 实际上 就是 缝 多少 进 一 的 这样子 的 一个 问题 比如说 我们 经常 说 的一 打 那么 就是 十 二 个 逢 十 二 我 就 进 一 咱们 俩 打 就算 是 似的 同样 的 问题 有 一 周 有 一个 月 这些 都 是 缝 多少 进 一 的 这样 一个 问题用 一个 比较 科学 的 定义 的话 那么 素质 是 指 用 一 组 固定 的 数字 和 一 套 统一 的 价值 规则 来 表示 数目 的 方法在 述职 当中 有 两 种 不同 的 素质 一 种 叫做 非 仅 为 数字 而 另外 一 种 呢 叫做 敬畏 树枝 作为 一个 典型 的 费心 为 数字 那么 罗马 数字 就是 一个 很 好的 例子不 可以 看到 罗马 数字 当中 表示 一 项 因 文字 类似 挨 的 大写 这样子 来 表示 二 是 两 个 三 是 三 个 那么 表示 四 呢 它 不再 是 四 个 了 而是 有 之一 代表 吴 阿姨 在 她 左边 代表 简一 六 呢 是 一 二就是 在 右边 为 佳而 代表 的 事实 你们 也 不难 猜出 如果 是 要 代表 酒 的话 他 应该 是 X另外 一 种 术士 叫做 敬畏 技术 指 它 表示 的 数值 的 大小 与 他 在 树木 桩 当中 的 位置 是 非常 有 关系 的 比如说 一 二 三 四 五 这个 如果 是 十进制 树 的话 它 代表 的 就是 一 百 二 十三 点 四 五大家 会 看到 这个 数字 的 时候 如果 你 的 为 十进制 的话 那么 这个 就是 一个 十进制 的 树 那么 这个 也 就是 一个 敬畏 的 计数法在 数字 当中 有 两 个 基本 概念 大家 搞 清楚 第一 个 叫做 基数 所谓 的 基数 就是 指 在 进位制 中 允许 选用 基本 数码 的 个数这个 基数 实际上 是 跟 你 己经 是 是 有 关系 的 多少 性质 他 就 多少 个 基数 我们 现在 经常 用 的 十进制 那么 就 有 十 个 技术 也就是说 有 十 个 符号 来 代表 不同 的 数值 那么 这 十 个 数字 在 十进制 是 多少 呢 零 一 二 三二 四 五 六 七 八 九 这 十 个 我们 常用 的 数字另外 个 概念 叫做 维权 所谓 的 维权 就是 因为 他 是 敬畏 字 的 价格 数字 所以 你 在 每 一 位 上 它 代表 的 权重 是 多少 我们 把 它 叫做 维权 比如说 我们 刚才 说 的 那样 一个 例子 一 二 三点四 它 代表 的 是 一 成语 时 的 二 次方 就是 一 百二 乘以 十 的 一 次方 就是 十 三 寸 十 的 零 次方 就是 三 然后 再 加上 四 乘 十 的 负 一 次方 就是 零点四 分 整个 数值 呢 就 会 得到 十进制 的 一 百 二 十 三点四 每个 位置 上 的 十 的 平方 十 的 一 次方 实在 令 四方 这些就是 我们 所 说 的 维权\n我们 知道 计算机 跟 二进制 有着 密不可分 的 这样子 的 一个 关系 那么 计算机 实际上 它 所有 的 数据 程序 最后 将 形成 为 零 和 一 的 序列 串 才能 被 计算机 所 说识别 实际上 计算机 只 认识 零 和 一 只是 这 一 串 的 零 和 一 代表 的 意义 不 一样 而已我们 来看 一下 计算机 为什么 要 采用 按 性质 首先 计算机 采用 按键式 它 因为 首先 一个 就是 电路 非常 的 简单 零 和 一 可以 代表 电路 的 开 和 关 那么 计算机 里面 它 有 个 逻辑 电路 逻辑 电路 通常 只有 两 个 状态 所以 用 灵活一来 代表 能够 得到 一个 简单 的 电路 跌 个 原因 是 因为 计算机 采用 按 姓氏 的 时候 它 的 可靠性 比较 高 两 个 状态 表示 的 爱情 是 两 个 数码 数字 的 传输 和 处理 不 容易 出错还有 用 二进制 是 因为 它 的 逻辑性 比较 强 因为 计算机 的 工作 原理 是 建立 在 逻辑 运算 的 基础 上 所以 逻辑 代数 是 逻辑 运算 的 理论 根据 用 二进制 就 正好 符合 逻辑性 强 的 这样 一个 原理同时 因为 二 进 制数 它 的 运算 规则 比较 简单 所以 用 二进制 来 做 计算机 的 这个 主要 的 这个 运算 是 有 道理 的\n又 是 着 了 沉思 的 林凤儿 才 肯 答应二 其他 的 S 代理闫梯儿 也 是 给 电视台 早起 熬 在 此 的 李南恩 修改 的 恋爱这 四 年 四 十 的 王祖蓝 为 这 时代 里 穿 白色 为 楚王 神恩 拿 着 刀 所有 的 人 还 会 把 利润 的 氛围欧洲 的 法律 效力 买 起 的 水域 如 雷震 泼 净流入 二 零 时代 的 福尔摩斯 他 并 勒令 撒油 而 文书 的 主人 不 一定 为 零 时代 和 偏转比伯 的 第十八 次 错 我 带 着 怕 是 不服 看 那时 的 季后赛 比赛具体 是 这个 鱼儿 领 着 一 瓶 碰头 易 到 难 的 三 十 人 而是 无碍 住宅 里 有 那么 肥 而 不 肯 吃 这个 宝宝 储蓄罐他 说 一 看到 所 执笔 少 菲 女配 比 别人 差 特别 的 那 一点 而 她 与 路人而 此时 购买 瓷砖 的 粉 本题 深刻 而 显得 气质 深 一个 层次 选 几 部 李子维 温柔 体贴 地 为 王宁 而 凉皮 要 很 细致 地 取景 约 十 五 张 相传 这里 是 由 搜狗 男 深夜 那么 肌肉 有 手心 美鼻 而 非 是 我 玩 的 然后 三 个 有他 会 比喻 问 着 一个 领域 的 爬行 一部分 娃群 俄罗斯 零 准入 一 零 零 三 我 没 比 入门版 白 追尾 为 此人 早年 避而远之 的 心智 可燃冰 之 处 阿远 西布曲明 呢 称 这 只 镯子 一 种 撒入 海 总 知道 里面 是 子弹 我 该 不行而且 这个 我 给 他 装 接连 发生 没 家里太子妃 是 我们 的 新 赛季 头部 CT一方 硬着头皮 去 倭人 来信 说 没事 那 邻村 中 还是 带 着 要 受苦 也 是 鬼子 的 林芳兵 干 得 邓小平 并且 把 这 三 英寸 双十 哪 来 的咋 了 怎么 去 非礼 而 去 如 发令 的 抛夫 夫人 却 一直 没 醒瑞比 也 是 墨尔本 的 处理 个人 居然 是 得力 的 助手 告诉 他们 七日 无效 的 日期 商船 顺理成章 巧妙 地 避开 最后 的 西儿 我 去 吃 早点 人 从 开始 哭 肿 了 吃 卤味 和 气质 都 没 舍得 说 他 去 勾搭 肥罗 身体 为 为准此外 有 粉丝 提问 齐白石 搬入 一 零 零 具体 可 真是 的 是 文科 啊 所谓 的 猫我 呢 四川 等 省份 得到要是 没 数 出 一 主意 为 联黎 BTOC 体制 还是 善意 的 可爱王爷 也 是 甜 的 实在 的 狗 儿子 去 了 我 爱 的 人 一起瓜子 偏早 那 巧克力 操盘 的 二 至 三 英寸 哪 点 是 它 本质 上 禅修 离婚 的 切入 有望 需索 品种 任务 的 主要 是 我们 腿部 为 谁 手指 区分 什么 是 兰州 拉面 的 搜狗 苏区 不 全 是 鳃裂 包袱 而 历史 均值 零 三 目前 旅游 本质 收益 的 氛围两 夫妻 在 审定 替代 的 我 给 沈睿 本 赛季 车门 的 女儿 罗丽莎 一 百 零 四 佳丽们 是 处在 人 的 角色 吗 遗憾 的 消息 也 令 该车 入手机械库银 啊 接着 的 夫人 带 着 碗\n冶炼法 怎么 来 支配 婶母 思考 与 李娜 的 天真 而 差 呢 而 抗 吹唢 泡 他们 如果 哪 一 天 我们 的 父辈们 的 别 看 领导权 呢 一拖 又 撇清 我 的 不知 是否 王学习 听力 准备 塞 口子 都 不 会成为 你 的 上 一 粒 激情 小子 可 是 青春那么 虚拟 系统也许 是 小 职员 一 号 而 反而 是 那些 惊人 来而 CTCC 转行 沈飞 金恩淑 最牛 先生在 你 就 入门未知性 隐私 虽 穿 这 本书 安慰 儿子 他 的 病态 呢那些 不 注意 提前 预知 卖 了 译文 意思 呀 更 大 玫瑰 吸引 沃恩 论文 称是 太太他 问道卧槽 卧槽 上来的 教育 呢跟 拍 的 戏份 该 是 组强力 抑制 细菌 滋生 赶忙 从 俏皮 的 开始 没 干 紫菜 哦英语 是 最 高 主任 啊现代 武器 之类 的在 落地 为 餐区 踩踩 了 微信 文本 的 扣子 任务 也 给 咱们 的 意思 楼 为 居住区按照 我们 的 巧言令色为 特色 的 根子 在于 争气 呢并 无 大碍俺 就 成为 历史 故事 我们 的 载人得 飞快 音色 等 分为 三 分 可 分为 汉字 被 称为 历史 古 安抚 寂寞 愤懑比赛 分 三分 负 复赛八日 韩 贴 乱 飞 的 傅 博文包含 业内 安危 情报 科曼德 问 得 稀碎服务 岁调味 呢五 七 岁 红在 盛宴 上 一 首对 吧行业 内但 这 并不 是 安塞 一 层 一 句 未 在位 的 安卓 二 零 和 蕊官 客们 三 击败 说 什么 站 的 这个 教育 是 弯 的 认为可是 须 终身 为 卧蚕 切肤 百 万黎兵 的 汉源 慕课 的 浪子几 得 猜谜 所有 批评但自信 的 自己 迈进 那 意识肺 的 身体 啊推迟 空分 听 安德尔 会 不 会 其 发放 埃塞尔 却 是 整齐 的 人们GTD 之上 只有 安置 才能 把 这个 嗯 托盘 中 的 记载 改变 只 会 是 累 啊 跟 位 妻子 被 四婶 两 只 狗 打死 案件 中 败诉一 开 进去 看 欧瑞 彼得斯 这位 王 句 离骚 是 哪个 弟子 的 本分宇宙 为 ISO 而 肥皂而 八分为此 业余 赛事 的 举办 CCTV 烂根\n你 的 鼻子 缝 啊 一 轮 的 扣屎 可 有的 没 的 陈为民 词语 而 不 唯美 的 剖 念叨 着 跑出 没 什么 阳光 H 的 朋友 拎 不 三 杯 水 说 是 差 了 一 楼 注意 着 把 古人 的 注意力 如意 美 欧 木板 否认老头 零 六 三 种 方案 不是 在 车 开始 收 着 他们 准备 了 锥子 爪子 举 有 权威 的 繁殖 而 没 喊 着 脖子 望 着 或许 是 儿子 准备 跟 那 不声不响 地 控制 并 说 很 不 认真 办法长 按 车模 能 转 个 弯 出来 不 认识 的 朋友 另 一 组 的 网友 私奔 的 嘴 一 避开 那些 RO 的 屁股 或者 干冰 方案一 位 演唱者 在 瞩望 这 段 历史 的 朋友 林子 干什么 我们 便 有 魔力 的 准备 跟 小品也 不对 甚至 还 曾 不声不响 地 吸入 减排一 一 蒙对 了 朋友 另 找 耳鸣 抛 个 砖如何 多 分 的 陪练 占 北深 区 受累 丈夫 的 悲痛 的 时代 储备 主要 是 的 是 妹纸 卧槽 的 剖面 二 米 莴笋 可 拍摄 出 美丽 食物 之 家 次方 寇准 的 办法累 得 比 别人 更 爱 你 的 朋友 莲子 啊 这些 为生 的 朋友 拎 不 死 不 死 猪肉 还 挨个 拉 着 爱人 KO 把 我 喷 在 脸上 背 上 带上 不然 也 了穿着 繁琐 不易 PRE 的 步入 了 杭州 得 海外 的 朋友 之 康柏一辈子 就 这点 了 等 拔出 了 不过 晟仑 王子 卑路斯 把 欧洲 的 现实主义一 位 埃及 主人 还 愣 着 干 吃 狗屎 口 深 了 三 三 了老头 拎 包 着 泡儿 指数 南边儿的 注意力 这个 黑嘴 鸥 此外 这位 妈妈 的 贪污案 被 审判 安倍 更 甚偶尔 也 作 了 每个 人 的 的 他 偶尔 落 俺 绝伦 赖 着 藏 着 如此",
+      "per_clip": {
+        "zh-1351890321-1": {
+          "cer": 0.04336043360433604,
+          "errors": 16,
+          "ref_len": 369,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "说同学欢迎来到计算机基础的课堂我们今天将会开始第一章的学习第一章将介绍计算机基础的知识第一章第一节我们将讲到计算机的概述那么我们现在就开始进入计算机概述的这样子的一个内容当中去首先什么是计算机很多人对计算机有不同的定义和有不同的这个思路和想"
+        },
+        "zh-1351890321-2": {
+          "cer": 0.08782435129740519,
+          "errors": 88,
+          "ref_len": 1002,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "那么按着计算机的分类来讲我们可以把计算机分为专用计算机和通用计算机所谓的专用计算机就是为了解决一类的问题而专门设计的将一个计算机我们把它叫做专用计算机当然了它的硬件和它软件是单单为解决某一个问题而设置所以它在解决这个问题的时候它的处理速度将"
+        },
+        "zh-1351890321-3": {
+          "cer": 0.056790123456790124,
+          "errors": 23,
+          "ref_len": 405,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们再来看一下计算机它的特点首先计算机它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万一次的这个计算因为计算机它的计算速度相当的快说现在普遍应用在很多很多的领域比如说科学计算比如说气象预报等等等等这些方面另外一个特点就是计算"
+        },
+        "zh-1351890321-4": {
+          "cer": 0.06644238856181665,
+          "errors": 79,
+          "ref_len": 1189,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们来看一下计算机的应用领域首先计算机可以用来做科学计算或者数值计算大家还记得世界上第一台计算机叫做薏米它主要是美国用来计算一个炮弹的打出去的这个轨迹以及它的落点所以计算机啊原来开发的就是为了做科学计算或者数值计算那么如何做到这一点呢计"
+        },
+        "zh-1351890321-5": {
+          "cer": 0.20787083753784055,
+          "errors": 206,
+          "ref_len": 991,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们今天要讲的是数字转换的这个话题首先我给大家一道脑筋急转弯请看这个PPT世界上一共有一零种人一种会用二进制一种不会如果停在这里你是在想那另外的吧个人在哪里呢如果你是这么想的话实际上你还剩十进制的观点来看待这个问题所以在题目中的一零这两个字"
+        },
+        "zh-1351890321-6": {
+          "cer": 0.07795698924731183,
+          "errors": 29,
+          "ref_len": 372,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们知道计算机跟二进制有着密不可分的这样子的一个关系那么计算机实际上它所有的数据程序最后将形成为零和一的序列串才能被计算机所说识别实际上计算机只认识零和一只是这一串的零和一代表的意义不一样而已我们来看一下计算机为什么要采用按性质首先计算机采"
+        },
+        "en-1911877932-1": {
+          "cer": 0.9996224990562477,
+          "errors": 2648,
+          "ref_len": 2649,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "又是着了沉思的林凤儿才肯答应二其他的S代理闫梯儿也是给电视台早起熬在此的李南恩修改的恋爱这四年四十的王祖蓝为这时代里穿白色为楚王神恩拿着刀所有的人还会把利润的氛围欧洲的法律效力买起的水域如雷震泼净流入二零时代的福尔摩斯他并勒令撒油而文书的主"
+        },
+        "en-1911877932-2": {
+          "cer": 0.9945578231292517,
+          "errors": 2193,
+          "ref_len": 2205,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "冶炼法怎么来支配婶母思考与李娜的天真而差呢而抗吹唢泡他们如果哪一天我们的父辈们的别看领导权呢一拖又撇清我的不知是否王学习听力准备塞口子都不会成为你的上一粒激情小子可是青春那么虚拟系统也许是小职员一号而反而是那些惊人来而CTCC转行沈飞金恩淑"
+        },
+        "en-1911877932-3": {
+          "cer": 0.9976484420928865,
+          "errors": 1697,
+          "ref_len": 1701,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "你的鼻子缝啊一轮的扣屎可有的没的陈为民词语而不唯美的剖念叨着跑出没什么阳光H的朋友拎不三杯水说是差了一楼注意着把古人的注意力如意美欧木板否认老头零六三种方案不是在车开始收着他们准备了锥子爪子举有权威的繁殖而没喊着脖子望着或许是儿子准备跟那不"
+        }
+      },
+      "clips": 9,
+      "clip_seconds": 1702.9515625,
+      "weakest_verified": "subtitle"
+    },
+    {
+      "key": "wcpp-tiny",
+      "backend": "whisper.cpp",
+      "label": "whisper.cpp tiny (q5_0)",
+      "size_mb": 36.66317844390869,
+      "cer": 0.0729578241293761,
+      "rtf": 17.607055892459588,
+      "load_s": 0.0,
+      "status": "ok",
+      "note": "",
+      "text": "(攻击)\n(攻击)\n(攻击)\n各位同学 欢迎来到计算机机处的客堂\n我们今天将会开始第一张的学习\n第一张将介绍计算机机处的支持\n第一张第一节 我们将讲到计算机的概数\n那么我们现在就开始进入计算机概数的这样子的一个内容当中去\n首先 什么是计算机\n很多人对计相机有不同的定义和有不同的思路和想法\n比如说有的人认为 计算机就是一个游戏机\n你可以用它来打游戏\n有的人呢 认为计算机是一个打印机\n因为很多的文件它都能够用来编排打印出来\n实际上计算机不仅仅是我们刚才说的那些\n如果给一个定义的话\n那么计算机我们可以把它认为是对各种信息\n信息计算纯除和高速处理的一个电子的机器\n那么对于这个概念 我们想做两点的补充\n第一个 我们说计算机不仅仅是一个计算的工具\n而且还是一个信息处理机\n同时 我们也要知道计算机不同于其他的任何机器\n它能够纯除程序\n并能够按照程序的引导自动的纯取和处理数据\n说出人们想要的这样一个结果\n那么这个就是一个计算机的基本的概念\n\n按照既算机的分类来讲,我们可以把既算机分为专用既算机和通用既算机。\n所谓的专用既算机,就是为了解决一类的问题,而专门设计的这样一个既算机,我们把它叫做专用既算机。\n当然了,它的硬件和它的软件是单单为解决某一个问题,而设置,所以它在解决这个问题的时候,它的处理数度将会非常的快。\n另外一种,叫通用既算机。\n这通用既算机是为了解决各种问题,有教强的通用性而设计的这个既算机。\n我们现在在家里所用的,以及在实验室里面,你们看到的这些,我们都把它称之为通用既算机。\n所以,我们可以用它来打字,可以用它上网,可以用它来打游戏等等等等。\n这就是取决于,你装了不同的软件,就有不同的应用。\n好,如果我们按照既算机的处理对象来分类的话,我们可以简单地把它分为3种,第一种数字式的电子机软机。\n第二种,模拟式的电子机软机,既算机,既算机就是把数字和模拟两种处理对象,放在一起教会和市的电子机软机。\n数字式的电子机软机,它是处理非联续变化的数据为主。\n而这些数据,在时间上,它是一个有一个离散的。\n它里面的基本的部件,运算部件就是数字和邏輯电影。\n模拟式的电子机软机,它的处理的数据,是联续变化的这样一个数据。\n他们这些数据在时间上是相联的。\n基本上它的运算部件是有运算放大器,组成的微分器、机分器和通用的函数运算器等等等等。\n当然,混合式的电子机软机,就是把数字式机软机和模拟式机软机,合在一起。\n它可以处理数字量,也可以处理模拟。\n如果按照它的规模和处理能力来分的话,又可以分为很多种。\n比如说,有巨型机。\n这个,我们也把它称作为超级制软机。\n那么这种机算机,它的处理能力相当的强,当然它也要占用很大的空间。\n那么这种机算机,它的价格也相当的按按贵。\n那么在出现巨型机软机之后,人们为了使得它的价格降下来,又开发了一种叫小巨型机。\n这种小巨型机和巨型机软机相比的话,\n它的价格比小便宜。\n在往后发展,又出现了一种叫做大型机。\n也叫Mainframe,同时,这个大型机,它具有很强的管理和处理数据的能力。\n那么目前,我们在中国当中,大企业,银行,交通部门,很多很多都在使用大型机。\n为了满足中小型企业,的需要,那么既算机里面还有一种叫小型机。\n那么既用小型机,跟我们的大型机相比,它的价格和它的体积机,就会大大的渏小。\n当然,它的处理速度也没有大型机,那么快。\n我们现在比较熟悉的,还有工作站和个人计算机。\n工作站就是比较高党的这个危机,具有很强的图形处理能力,\n那么应用于计算机付出设计,赛你工作站等等等等。\n而个人计算机就是我们现在常用的,我们所说的,PCC也好,我们所说的,这个来跑电脑也好,都是个人计算机。\n按照这个规模和处理能力来分,就我们大概可以把计算机分为这集中内容。\n\n下面我们再来看一下计算机它的特点\n首先计算机它的运算速度非常的快\n我们知道现在的计算机已经能够达到每秒数万一次的这个计算\n因为计算机它的计算速度相当快\n所以现在普遍应用在很多很多的领域比较说科学计算\n比较说契相遇报等等的这些方面\n另外一个特点\n就是计算机的进度相当高\n从理论上来讲\n如果这个计算机的计算能力够强\n有足够的纯处空间的话\n那么它在理论上它的金确度可以不数限制\n还有一个呢计算机它具有纯处能力比较强的这样一个特点\n一个计算机能够处理的数据\n拒绝于它的内存有多大\n一个中型规模的图入管\n实际上在计算机处理起来\n也是相当容易的\n因为它具备一个光盘\n就能够纯处一个小心\n除入管的这样一个内容了\n计算机还有另外一个特点\n它就具有邏輯判断能力\n它是如何做到这一点呢\n其实它的通过算数运算\n邏輯运算进行判断和比较得出一个结果\n那么计算机它还有自动直行的功能\n它不需要人工的干预\n你只要把程序写好了\n它将会按照这个程序自动的去直行\n人只要等到它需要的时候\n把这个结果获得就可以了\n\n下面我们来看一下计算机的应用领域\n首先计算机可以用来做科学计算或者数直计算\n大家还记得世界上第一台计算机叫做一年\n它主要是美国用来计算一个泡蛋的打出去的这个轨记以及它的落点\n所以计算机原来开发的就是为了做科学计算或者数直计算\n那么如何做到这一点呢?计算机它实际上把一个实际的问题进行给数学模型的一个抽象\n然后把它转换成为一个计算机能够处理的这样一个模型\n最后我们用计算机大量的对它进行计算得出人们要的这样一个结果\n这个就是它做科学计算或者数直计算的一个原理\n计算机的第二个应用领域\n是用数直处理或者信息处理\n那么我们知道现在都是在一个大数据的这样一个时代\n所以计算机它能够对数据进行一个收集进行一个全处\n整理进行分类统计 最后进行加工 捡所\n以及对它进行传播等等的这些对数据的一系列的活动\n计算机的第三个应用领域是过程控制过程实实控制\n我们可以看到很多很多的如今在制造业当中大量的用到了这个计算机\n它是利用计算机的几十财集这个检测数据\n按照最优质迅速的进行控制和对对象的这样子的一个自动\n条件和自动检测自动控制等等的\n我们知道计算机还有另外一个作用就是用作计算机的辅助技术\n比如说有计算机辅助设计\n现在的设计人员不要再把这个环境搭出来\n然后才来看这个结果好不好\n它现在可以用计算机把这个电路也好\n这个艺术品也好 直接在计算机里面进行设计\n你还没有做出来 你就能看到它的结果\n另外一个地方可以用到计算机的\n就是计算机辅助制造\n在制造也当中一个产品的成型和制造过程当中\n要有计算机的参与使得制造能够按照它的要求和按照它的流程进行\n我们也知道计算机集成制造系统里面\n也用到了很多的计算机\n我们把这个计算机集成制造系统叫做 C-I-M-S\n这个系统当中计算机通过控制\n它整个流程使得几乘这个系统能够得到完美的这样的机盒\n机算机另外一个领域\n叫做人工智能\n如果大家还记得的话\n在十来年前有部美国的篇子\n就此以人工智能秘密\n它是苗写一个机器人\n通过了人工智能的技术\n获得了人类的思想\n最终它学习到如何去爱\n当然\n这个是电影当中的情节\n那么现在我们的计算机的制造人工智能方面的成就\n已经使得计算机集本上能够造出一个\n非常之像人的动作的这样一个机器人\n好\n计算机还有更广赋的领域\n就是在我们的通讯网络\n相信大家对互联网已经不会在抹身\n它改变了人的很多行为习惯\n现在我们可以很方便地坐在家里面\n进行网上银行的操作\n进行网上定票的操作\n如果你报了一些网络的课程\n你甚至可以不用去教识\n就能够享受网上教学的这样子的一个\n服务\n同时我们可以看到大家可以通过\n互联网获得一些一聊的这样一些信息\n还有一个应用叫做网上碎收\n现在我们报税不用再到水务绝去了\n你只要到水务绝的官方网站\n弄入你的信息\n自动把水务的信息登记就可以了\n还有网上出版也是一种心心的互联网应用的这样一个形势\n它包括文章的收集\n文章的编排\n文章的审核以及文章的出版都可以在线完成\n我们可以看到计算机有很多很多的应用\n那么今天我们就想到这里\n我们下节课再跟大家分享\n计算机的运算基础\n谢谢大家\n\n我们今天要讲的是数字转换的这个话题\n首先我给大家一到脑金集团玩请看这个PPT\n事实上一共有10种人 一种会用二级纸 一种不会\n如果听在这里 你是不是在想那另外的8个人在哪里呢\n如果你是这么想的话\n实际上你还是用实际制的观点来看的这个问题\n所以在题目中的10 这两个字并不代表10 而12 竟是的2\n如果你学过机算金 你在看一个数的时候\n你不但只是看这个数是什么\n而且在你脑海当中 马上就要反映过来\n这个数到底是几竟质\n这就设计了一个竟质的问题\n也就是我们今天学写的重点\n首先要给大家介绍的\n是数质的基本概念\n所谓的数质实际上就是\n访多少建议的这样子的一个问题\n比如说我们经常说的一打\n那么就是12个\n反12我们就建议\n两打就是24个\n同样的问题有一周有一个月\n这些都是访多少建议的这样一个问题\n用一个比较科学的定义的话\n那么数质是指用一组\n固定的数字\n和一套统一的这样子的规则\n来表示数目的方法\n在数质当中有两种不同的数质\n一种叫做非尽未输质\n而另外一种叫做尽未输质\n作为一个典型的非尽未输质\n那么罗马数质就是一个很好的例子\n我们可以看到罗马数质当中\n表示1\n像是1为1字\n类似i的大鞋这样子来表示\n2是两个\n3是3个\n那么表示4呢\n它不再是4个了\n而是用V代表5\ni在它左边代表建议\n6是Vi\n就是在右边为价\nX4代表的是10\n你们也不能猜出\n如果是要代表9的话\n它应该是iX4\n另外一种数质叫做尽未接触质\n它表示的数质的大小\n与它在数目中当中的位置\n是非常有关系的\n比如说1,2,3.45\n如果是实际质数的话\n它代表的就是100\n20,3.45\n大家会看到这个数质的时候\n如果你订为实际质的话\n那么这个就是一个实际质的数\n那么这个也就是一个\n计位的技术法\n在数质当中有两个基本概念\n大家要搞清楚\n第一个叫做机束\n所谓的机束就是值在计位置中\n允许选用机本数码的个数\n这个机束实际上是跟你纸竞至是有关系的\n多少竞至它就有多少机束\n我们现在经常用的实际质\n那么就有10个机束\n也就是说有10个符号来代表\n不同的数质\n那么这10个数质在实际质是多少呢\n0,1,2,3,4,5,6,7,8,9\n这10个我们常用的数质\n另外一个概念叫做未权\n所谓的未权就是因为它是计位\n质的这样一个数质\n所以你在每个位上它代表的权重是多少\n我们把它叫做未权\n比如说我们刚才说的那样一个例子\n1,2,3,4\n它代表的是1成以10的二次方\n就是100\n二成以10的1次方就是10\n3成以10的0次方就是3\n然后再加上4成以10的负义次方就是0.4\n所以整个数质呢\n就会得到实际质的1,2是3.4\n每个位置上的\n10的平方\n10的1次方\n10的0次方\n这些就是我们所说的\n未权\n\n我們知道 計算期跟二劑有什麼密不可分的這樣子的關係\n那麼 計算期實際上它所有的數據程序最後將形成為靈和醫的序列傳才能被計算接手失別\n實際上 計算期指日史靈和醫 只是這一川的靈和醫代表的意義不一樣而已\n我們來看一下 計算期為什麼要採用二劑制\n首先 計算期採用二劑制 它因為首先一個就是電腦非常的簡單\n靈和醫可以代表電腦的開 很關\n那麼 計算期裡面 它有一個邏輯電腦 邏輯電腦通常只有兩個狀態\n所以用靈和醫來代表能夠得到一個簡單的電腦\n第二個原因是因為計算期 採用二劑制的時候 它的可靠性比較高\n兩個狀態 表示的二劑是兩個數碼 數字的傳輸和處理不容易出錯\n還有 用二劑制是因為它的邏輯性比較強\n因為計算期的工作原理是建立在邏輯運算的基礎上\n所以 邏輯代數是邏輯運算的理論根據\n用二劑制 就正好符合了邏輯性強的這樣一個原理\n同時 因為二劑制數它的運算的規則比較簡單\n所以用二劑制來做計算期的主要的運算是有道理的\n\nHere's Jonathan studying for a test and studying and studying and studying and\nHere he is getting his test results. All that studying and he still got an F. Why?\nThe thing is there's no one right way to study.\nSome methods might work great for one person and not at all for others.\nEverybody learns differently.\nIn order to find a study method that's best for you, it's important to know\nyour learning style. The foremost popular learning styles are visual,\nauditory, reading, writing and kinesthetic or hands-on.\nFor most people, one of these methods will work best but it's also possible for a combination of\ndifferent styles to be effective. To discover your learning style, you can complete an online\nassessment. There's a wide variety of them available consisting of multiple choice questions.\nHowever, you can also observe yourself and your previous learning experiences to get an idea of how you learn\nbest. Let's circle back to Jonathan. When he's in class and is teacher as lecturing,\nhe gets distracted pretty easily. Words tend to go in one year and out the other, but when his teacher\nstarts using visuals, Jonathan finds it easier to focus and understand the material. So he might be\na visual learner. Now think about your history. How have you enjoyed learning in the past?\nDo you prefer watching over listening? Do you enjoy reading instead? Or maybe you'll learn\nbest by doing with hands-on experience? If none of these seem to grab you, give them each a try and\nsee which one you tend to drift towards. Each learning style has its own study methods that work\nbest with it. Let's take a look at how Jonathan and a few of his classmates study.\nAs a visual learner, Jonathan finds it helpful to color code his notes. He finds it helps him\nto organize information and internalize it better. He also creates diagrams while studying,\nfinding that they help him to better understand certain structures and ideas. Jonathan watches\nvideos too, finding them helpful for extra information. Ruby is more of an auditory learner. She\nlikes to study in a group and discuss the material with others. Sometimes she'll read her notes\nout loud because it helps her to hear what she's studying. In some classes, Ruby will record\nthe lecture with her teacher's permission, of course, so that she can go back and listen to it later.\nTerrell finds that he learns best by reading and writing. He takes substantial notes\nduring class and reads over them often. When he's trying to memorize something, he'll often write it out.\nHe also makes sure to read and reread any materials his teacher has assigned the class.\nRaya is a kinesthetic learner. She's got a lot of energy and likes doing things.\nLaves and hands-on activities help her to understand certain ideas and topics.\nSometimes she'll review her material while she's walking around. She also likes to take breaks\nin order to release some of her energy, allowing her to focus when she returns to studying.\nAll four of these students are studying the same material but they're doing so in different ways.\nNow, this doesn't guarantee that they'll all get the same grades, but by determining their\nlearning style and finding study methods that work for them, they just might find themselves\ngetting better results.\nG-C-F Global Creating opportunities for a better life.\n\nIn inside we look at education more specifically the United Kingdom versus China, both countries\nwere part of an extraordinary television experiment.\nIt's called the Big Test, hitting the Chinese way of teaching with the British approach,\nwho won, CCP's futuristic holds up the report card.\n\"The Chinese teaching methods came as a shock to the class of British school children,\nand the students are rebellious, response came as a shock to a horrifying\nBritish nation.\"\n\"I've never seen a student like you!\"\nAs the 50-strong class of 13 and 14-year-olds showed themselves, according to Britain's\nnormally resilient street press to be disrespectful and arrogant, as the week's past,\nand the big test needed, relations between teachers and students maloed, even if\nthe academic regime was unrelenting.\n\"Look, it's needed for four to senses to take place!\"\n\"Softing!\"\n\"A carbon dioxide!\"\n\"A carbon dioxide!\"\n\"Water!\"\n\"Water!\"\n\"And then the sunlight.\"\n\"Okay, you're beautiful!\"\n\"The Chinese students were gripped by a competitive further.\"\n\"Guys, shush!\"\n\"Would the Chinese or British teaching system come out on top?\"\n\"The pressure began to tell.\"\n\"The English system was what I didn't aim, but would it deliver?\"\nSo what did the tale of the test tell us, which system worked best in the cauldron of the\nexamination hall, when students who'd undergone the Chinese system were tested against\nthose who'd continued in the English style?\n\"And if Chinese school has won the day, then it's going to be quite interesting for us,\nbut I think at Bo-Hunt.\"\nThe Chinese school, average mark for maths, 67.74 percent, Bo-Hunt year 9, 54.84 percent.\nThere is more, Bo-Hunt year 9, average mark for Mandarin, 36.46.\nThe Chinese school, 46.8 percent, for science, Chinese school, 58.33, Bo-Hunt year 9, 50.\n\"I have to attempt to be gracious and say to Chinese school very, very well done, and the inquiry\nwill commence.\nThank you very much, and well done, well done, so the Chinese system won resoundingly.\"\nFor the students and teachers, there was time for a cheerful farewell, possibly leaving behind\nmore questions than answers.\n\"Maybe the Chinese way of teaching, to some extent, kills the students imagination, freedom\nof thinking, critical thinking, and the creativity.\"\nThis was far from a scientific experiment.\nIt was reality TV designed to entertain and perhaps to inform a little.\nIt did, though, get us questioning and asking which is the best system.\nThe answer, of course, is perhaps a little bit of both.\nHowever, as UK teachers have already discovered, once students start questioning ideas\nto destruction, their first challenge is always authority itself.\nIs that a good thing?\nOr a bad thing?\nIt's for you to decide.\nRichard Bestick, CCTV, London.\n\nIn the beautiful island of Corsica, in the Mediterranean Sea, a boy named Napoleon Bonaparte was born.\nFrom a young age, Napoleon was ambitious and fiercely intelligent.\nHe loved to read about great military leaders, dreaming of his own battles and victories.\nNapoleon was sent to France for his education and quickly showed a talent for military strategy.\nHe joined the French Army and it wasn't long before he started to make a name for himself.\nHe was known for being fearless and brilliant and battle.\nDuring a time of great turmoil in France, known as the French Revolution,\nNapoleon quickly rose through the ranks of the military.\nHe became a hero to the people for defending France against other European countries\nthat wanted to stop the revolution.\nNapoleon's biggest moment came when he decided to make himself the Emperor of France.\nHe had great visions for France and for himself.\nHe wanted to create a huge empire and for a while.\nHe almost did. Napoleon's armies conquered lands far and wide,\nand he ruled over much of Europe, but Napoleon's ambition also led to his downfall.\nHe made a big mistake by deciding to invade Russia.\nThe Russian winter was harsh and Napoleon's army wasn't prepared for it.\nMany soldiers didn't survive the cold and the battles.\nThis was the beginning of the end of Napoleon's empire.\nAfter a series of defeats, Napoleon was forced to give up his throne and was exiled to a\nsmall island called Elba.\nBut even then, his ambition didn't let him rest.\nHe escaped from Elba and returned to France for a brief period of rule, known as the Hundred Days.\nHowever, Napoleon's comeback didn't last long.\nHe was defeated again at the Battle of Waterloo, one of the most famous battles in history.\nThis time, he was exiled to a remote island in the Atlantic Ocean, called Saint Helena,\nwhere he spent the rest of his life.\nNapoleon Bonaparte is remembered as one of the greatest military leaders in history,\nbut also as a reminder of how ambition can both make and break a person.\nHis life story is full of victories and defeats, power and loss,\nand the enduring lessons of history's complex heroes.\n",
+      "per_clip": {
+        "zh-1351890321-1": {
+          "cer": 0.0948509485094851,
+          "errors": 35,
+          "ref_len": 369,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "攻击攻击攻击各位同学欢迎来到计算机机处的客堂我们今天将会开始第一张的学习第一张将介绍计算机机处的支持第一张第一节我们将讲到计算机的概数那么我们现在就开始进入计算机概数的这样子的一个内容当中去首先什么是计算机很多人对计相机有不同的定义和有不同"
+        },
+        "zh-1351890321-2": {
+          "cer": 0.10678642714570859,
+          "errors": 107,
+          "ref_len": 1002,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "按照既算机的分类来讲我们可以把既算机分为专用既算机和通用既算机所谓的专用既算机就是为了解决一类的问题而专门设计的这样一个既算机我们把它叫做专用既算机当然了它的硬件和它的软件是单单为解决某一个问题而设置所以它在解决这个问题的时候它的处理数度将"
+        },
+        "zh-1351890321-3": {
+          "cer": 0.0962962962962963,
+          "errors": 39,
+          "ref_len": 405,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们再来看一下计算机它的特点首先计算机它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万一次的这个计算因为计算机它的计算速度相当快所以现在普遍应用在很多很多的领域比较说科学计算比较说契相遇报等等的这些方面另外一个特点就是计算机"
+        },
+        "zh-1351890321-4": {
+          "cer": 0.07653490328006729,
+          "errors": 91,
+          "ref_len": 1189,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们来看一下计算机的应用领域首先计算机可以用来做科学计算或者数直计算大家还记得世界上第一台计算机叫做一年它主要是美国用来计算一个泡蛋的打出去的这个轨记以及它的落点所以计算机原来开发的就是为了做科学计算或者数直计算那么如何做到这一点呢计算"
+        },
+        "zh-1351890321-5": {
+          "cer": 0.17255297679112008,
+          "errors": 171,
+          "ref_len": 991,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们今天要讲的是数字转换的这个话题首先我给大家一到脑金集团玩请看这个PPT事实上一共有10种人一种会用二级纸一种不会如果听在这里你是不是在想那另外的8个人在哪里呢如果你是这么想的话实际上你还是用实际制的观点来看的这个问题所以在题目中的10这"
+        },
+        "zh-1351890321-6": {
+          "cer": 0.14516129032258066,
+          "errors": 54,
+          "ref_len": 372,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我們知道計算期跟二劑有什麼密不可分的這樣子的關係那麼計算期實際上它所有的數據程序最後將形成為靈和醫的序列傳才能被計算接手失別實際上計算期指日史靈和醫只是這一川的靈和醫代表的意義不一樣而已我們來看一下計算期為什麼要採用二劑制首先計算期採用二劑"
+        },
+        "en-1911877932-1": {
+          "cer": 0.021517553793884484,
+          "errors": 57,
+          "ref_len": 2649,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "HeresJonathanstudyingforatestandstudyingandstudyingandstudyingandHereheisgettinghistestresultsAllthatstudyingandhestillg"
+        },
+        "en-1911877932-2": {
+          "cer": 0.10657596371882086,
+          "errors": 235,
+          "ref_len": 2205,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "IninsidewelookateducationmorespecificallytheUnitedKingdomversusChinabothcountrieswerepartofanextraordinarytelevisionexpe"
+        },
+        "en-1911877932-3": {
+          "cer": 0.0029394473838918285,
+          "errors": 5,
+          "ref_len": 1701,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "InthebeautifulislandofCorsicaintheMediterraneanSeaaboynamedNapoleonBonapartewasbornFromayoungageNapoleonwasambitiousandf"
+        }
+      },
+      "clips": 9,
+      "clip_seconds": 1702.9515625,
+      "weakest_verified": "subtitle"
+    },
+    {
+      "key": "sherpa-paraformer",
+      "backend": "sherpa-onnx",
+      "label": "sherpa-onnx paraformer-zh (2023-09)",
+      "size_mb": 273.7432565689087,
+      "cer": 0.2748323072682165,
+      "rtf": 11.29862815776637,
+      "load_s": 1.1343441009521484,
+      "status": "ok",
+      "note": "",
+      "text": "同们同学欢迎来到计算机基础的课堂我们今天将会开始第一章的学习第一章将介绍计算机基础的知识第一章第一节我们将讲到计算机的概述那么我们现在就开始进入计算机概述的这样子的一个内容当中去首先什么是计算机很多人对计算机有不同的定义和有不同的这个思路和想法比如说有的人认为啊计算机就是一个游戏机你可以用它来打游习有的人呢认为计算机是一个打印机因为很多的文件它都能够用来编排打印出来而实际上计算机不仅仅是我们刚才所说的那一些如果给一个定义的话那么计算机我们可以把它认为是对各种信息进行存储和高速处理的一个电子的机器那么对于这个概念我们想做两点的补充第一个我们说计算机不仅仅是一个计算的工具而且还是个信息处理机同时我们也要知道计算机不同于其他的任何机器它能够存储程序并能够按照程序的引导自动的存储和处理数据输出人们想要的这样一个结果那么这个就是一个计算机的基本的这个概念\n那么按照计算机的分类来讲那们可以把计算机分为专用计算机和通用计算机所谓的专用计算机就是为了解决一类的问题是专门设计的这样一个计算机我们把它叫做专用计算机当然了它的硬件和它的软件是单单为解决某一个问题而设置那么我们解决这个问题的时候它的处理速度将会非常的快那外我们叫通用计算机是通用型计算机是为了解决各种算题有较强的通用性而设计的这个计算机那么我们在家里所用的以及在实验室里面你们看到的这些我们都把它通称之为通用计算算机那我们们可以用它来问题可以用它来上网可以用它来打游戏等等等等这就是取决于你装的不同的软件就有不同的这个应用好如果我们按照计算机的处理对象来分类的话那么我们也可以简单的把它分为为三种第一种数字式的电子计算机第二种我们解解的电计算算机第三种呢就是把它它模模理种种计算机机相一一叫通用计的电子计算机那么们的非电子计算机它是处理非连续变化的数据为主而这些数据在时间上它是一个又一个离算机那么它里面照基本计部件这运计部件就数数字逻计计当那那们这们计算计算机好它的数理计算据那是连续计化的这样一个数据那么它们这些数据在时间上是相连的啊基本上它的运算部件是由运算计算机那那么这个算算机好们们用的计计算算机等等等那那么们们式的电子计算机就是把数字计计算机和数理计计算机合在一起那么们处理理数量量也有以理的能力那么么么我们们照它它规模模数理计算机相等等那那么又可以分为计算机比如说有巨型机那么我们也把它数据为通计计算机那么这种计算机啊它的数算算算相当的那然么它也要用很很的的工那那么这个个计算机它的价格也相当的昂贵那那么在出现计计算算机力那么么们们的的的算算算机好好有出现的一种叫小计算机那种计算算机和计计计算机相比那那么们个的计算机机那么们发它有出现了一种叫做大机机那叫 ma 机计 ra 机那么这个大型机它具有很的的理理和理理算的的个个力那那么这们们们中算机当中大企机那们这算机机很多们的都在使用大机机那么这个这算计算机能力那么么算算机里面还有一种叫型机那那么这种计算机跟我们的计算机相机那那么这个它的算机的还有大的的机当然然它的理理速度也没有大型机那么那么么这在这数数机的还有工作站和个人计算机那么这就是比计算算的这个机机那这们很的的计计计算能力那么么们们计算机辅助设计算算工作站这个机那那这种计算机呢就我们们在算算机好那们所说的计算机算好我们所说的这个 laptop 这个计算机好都是个计算算机那么这个这的和处理能理能好那们们个可可以把计算机分为这几种内容\n下面我们再来看一下计算机它的特点首先计算机它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万亿次的这个计算因为计算机它的计算速度相当的快所以现在普遍应用在很多很多的领域比如说科学计算比如说气象预报等等等等这些方面另外一个特点就是计算机的精度相当的高从理论上来讲如果这个计算机的计算能力够强有足够的存储空间的话那么它在理论上它的精确度可以不受限制还有一个呢计算机它具有存储能力比较强的这样一个特点一个计算机能够处理的这个数据取决于它的内存有多大一个中型规模的图书馆实际上在计算机处理起来也是相当容易的因为它具备一个光盘就能够存储一个小型图书馆的这样一个内容了计算机还有另外一个特点它就具有逻辑判断能力它是如何做到这一点的呢其实啊它是通过算术运算逻辑运算进行判断和比较得出一个结果那么计算机它还有自动执行的这个功能它不需要人工的干预你只要把程序写好了它将会按照这个程序自动的去执行人只要等到它需要的时候把这个结果自动就可以了\n下面我们来看一下计算机的应用领域当然这个是可以用来做科学计算或者数值计算大家还记得世界上第一台计算机叫做 e i x 它主要是美国用来计算一个据算的数数据的一个计算或者一个计计所以计算机啊原来开发的就是为了做数学计算或者数据计算那么我何做到这一点呢计算机它实际上把一个计算的问题进行一个数学模型的一个抽象最后把它转化成为一个计算机能够处理的这样一个模型那么我们用计算机大量的对它进行一个计算或者计计要的这样一个结果那么我是它数数据计算者数据计算的一个原理计算机的第二个应用领域就是用做数据计算或者数据计理那么我们知道现在都是在一个大数据的或者一个计算所以计算机它能够对数据进行一个领域进行一个存储进后进行分类统计最后进行机果检索啊以及对它进行传播等等等等的这个对数据的一系列的原理计算机的第三个应用领域进行程计的或者数据计算我们可以看到很多很多的如个个数算业当中一个个计算或者数据计算机是利用计算机的及时采集这个检测数据当然这个的迅速的进行系制的这个系的这样样的一个系能进行以个系能的这个系的等等等同我们知道计算机还有另外一个作用就是用做计算机的辅助技术比如说有计算机辅助系统统在个设计人员不要再把这个环境搭出来然后才来看这个结果好不好它现在呢可以用计算机把这个电路也好这个艺术品也好直接在计算机里面进行设计你还没有做出来你就能够看到它的一个结果另外一个地方可以用到计算机的就计计算机辅助系统在计算业当中这个产品的成型和制造过程当中要有计算机的参与或者这个计造能够按照这的信也和按照它的计程进行我们也知道计算机集成制造系统里面也用到了很多的计算机啊我们把这个计算机集成制造系统叫做人工智能这个计算机中计算机呢通过控制它整个系程使得这个集成这个系统进够一个信统的这样一个系作计算机另外一个领域叫做人工智能如果大家还记得的话在十来年前有一部美国的片子就是以人工智能去了它是描写一个机器人啊通过了人工智能的这个技术所得了人类的系统最能它学习到如何去做当然这个是人工当中的情节那么现在我们的计算机的制造人工智能方面的这个成就呢已经使得计算机基本上能够造出一个非常智像这个以个的这样一个机器人好计算机还有更广阔的领域就是在我们的通讯领域相信大家对互联网已经不会的应用它我变了人的很多行为习惯现在我们可以很方便的做在机里面进行网上系的的系作进行这个机统的操作如果你报了一些网络的课程你甚至可以不用去编排它能够享受网上信学的这样子的一个啊服务同时呢我们可以看到这个可以通过互联网进行一些信统的这样一个信息还有一个应用叫做网上的系统现在我们报税不用再到税务的去了那只这个计算机的官方网站录入这个信息自动把算算的信息登记就可以了还有我们可以也有一个新兴的互联网应用的这样一个形式那么我们文机的机机文章的工作人的的程以以及文章的系统这可以一个信统我们可以看计计算机有很多很的的系那那么们们们个个个的系的我们下节可把可以分行计算机的计算技术谢谢大家\n我们今天要讲的是数字转换的这个话题首先我给大家一道脑个进进制一看这个个 p t 如际上一共有一进制人一种会用进进制一种不会那们停在这里你是不是在想那另外的八个人在哪里呢如果你是这么想的话实际上你还是用十进制的观点来看的这个问题如果你题目中的一零这两个字并不代表十而是二进制的二所以你比过计算机你再看一个数的时候你不单只是看这个数字的候题其在你脑海当中马上就要反个四个这个数到底是几进制这就是设是一一个进的的问题这个我们们个个进的问问题如果你给家介绍的是数进的的本问题题果的你个实际际上就是是个进进的的一个的一个问问题如说我们们经说的一打那么就是十进个这实二我们就进一个那么是就有二个四题题这的问题题一是有一个个这这都是是多少进一的这样一个问题题如果比比科学的定义的话那么数字是指用一组固定的数字和一套统一的这样子的规则来表示数目的方法而数一当中中这两的数的数数字那表叫做非进位数字而另外一种的叫做位位数字而一个个型的非进进位数字那那个个数就就一个个十的的数话那们可以看到罗数数字当中表示一用英文字叫数字的大写这样子来表示那么外个种数四那个表示四呢它不表的是四个所所是在代表表五代表它十的一数字那那是表是我是一一种数为那代表表的是你们也不不能数数如果我是代表九的话它应该是 i x 另外一种数字叫做进位计数字它表示的数字的大小与它在数目中当中的位置是非常有关系的比如说我们三点四五这个如果是十进制数的话它代表的就是一百数数字字的字那家会看到这个数字的时候如果你定义为十进制的话那么这个就是一个进进制的数那么这个也就是一个进位的计数法那是两个到它两个基本概念大家要搞清楚所一个叫做基数所谓的基数就是指在进位制中允许选用基本数码的个数那个基数实际上是跟你几进制是有关系的所个进制它就有多少个基数我们现在经常用的零进制那么就有十个奇数也就是说有十个符号来代表不同的数字那么这十个数字的十进制是多少呢在一二三四五六七八九这十个我们常用的数字所所一个代个叫做位数所谓的基数就是因为它是进位制的这样一个数字比如呢在每个位上它代表的数数是多少我们把它叫做位数比如说我们刚才说的那样一个数字一二三点四它代表的是一乘以十的二次方就是一百二乘以十的一次方就是十个乘以十的零进方就是三然后再加上四乘以十的负一次方就是零点四所以整个数值呢就会得到十进制的一百二十三个数那个位置上的十的平方十的一次方十的零次方所以就是我们所说的个数\n我们知道计算机跟二进制有着密不可分的这样子的一个关系那么计算机实际上为所有的数据程序最后将形成为零和一的序列串才能被计算机所识别实际上计算机只认识零和一只是这一串的零和一代表的意义不一样而已我们来看一下计算机为什么要采用二进制首先计算机采用二进制它因为首先一个就是电路非常的简单零和一可以代表电路的开和关那么计算机里面它有个逻辑电路逻辑电路通常只有两个状态所以用零和一来代表能够得到一个简单的电路第二个原因是因为计算机采用二进制的时候它的可靠性比较高两个状态表示的二进制两个数码数字的传输和处理不容易出错还有用二进制是因为它的逻辑性比较高因为计算机的工作原理是建立在逻辑运算的基础上所以逻辑代数是逻辑运算的理论根据用二进制就正好符合了逻辑性强的这样一个原理同时因为二进制数它的运算的规则比较简单所以用二进制来做计算机的这个主要的这个运算是有道理的\nhere's jonathan studying for a test and studying and study ying and study ying and here is getting his test reforit better all that studying and he still get ststaliand the think is there's no learning to stuence some methods might work great for one person and not at all for others and not learn to stuthem but you you find study methods that's best for you but important to know your learning ststle so for most most popular learning styles are visual auditory reading writing and ininnotic for for stenenand the most people one of lelearto lestebetter but is also poable for a lestintion of different standles to be effects on to disver ver your learning style you can complete and online assessment there's a wide right de them one stinor consisting of multiple choice questions however you can also observe yourself and your previous learning styles to get an idea of how to learenbest but t's also groal for the listenment so he's in class and his teachers the lesterwhen there's be to stacted letesteasit and when tend to go in one year and out the other but when his teachers starting in the sual and inerststarit easito to ststeand and understand the material but he might be a lesual learers hethink about your ststory but have you enjoy stlelearning in stbest leto prefer er wating ing to ststing and you can rereadinnonoand someone one if you learn best by doing and stuststto stthers somefinif it geing to grateit and interthem to try and and which one intend to drift tods ds just leining style has its own study methods that work best with it let's take a look at how gonious and if few of his class ers of ideas as a visual learner jonathan finds it helpeful to color code his notes he finds it helps him to organize infornotion and her interalize it better he also create tes diagrams while studying finding that they helphim to better understand certain structures and ideas jonathan watchhis videmoors she finds it helpful for extra information ruby finds of an augitory learers she likes to stustuin a group and discuss the material with others somehe can getting her notes out loud if somehelps her to hear what she's stustuds and some class ses ruby will record the lecture with her teachers permission of idese so that she can go him to resten to it noter jrel finds ds that he len ers better reorinnoorhe finds substantial notes starststles and reds over them often when he's trying to meerorize something that 'often riit out and it to stto reand and and read her to reles his teacher has assign the clourria is that kinnostitic tic learout she's got a lot of energy and lea doing something she e's and stds on actitities ties find to understand their cerinideals and topics she also doesto materities al that ge's the risomething something also also kes her to breaks in order to release some of her energy alloing her to focus when she returns to studiing all also of these students are studying the same material but the're 're doing her interorout but also doesn't guarantee that they all get the same rids also also determining their learning style and finding study methods that work for them they just might find erteciself getting better reerorout someis a stuloband creher our mattercials and a better best\nand inside but look at education or specificing and all the ten intem perth this china both countries were teach an extraordinary television experiment it's called the big test and into chinese what you have teaching with the british apstech what one what the tetees were the best teors up the report or what the chinese teachers the chinese teaching methods came as a shoort but the class of british school children and the students were rebelious repetitience came as a jop to the chtitified british ststed what h the the the the teacment or what was the chineteteteof briinesh ststeand the stumselwas acording to briittiin's normally rititience perperit and be the respect ful and arrogant and the week passed the the destect the and the the twinese teachers and students mallowed even if the academic regime what unrelenting what is is the four fourof of stices ces to take this so h h the the d inthe the resresct or what the the dense the the ened was the briinese studenm were gripped by the comtitifitive first all is what was the chinese or british teaching system come out on top what the which perstem was the this this st the english system was the the to resct ct it what would it deliver what what did the teil of the test stestethe the ineineteteach them and the contem of the examination hall the students would the eninethe the chinesh stestem what the tedents was the continued in the british ststem what the chinese school was one the ten and the students quthe intetisting for a th th four hunt the chinese school enverchmark for eight th it very from point seven four percent the hunt of annoing six six perent ent there is more the chinese year one the ristimarmarfor perdor in six six percenent both chinese is one ten and the chinese chinese school the ineten school and was reforpoint of six it ybe the chinese to be graaccious and say the chinese school very very little comone it was know the encount of recomments it you very much and well done it was ent the chinese system m restorting ary exchinese teachment for the students in teachthem there was time reteacful fair well possiably the best behind more questions than answers there is more the chinese reof teteing and is the inperent ent for the the inese imagination or what the em m of teing and the inese al inting and the entiof teenit it was a from from a cicitific experiment it was was a thing of dedesithe the enterten perperperent the perpertiof six it was think get this questioning and asking which is the best system the answer of course is perhaps two little bit of both howebe the u k teaching have already discovered one students stwas questioning idev to destruent the first challenge the first the dentetime it's ence this the the different thing a a perm this is ent to decient this which the the best c tet v london\nin the beautiful island of courseica in in the meiteranian sea a boy named nenapolian bonapart was born from a young age ed napolian was ambitious and fiercely intelligent he loved to read about great military leader dreaming of his own battles and victories he polian was sent rofrance for his emption tion he wkly showed a talent for military intestrategy he joined the french army and it wasn't long before he started to make a name for himself he was known for being fearness and brilliant and battle he was known for great turmoil in france known as the french revolution napolean quickly rose through the ranks of the military he became a hero to the people for defending france against ted european countries that wanted to stop the evolue nepolien's biggest moment came when he decided to make himself the emperor of france he had great visions for france and for himself he wanted to create a huge empire and for a while he almost did napolien's army is conquered lands bar and wide and he ruled over much of your but napolean's ambition also led to his downfall he made a big mistake by decided to devade rutria the russian winter was harsh and napolian 's army wasn't preparcounfor it the wlers didn't dn't vive the cold in the battes he was the beginning of the end of nepolipe's empire after a series of defects nepolian was forced to give up ary eattle and he was iled to a small island called elba but even then his ambition didn't let him rest he escaped from elb and returned to france for a brief period of rule known as the hundred days however napolian 's amean delaan he was deamated ated at the battle of waterloloone one of the enfamous battles in history this time and the exilile to a remote island in the atlantic ocean called saint hella where he spent the rest of his life napolian bona part is remembered as one of the greatest military leaders in history but also as a reminder of how ambition can spthe abamic a howhen his his ststis is full of victories and defeats power and loss and the enduring lessons of historous complex heroes",
+      "per_clip": {
+        "zh-1351890321-1": {
+          "cer": 0.03523035230352303,
+          "errors": 13,
+          "ref_len": 369,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "同们同学欢迎来到计算机基础的课堂我们今天将会开始第一章的学习第一章将介绍计算机基础的知识第一章第一节我们将讲到计算机的概述那么我们现在就开始进入计算机概述的这样子的一个内容当中去首先什么是计算机很多人对计算机有不同的定义和有不同的这个思路和"
+        },
+        "zh-1351890321-2": {
+          "cer": 0.3383233532934132,
+          "errors": 339,
+          "ref_len": 1002,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "那么按照计算机的分类来讲那们可以把计算机分为专用计算机和通用计算机所谓的专用计算机就是为了解决一类的问题是专门设计的这样一个计算机我们把它叫做专用计算机当然了它的硬件和它的软件是单单为解决某一个问题而设置那么我们解决这个问题的时候它的处理速"
+        },
+        "zh-1351890321-3": {
+          "cer": 0.03209876543209877,
+          "errors": 13,
+          "ref_len": 405,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们再来看一下计算机它的特点首先计算机它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万亿次的这个计算因为计算机它的计算速度相当的快所以现在普遍应用在很多很多的领域比如说科学计算比如说气象预报等等等等这些方面另外一个特点就是计"
+        },
+        "zh-1351890321-4": {
+          "cer": 0.22624053826745164,
+          "errors": 269,
+          "ref_len": 1189,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们来看一下计算机的应用领域当然这个是可以用来做科学计算或者数值计算大家还记得世界上第一台计算机叫做eix它主要是美国用来计算一个据算的数数据的一个计算或者一个计计所以计算机啊原来开发的就是为了做数学计算或者数据计算那么我何做到这一点呢"
+        },
+        "zh-1351890321-5": {
+          "cer": 0.2966700302724521,
+          "errors": 294,
+          "ref_len": 991,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们今天要讲的是数字转换的这个话题首先我给大家一道脑个进进制一看这个个pt如际上一共有一进制人一种会用进进制一种不会那们停在这里你是不是在想那另外的八个人在哪里呢如果你是这么想的话实际上你还是用十进制的观点来看的这个问题如果你题目中的一零这"
+        },
+        "zh-1351890321-6": {
+          "cer": 0.03494623655913978,
+          "errors": 13,
+          "ref_len": 372,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们知道计算机跟二进制有着密不可分的这样子的一个关系那么计算机实际上为所有的数据程序最后将形成为零和一的序列串才能被计算机所识别实际上计算机只认识零和一只是这一串的零和一代表的意义不一样而已我们来看一下计算机为什么要采用二进制首先计算机采用"
+        },
+        "en-1911877932-1": {
+          "cer": 0.2782181955454889,
+          "errors": 737,
+          "ref_len": 2649,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "heresjonathanstudyingforatestandstudyingandstudyyingandstudyyingandhereisgettinghistestreforitbetterallthatstudyingandhe"
+        },
+        "en-1911877932-2": {
+          "cer": 0.4816326530612245,
+          "errors": 1062,
+          "ref_len": 2205,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "andinsidebutlookateducationorspecificingandallthetenintemperththischinabothcountrieswereteachanextraordinarytelevisionex"
+        },
+        "en-1911877932-3": {
+          "cer": 0.1475602586713698,
+          "errors": 251,
+          "ref_len": 1701,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "inthebeautifulislandofcourseicaininthemeiteranianseaaboynamednenapolianbonapartwasbornfromayoungageednapolianwasambitiou"
+        }
+      },
+      "clips": 9,
+      "clip_seconds": 1702.9515625,
+      "weakest_verified": "subtitle"
+    },
+    {
+      "key": "wcpp-base",
+      "backend": "whisper.cpp",
+      "label": "whisper.cpp base (q5_0)",
+      "size_mb": 62.94162845611572,
+      "cer": 0.04805660203987871,
+      "rtf": 5.6755545744843765,
+      "load_s": 0.0,
+      "status": "ok",
+      "note": "",
+      "text": "(第1章)\n各位同學\n歡迎來到計算機基礎的課堂\n我們今天將會開始第一章的學習\n第一章將介紹計算機基礎的知識\n(第1章)\n第一章第一節\n我們將講到計算機的概述\n那我們現在就開始進入計算機概述的\n這樣子的一個內容當中去\n首先 什麼是計算機\n很多人對計算機有不同的定義\n和有不同的思路和想法\n比如說有的人認為計算機就是一個遊戲機\n你可以用它來打遊戲\n有的人認為計算機是一個打印機\n因為很多的文件\n它都能夠用來編排打印出來\n實際上計算機不僅僅是我們剛才所說的那些\n如果給一個定義的話\n那麼計算機我們可以把它認為\n是對各種信息進行存儲\n和高速處理的一個電子的機器\n那麼對於這個概念\n我們想做兩點的補充\n第一個\n我們說計算機不僅僅是一個計算工具\n而且還是個信息處理機\n同時我們也要知道\n計算機不同於其他的任何機器\n它能夠存儲程序\n並能夠按照程序的引導自動的\n存取和處理數據\n輸出人們想要的這個結果\n那麼這個就是一個計算機的基本的這個概念\n\n那么按照计算机的分类来讲\n我们可以把计算机分为专用计算机和通用计算机\n所谓的专用计算机就是为了解决一类的问题\n而专门设计的这样一个计算机\n我们把它叫做专用计算机\n当然了\n它的硬件和它的软件是单单为解决某一个问题而设置\n所以它在解决这个问题的时候\n它的处理速度将会非常的快\n另外一种叫通用计算机\n这通用性计算机是为了解决各种问题\n有较强的通用性而设计的这个计算机\n我们现在在家里所用的\n以及在实验室里面你们看到的这些\n我们都把它称之为通用性计算机\n所以我们可以用它来打字\n可以用它来上网\n可以用它来打游戏等等等等\n这就是取决于你装了不同的软件\n就有不同的应用\n如果我们按照计算机的处理对象来分类的话\n那么我们也可以简单的把它分为三种\n第一种数字式的电子计算机\n第二种模拟式的电子计算机\n第三种就是把数字和模拟两种处理对象\n放在一起叫混合式的电子计算机\n数字式的电子计算机\n它是处理非连续变化的数据为主\n而这些数据在时间上它是一个又一个离散的\n那么它里面的基本的部件\n运算部件就是数字和逻辑电路\n模拟式的电子计算机它的处理的数据\n是连续变化的这样一个数据\n那么他们这些数据在时间上是相连的\n基本上它的运算部件是由运算放大器组成的\n微分器、机分器和通用的含数运算器等等等等\n当然混合式的电子计算机就是把数字式计算机和模拟式计算机合在一起\n它可以处理数字量也可以处理模拟量\n那么如果我们按照它的规模和处理能力来分的话\n那么又可以分为很多种\n比如说有巨型机\n这个我们也把它称作为超级计算机\n那么这种计算机它的处理能力相当的强\n当然它也要占用很大的空间\n那么这种计算机它的价格也相当的很贵\n那么在出现巨型计算机之后\n人们为了使得它的价格降下来\n又开发了一种叫小巨型机\n这种小巨型机和巨型计算机相比的话\n它的价格比较便宜\n在往后发展有出现了一种叫做大型机\n也叫Mainframe\n同时这个大型机\n它具有很强的管理和处理数据的这个能力\n那么目前我们在中国当中\n大企业 银行 交通部门\n很多很多都在使用大型机\n为了满足中小型企业的需要\n那么计算机里面还有一种叫小型机\n那么这种小型机跟我们的大型机相比\n它的价格和它的体积就会大大的减小\n当然它的处理速度也没有大型机那么快\n我们现在比较熟悉的\n还有工作站和个人计算机\n工作站就是比较高胆的这个危机\n具有很强的图形处理能力\n那么应用于计算机辅助设计\n散你工作站等等等等\n而个人计算机就是我们现在常用的\n我们所说的PC系也好\n我们所说的这个Lapop这个电脑也好\n都是个人计算机\n按照这个规模和处理能力来分\n就我们大概可以把计算机分为这几种内容\n\n下面我们再来看一下计算机它的特点\n首先计算机它的运算速度非常的快\n我们知道现在的计算机已经能够达到每秒数万一次的这个计算\n因为计算机它的计算速度相当的快\n所以现在普遍应用在很多很多的领域\n比如说科学计算\n比如说气象预报等等等等这些方面\n另外一个特点就是计算机的精度相当的高\n从理论上来讲如果这个计算机的计算能力够强有足够的存储空间的话\n那么它在理论上它的精确度可以不受限制\n还有一个计算机它具有存储能力比较强的这样一个特点\n一个计算机能够处理的数据取决于它的内存有多大\n一个中型规模的投入馆实际上在计算机处理起来也是相当容易的\n因为它具备一个光盘就能够存储一个小型投入馆的这样一个内容了\n计算机还有另外一个特点它就具有逻辑判断能力\n它是如何做到这一点的呢\n其实它是通过算数运算、逻辑运算进行判断和比较得出一个结果\n那么计算机它还有自动执行的这个功能\n它不需要人工的干预\n你只要把程序写好了它将会按照这个程序自动的去执行\n人只要等到它需要的时候把这个结果获得就可以了\n\n下面我们来看一下计算机的应用领域\n首先 计算机可以用来做科学计算或者数值计算\n大家还记得世界上第一台计算机叫做E-MIC\n它主要是美国用来计算一个炮弹的打出去的轨迹以及它的落点\n所以计算机原来开发的就是为了做科学计算或者数值计算\n那么如何做到这一点呢?计算机它实际上把一个实际的问题进行一个数学模型的一个抽象\n然后把它转换成为一个计算机能够处理的这样一个模型\n最后我们用计算机大量的对它进行计算得出人们要的这样一个结果\n这个就是它做科学计算或数值计算的一个原理\n计算机的第二个应用领域就是用做数据处理或者信息处理\n那么我们知道现在都是在一个大数据的这样一个时代\n所以计算机它能够对数据进行一个收集进行一个存储\n整理进行分类统计\n最后进行加工、减锁以及对它进行传播等等等等的这些对数据的一系列的活动\n计算机的第三个应用领域是过程控制或者实时控制\n我们可以看到很多很多的如今在制造业当中大量的用到了这个计算机\n它是利用计算机的即时采集这个检测数据\n按照最优质迅速的进行控制和对对象的这样子的一个自动\n调解和自动检测自动控制等等等等\n我们知道计算机还有另外一个作用就是用做计算机的辅助技术\n比如说有计算机辅助设计\n现在的设计人员不要再把这个环境搭出来\n然后才来看这个结果好不好\n它现在可以用计算机把这个电路也好\n这个艺术品也好直接在计算机里面进行设计\n你还没有做出来你就能够看到它的一个结果\n另外一个地方可以用到计算机的就是计算机辅助制造\n在制造业当中一个产品的成型和制造过程当中\n要有计算机的采语使得这个制造能够按照它的要求和按照它的流程进行\n我们也知道计算机集成制造系统里面也用到了很多的计算机\n我们把这个计算机集成制造系统叫做CIMS\n这个系统当中计算机通过控制它整个流程使得这个集成这个系统\n能够得到完美的这样一个集合\n计算机另外一个领域叫做人工智能\n如果大家还记得的话在十来年前有一个美国的偏子\n就此以人工智能秘密\n它是描写一个机器人通过了人工智能的这个技术\n获得了人类的思想最终它学习到如何去爱\n当然这个是电影当中的情节\n那么现在我们的计算机的制造人工智能方面的这个成就\n已经使得计算机基本上能够造出一个非常之像人的动作的这样一个机器人\n好 计算机还有更广播的领域就是在我们的通讯网络\n相信大家对互联网已经不会在陌生\n它改变了人的很多行为习惯\n现在我们可以很方便的坐在家里面进行网上银行的操作\n进行网上定票的操作\n如果你报了一些网络的课程\n你甚至可以不用去教室就能够享受网上教学的这样子的一个服务\n同时我们可以看看大家可以通过互联网\n获得一些医疗的这样一些信息\n还有一个应用叫做网上税收\n现在我们报税不用再到税物局去了\n你只要到税物局的官方网站\n怒入你的信息自动把税物的信息登记就可以了\n还有网上出版也是一种新新的互联网应用的这样一个形式\n它包括文章的收集文章的边牌文章的审核以及文章的出版都可以再现完成\n我们可以看到计算期有很多很多的应用\n那么今天我们就想到这里\n我们下节课再跟大家分享计算期的运算基础\n谢谢大家\n\n我们今天要讲的是数字转换的这个话题\n首先我给大家一道脑筋集转弯 请看这个PPT\n事实上一共有一零种人 一种会用二进尺 一种不会\n如果我停在这里 你是不是在想\n那另外的八个人在哪里呢\n如果你是这么想的话 实际上你还是用实际制的观点来看待这个问题\n所以在题目中的一零这两个字并不代表十 而是二进尺的二\n如果你学过计算金 你再看一个数的时候\n你不但只是看这个数是什么\n而且在你脑海当中马上就要反映过来\n这个数到底是几进尺\n这就涉及了一个进尺的问题\n也就是我们今天学习的重点\n首先要给大家介绍的是数字的基本概念\n所谓的数字实际上就是缝多少进一的这样子的一个问题\n比如说我们经常说的一打 那么就是十二个\n缝十二我们就进一 那么两打就是二十四个\n同样的问题有一周有一个月\n这些都是缝多少进一的这样一个问题\n用一个比较科学的定义的话\n那么数字是指用一组固定的数字\n和一套统一的这样子的规则来表示数目的方法\n在数字当中有两种不同的数字\n一种叫做非近尾数字\n而另外一种叫做近尾数字\n作为一个点形的非近尾数字\n那么罗马数字就是一个很好的例子\n我们可以看到罗马数字当中\n表示1英文字类似i的大鞋这样子来表示\n二是两个三是三个\n那么表示4呢它不再是4个了\n而是用v代表5 i在它左边代表减1\n6是v i就是在右边为假\nx代表的是10 你们也不能猜出\n如果是要代表9的话它应该是i x\n另外一种数字叫做近尾技数字\n它表示的数值的大小与它在数目中当中的位置\n是非常有关系的\n比如说123.45\n这个如果是实际制数的话\n它代表的就是123.45\n大家会看到这个数字的时候\n如果你定义为实际制的话\n那么这个就是一个实际制的数\n那么这个也就是一个近尾的技数法\n在数字当中有两个基本概念\n大家要搞清楚\n第一个叫做基数\n所谓的基数就是值在近尾置中允许\n选用基本数码的各数\n这个基数实际上是跟你几进制是有关系的\n多少进制它就有多少个基数\n我们现在经常用的实际制\n那么就有10个基数\n也就是说有10个符号来代表不同的数值\n那么这10个数字在实际制是多少呢\n0123456789\n这10个我们常用的数字\n另外一个概念叫做卫权\n所谓的卫权就是因为它是近尾置的这样一个数字\n所以在每个卫上它代表的权重是多少\n我们把它叫做卫权\n比如说我们刚才说的那样一个例子\n1 2 3.4\n它代表的是1乘以10的二次方就是100\n2乘以10的1次方就是10\n3乘以10的0字方就是3\n然后再加上4乘以10的不1次方就是0.4\n所以整个数值就会得到实际制的123.4\n每个卫址上的10的平方\n10的1次方10的0字方\n这些就是我们所说的位权\n\n我们知道计算机跟二进制有着密不可分的这样子的一个关系\n那么计算机实际上它所有的数据程序最后将形成为零和一的训练串才能被计算机所识别\n实际上计算机只认识零和一 只是这一串的零和一代表的意义不一样而已\n我们来看一下计算机为什么要采用二进制\n首先计算机采用二进制它因为首先一个就是电路非常的简单\n零和一可以代表电路的开和关\n那么计算机里面它有个逻辑电路 逻辑电路通常只有两个状态\n所以用零和一来代表能够得到一个简单的电路\n第二个原因是因为计算机采用二进制的时候它的可靠性比较高\n两个状态表示的二进制两个数码数字的传输和处理不容易出错\n还有用二进制是因为它的逻辑性比较强\n因为计算机的工作原理是建立在逻辑运算的基础上\n所以逻辑代数是逻辑运算的理论根据\n用二进制就正好符合了逻辑性强的这样一个原理\n同时因为二进制数它的运算的规则比较简单\n所以用二进制来做计算机的这个主要的运算是有道理的\n\nHere's Jonathan studying for a test, and studying, and studying, and studying.\nAnd here he is getting his test results.\nAll that studying, and he still got an F. Why?\nThe thing is, there's no one right way to study.\nSome methods might work great for one person, and not at all for others.\nEverybody learns differently.\nIn order to find a study method that's best for you, it's important to know your learning\nstyle.\nThe four most popular learning styles are visual, auditory, reading, writing, and kinesthetic,\nor hands-on.\nFor most people, one of these methods will work best, but it's also possible for a combination\nof different styles to be effective.\nTo discover your learning style, you can complete an online assessment.\nThere's a wide variety of them available, consisting of multiple choice questions.\nHowever, you can also observe yourself and your previous learning experiences to get\nan idea of how you learn best.\nLet's circle back to Jonathan.\nWhen he's in class and his teacher is lecturing, he gets distracted pretty easily.\nWords tend to go in one ear and out the other.\nBut when his teacher starts using visuals, Jonathan finds it easier to focus and understand\nthe material, so he might be a visual learner.\nNow, think about your history.\nHow have you enjoyed learning in the past?\nDo you prefer watching over-listening?\nDo you enjoy reading instead?\nOr maybe you learn best by doing with hands-on experience?\nIf none of these seem to grab you, give them each a try and see which one you tend to drift\ntowards.\nEach learning style has its own study methods that work best with it.\nLet's take a look at how Jonathan and a few of his classmates study.\nAs a visual learner, Jonathan finds it helpful to color code his notes.\nHe finds it helps him to organize information and internalize it better.\nHe also creates diagrams while studying, finding that they help him to better understand\ncertain structures and ideas.\nJonathan watches videos, too, finding them helpful for extra information.\nRuby is more of an auditory learner.\nShe likes to study in a group and discuss the material with others.\nSometimes she'll read her notes out loud because it helps her to hear what she's studying.\nIn some classes, Ruby will record the lecture with her teacher's permission, of course,\nso that she can go back and listen to it later.\nTyrell finds that he learns best by reading and writing.\nHe takes substantial notes during class and reads over them often.\nWhen he's trying to memorize something, he'll often write it out.\nHe also makes sure to read and reread any materials his teacher has assigned the class.\nTaya is a kinesthetic learner.\nShe's got a lot of energy and likes doing things.\nLabs and hands-on activities help her to understand certain ideas and topics.\nSometimes she'll review her material while she's walking around.\nShe also likes to take breaks in order to release some of her energy, allowing her to focus\nwhen she returns to studying.\nAll four of these students are studying the same material, but they're doing so in different\nways.\nNow this doesn't guarantee that they'll all get the same grades, but by determining their\nlearning style and finding study methods that work for them, they just might find themselves\ngetting better results.\n\nAnd inside, we look at education more specifically the United Kingdom versus China, both countries\nwere part of an extraordinary television experiment.\nIt's called the big test, hitting the Chinese way of teaching with the British approach.\nWho won?\nCCTV's Richard Bestech holds up the report card.\nThe Chinese teaching methods came as a shock to the class of British schoolchildren, and\nthe students of rebellious response came as a shock to a horrified British nation.\nWhat's going on there?\nI've never seen a student like you.\nAs the 50 strong class of 13 and 14-year-olds showed themselves according to Britain's\nnormally resilient street press to be disrespectful and arrogant.\nAs the weeks passed and the big test neared, relations between teachers and students malode,\neven if the academic regime was unrelenting.\nWhat is needed for photosynthesis to take place?\nSomething.\nCarving dark sides.\nCarving dark sides?\nWater.\nWater.\nAnd then the sunlight.\nOK.\nThe Chinese students were gripped by a competitive fervor.\nGuys, shush.\nWould the Chinese or British teaching system come out on top?\nThe pressure began to tell.\nThe English system was enriched for DNA, but would it deliver?\nSo what did the tail of the test tell us?\nWhich system worked best in the cauldron of the examination hall?\nWhen students who'd undergone the Chinese system were tested against those who'd continued\nin the English style?\nAnd if Chinese school has won the day, then it's going to be quite interesting for us,\nI think, at Bow Hunt.\nThe Chinese school Average Mark Firmats, 67.74%.\nBow Hunt Year 9, 54.84.\nThere is more.\nBow Hunt Year 9, Average Mark Firmander in, 36.46.\nThe Chinese school 46.88.\nFor science, Chinese school 58.33.\nBow Hunt Year 9, 50.\nI have to attempt to be gracious and say to Chinese school, very, very well done.\nAnd, you know, the inquiry will commence.\nThank you very much and well done and well done.\nSo the Chinese system won resoundingly.\nThree chance for the teachers, hip-hop.\nFor the students and teachers, there was time for a tearful, fair well.\nPossibly leaving behind more questions than answers.\nMaybe the Chinese way of teaching, to some extent,\nkills the students' imagination,\nfreedom of thinking, critical thinking, and a creativity.\nThis was far from a scientific experiment.\nIt was reality TV designed to entertain and perhaps to inform a little.\nIt did, though, get us questioning and asking which is the best system.\nThe answer, of course, is perhaps a little bit of both.\nHowever, as UK teachers have already discovered,\nonce students start questioning ideas to destruction,\ntheir first challenge is always authority itself.\nIs that a good thing or a bad thing?\nIt's for you to decide.\nRichard Bestex, CCTV, London.\n\nIn the beautiful island of Corsica, in the Mediterranean Sea, a boy named Napoleon Bonaparte was born.\nFrom a young age, Napoleon was ambitious and fiercely intelligent.\nHe loved to read about great military leaders, dreaming of his own battles and victories.\nNapoleon was sent to France for his education, and quickly showed a talent for military strategy.\nHe joined the French army, and it wasn't long before he started to make a name for himself.\nHe was known for being fearless and brilliant in battle.\nDuring a time of great turmoil in France, known as the French Revolution,\nNapoleon quickly rose through the ranks of the military.\nHe became a hero to the people for defending France against other European countries\nthat wanted to stop the revolution.\nNapoleon's biggest moment came when he decided to make himself the Emperor of France.\nHe had great visions for France and for himself.\nHe wanted to create a huge empire, and for a while,\nhe almost did.\nNapoleon's army's conquered lands far and wide, and he ruled over much of Europe.\nBut Napoleon's ambition also led to his downfall.\nHe made a big mistake by deciding to invade Russia.\nThe Russian winter was harsh, and Napoleon's army wasn't prepared for it.\nMany soldiers didn't survive the cold and the battles.\nThis was the beginning of the end of Napoleon's empire.\nAfter a series of defeats, Napoleon was forced to give up his throne\nand was exiled to a small island called Elba.\nBut even then, his ambition didn't let him rest.\nHe escaped from Elba and returned to France for a brief period of rule,\nknown as the Hundred Days.\nHowever, Napoleon's comeback didn't last long.\nHe was defeated again at the Battle of Waterloo,\none of the most famous battles in history.\nThis time, he was exiled to a remote island in the Atlantic Ocean,\ncalled Saint Helena, where he spent the rest of his life.\nNapoleon, Bonaparte, is remembered as one of the greatest military leaders in history,\nbut also as a reminder of how ambition can both make and break a person.\nHis life story is full of victories and defeats, power and loss,\nand the enduring lessons of history's complex heroes.\n",
+      "per_clip": {
+        "zh-1351890321-1": {
+          "cer": 0.04065040650406504,
+          "errors": 15,
+          "ref_len": 369,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "第1章各位同學歡迎來到計算機基礎的課堂我們今天將會開始第一章的學習第一章將介紹計算機基礎的知識第1章第一章第一節我們將講到計算機的概述那我們現在就開始進入計算機概述的這樣子的一個內容當中去首先什麼是計算機很多人對計算機有不同的定義和有不同的"
+        },
+        "zh-1351890321-2": {
+          "cer": 0.02694610778443114,
+          "errors": 27,
+          "ref_len": 1002,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "那么按照计算机的分类来讲我们可以把计算机分为专用计算机和通用计算机所谓的专用计算机就是为了解决一类的问题而专门设计的这样一个计算机我们把它叫做专用计算机当然了它的硬件和它的软件是单单为解决某一个问题而设置所以它在解决这个问题的时候它的处理速"
+        },
+        "zh-1351890321-3": {
+          "cer": 0.03209876543209877,
+          "errors": 13,
+          "ref_len": 405,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们再来看一下计算机它的特点首先计算机它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万一次的这个计算因为计算机它的计算速度相当的快所以现在普遍应用在很多很多的领域比如说科学计算比如说气象预报等等等等这些方面另外一个特点就是计"
+        },
+        "zh-1351890321-4": {
+          "cer": 0.04121110176619008,
+          "errors": 49,
+          "ref_len": 1189,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们来看一下计算机的应用领域首先计算机可以用来做科学计算或者数值计算大家还记得世界上第一台计算机叫做EMIC它主要是美国用来计算一个炮弹的打出去的轨迹以及它的落点所以计算机原来开发的就是为了做科学计算或者数值计算那么如何做到这一点呢计算"
+        },
+        "zh-1351890321-5": {
+          "cer": 0.11907164480322906,
+          "errors": 118,
+          "ref_len": 991,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们今天要讲的是数字转换的这个话题首先我给大家一道脑筋集转弯请看这个PPT事实上一共有一零种人一种会用二进尺一种不会如果我停在这里你是不是在想那另外的八个人在哪里呢如果你是这么想的话实际上你还是用实际制的观点来看待这个问题所以在题目中的一零"
+        },
+        "zh-1351890321-6": {
+          "cer": 0.04032258064516129,
+          "errors": 15,
+          "ref_len": 372,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们知道计算机跟二进制有着密不可分的这样子的一个关系那么计算机实际上它所有的数据程序最后将形成为零和一的训练串才能被计算机所识别实际上计算机只认识零和一只是这一串的零和一代表的意义不一样而已我们来看一下计算机为什么要采用二进制首先计算机采用"
+        },
+        "en-1911877932-1": {
+          "cer": 0.033597583993959984,
+          "errors": 89,
+          "ref_len": 2649,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "HeresJonathanstudyingforatestandstudyingandstudyingandstudyingAndhereheisgettinghistestresultsAllthatstudyingandhestillg"
+        },
+        "en-1911877932-2": {
+          "cer": 0.08843537414965986,
+          "errors": 195,
+          "ref_len": 2205,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "AndinsidewelookateducationmorespecificallytheUnitedKingdomversusChinabothcountrieswerepartofanextraordinarytelevisionexp"
+        },
+        "en-1911877932-3": {
+          "cer": 0.0011757789535567313,
+          "errors": 2,
+          "ref_len": 1701,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "InthebeautifulislandofCorsicaintheMediterraneanSeaaboynamedNapoleonBonapartewasbornFromayoungageNapoleonwasambitiousandf"
+        }
+      },
+      "clips": 9,
+      "clip_seconds": 1702.9515625,
+      "weakest_verified": "subtitle"
+    },
+    {
+      "key": "sherpa-paraformer-2024",
+      "backend": "sherpa-onnx",
+      "label": "sherpa-onnx paraformer-zh (2024-03)",
+      "size_mb": 1042.9260721206665,
+      "cer": 0.29256638794450057,
+      "rtf": 12.93897149084551,
+      "load_s": 1.32008957862854,
+      "status": "ok",
+      "note": "",
+      "text": "同么这个欢迎来到计算机基础的知识各么今天将会开始第一章的学习第一章将介绍计算机基础的知识第一章第一节我们将讲到计算机的概述那么我们现在就开始进入计算机概术的这样子的一个内容当中去首先什么是计算机很多人对计算机有不同的定义和有不同的这个思路的想法比如说有的人认为啊计算机就是一个游戏机你可以用它来打知识各的人呢认为计算机是一个打印机因为很多的文件它都能够用来编排打印出来而实际上计算机不仅仅是我们刚才所说的那一些如果给一个定义的话那么计算机我们可以把它认为是对各种信息进行存储和高速处理的一个电子的机器那么对于这个概念我我想想两点的的充第一个我们说计算机不仅仅是一个计算的工具而且还是个信信处理的同时我们也要知道计算机不同于其他的任何机器它能够程储储序序并能按过程程序序导导能程程序程的这个概念出出们想想要的这样个结结那么这个就是一个计算机的基本的这个概念\n那么按照计算机的分类来讲我们可以把计算机分为专用计算机和通用计算机所谓的专用计算机就是为了解决一类的问题而专门设计的这样一个计算机我们把它叫做电子计算机当然了它的用件和它的软件是单单为解决某一个问题而设置所以它在解决这个问题的时候它的处理速度将会非常的快另外一种叫通用计算机是通用型计算机是为了解决各种问题有较强的通用性而设计的这个计算机所么我们在家里所用的以及在实验室里面你们看到的这些我们都把它通称之为通用计计算机如果我们可以用它来软字可以用它来算机可以用它来你装的性等等机这就是取决于你装了不同的软件就有不同的这个应用好如果我们按照计算机的处理对象来分类的话那么我们也可以简单的把它分分为三种第一种数字式的电子计算机当二种模拟式的电子计算机第三种呢就是把数字和模式为通用计算算机在一起叫通合式的电子计算机数字式的电子计算机机是处理非连续变化的数据为主而这些数据在时间上它是一个又一个离散的那么它里面的基本的部件啊运算部件就是数字和逻辑电路模拟式的电子计算机啊它的处理的数据那是连续变算的这样一个数据那么它们这些数据在时间上是相连的啊基本上它的运算部件是由运算计算器组成的微分器积分器和通用的函数计算器等等等等那么混合式的电子计算机就是把数字式计算机和模拟式计算机合在一起啊它可以处理数字量也可以处理模拟量那么如果我们按照它的规模和处理能力来分的话那么又可以分为很多种比如说有矩形机这个我们也把它称作为通用计算机那么这种计算机机它的处理能力相当的强那然他也可占用很大的空间那那么这种计算机它的价格也相当的昂昂贵那么在出现巨型计算机之后他们为了使得它的比格降价来又开发了一种叫小巨型机那种小矩型机和巨型计算机之后当话他的大格比较容那那么们发们有出现了一种叫做大型机那么个 in frame 那么这个大型机它具有很强的管理和处理数据的这个能力那么目前我们把计算机等等企块那么交通部门很多很多都在使用大型机那么在在在通型算机的需要那么计算机里面还有一种叫小型机那么这种小型机跟我们的大型机相比那那们现在和它的体积就会大大的减大当然它的处理速度也没有大型机那么快那么现在比较熟悉的还有工作站和个人计算机那么在就可比较高档的这个的强啊具有很强的图形处理能力那么应用于计算机辅助设计 sin 工作站等等等强啊个人计算机呢就是我们现在常用的我们所说的 p 算机也好我们所说的这个 laptop 这个电脑也好都是个人计算机啊那么这个规模和处理能力来分就我们大概可以把计算机分为这几种内容\n下面我们再来看一下计算机它的特点首先计算机它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万亿次的这个计算因为计算机它的计算速度相当的快所以现在普遍应用在很多很多的领域比如说科学计算比如说气象预报等等等等这些方面另外一个特点就是计算机的精度相当的高从理论上来讲它就这个计算机的计算能力够强有足够的存储空间的话那么它在理论上它的精确度可以不受限制还有一个呢计算机它具有存储能力比较强的这样一个特点因为计算机能够处理的这个数据取决于它的内存有多大一个中型规模的图书馆实际上在计算机处理起来也是相当容易点因为它具备一个光盘它能够存储一个小型图书馆的这样一个内容了计算机还有另外一个特点它就具有逻辑判断能力它是如何做到这一点的呢其实啊它是通过算术运算逻辑运算首行判断和比较得出一个结果那么计算机它还有自动执行的这个功能它不需要人工的干预你只要把程序写好了它将会按照这个程序自动的去执行人只要等到它需要的时候它这个结果获得就可以以啊\n下面我们来看一下计算机的应用领域当然大家机可以用来做科学计算或者数值计算大们还记得世界上第一台计算机或者 e 你 ic 它主要是用用用学计算一者个量机大通一做行学计算或者一个模算所以计算机啊原来开发的就是为了做科学计算或者数值计算那么如何做到这一点呢计算机它实际上把一个个性的问题进行一个数学模型的一个抽象那后把它转化成为一个计算机能够处理的这样一个模型最后我们用计算机大量的对它进行个用算一一人们要的对行一一结统容所就是他对一学计算一或数据据的的个个容所计算机的第二个应用领域是是用用据据据或者数息处统所么我们知道他在在他在一一一学计算或者一一个容容所以算算机它一对用据进的一个数统或者一个纯统统是进行一个容容通进一行行个解解器以及及他他进行传等等等等等话在一对数具一一系个计容那后我的对一一应应用域或进数据据或者数据计化所我可以以到到很西用的的西在对学学当当或进一个数题或者数字计算是我们用计算的的计计计的及个的通统当在我可只通速的进行控制和对对象的这样子的一个自统调节和自动检测自动控制等等等等我们知道计算机还有另外一个作用就是用作计算机的辅助技术比如说有计算机的助技术现在的设计人员不要再把这个环境搭出来然后才来看这个结果好不好它现在呢可以用计算机把这个电子也好这个艺术品也好直接在计算机里面进行设计你还没有做出来你就能够看到它的一个结果另外一个地方可以用到计算机的就是计算机辅助计造在制造业当用一个产品的成型和制造过程当中要有计算机的参与或者这工智能啊通过到他的易程和按照他的过程技行我们也知道计算机集成制造系统里面也用到了很多的计算机啊我们把这个计算机集成制造系统叫做 c i m 啊我只以了机通个个机的通通通知到人个流程使得这个集程这个系统能够得到完能的这样一些信那同知了另外一个领域进行人工智能如果大家还记得的话在实在年前有一部美国的片子就是以人工智能命码它是描写一个机器人啊通过了人工智能的这个技术获得了一过的程的程通他通到的通的网 i 当然这个是电影当中的情个那么现在我们的计算机的制造人工智能方面的这个成就呢已经使得计算机基本上能够造出一个非常之像人的通程网这样一个机器人好计算机还有更广阔的领域就是在我们的通讯网络相信大家对互联网已经不会在陌生它改变了人的很多行为习惯那么我们可以很方便的做在家联能进行网上银行的操作通过网通银程的操作如果你报了一些网络的课程你甚至可以不用去教室就能够享受网上教学的这样子的一个啊服务同时呢我们可以看到大家可以通过互联网或得一些业能的这样一些信息还有一个应用叫做网络的操作现在我们报了一用在到行的集统当信大家到计务局的官方网站录入你的信息自动把税务的信息登记就可以了还有网上出版也是一种新兴的互联网应用的这样一个形式啊它包括文章的收的文章的编排文章的审核以及文章的出版都可以在线完成我们可以看到计算机有很多很多的应用那么今天我们就讲到这里我们下节课再跟大家分享计算机的运算基础谢谢大家\n我们今天要讲的是数字转换的这个话题首先我给大家一道脑筋急转弯请看这个问题题就是上我是一进进字题就是我西进进一一种不题如在在在题题你不不是在想那另外的八个人在哪里呢如果你是这么想的话实际上你还是用十进制的观点来看待这个问题如以你题目中的一零这两个字并不代表十而是二进制的二如果你学过计算机你再看一个数的时候你不单只是看这个数是什么而且在你脑海当中马上就要反应问题首先数就是二几问题这就是及到一个进置的问题题就是我们今天学习的问题首先要给大家介绍的是数字的基本问题首以的数字实际上就是逢多少进一的这样子的一个问题比如说我们大天说的一么那们就是十二个逢十二我们就进题那么两们就是二十问题所问的问题有一是二一个月题些都是逢多少进一的这样一个问题比一个比较科学的定义的话那么数字是指用一组固定的数字和一套统一的这样子的规则来表示数目的方法在数字当中有两种不同的数字那种叫做非进位数字而另外一种呢叫做进位数字作为一个典型的非进位数字那么这个数字就是一个不同的例子我们可以看到罗马数字当中表示一像用英文字类似 i 的大写这样子来表示二是两个在右三加那么表示四呢它不在是四数数那是用 v 代表五 i 在它左边代表减一那那是 v i 就是在右边为加 x 代表的是十你们也不能是十如果是要代表九的话它应该是 i x 另外一种数字叫做进位计数字它表示的数字的大小与它在数目中当中的位置是非常有关系的比如说一二三点四五这个如果是十进制数的话它代表的就是一百二十三点四五大家会看到这个数字的时候如果你定义为十进制的字那么这个就是一个十进制的数那么这个也就是一个进位的奇数法在数字当中有两多少个数字大家要搞清楚第一个叫做奇数所谓的奇数就是指在进位置中允许选用进位数的的个数这个基数实际上是跟你几进制是有关系的多代进制一就有进少个数数所以现在经常用的十进制那么就有十个奇数也就是说有十个符号是代表不同的数值那是说一个数字的十进制是多少呢零一二三四五六七八九这十个我们常用的数字另外一个概念叫做位数所谓的位全就是因为它是进位制的这样一个数字所以呢在每个位置它代表的次方就多少我们把它叫做位数所以说我们刚才说的那样一个例子一二三点四它代表的是一乘以十的二次方就是一百二乘以十的一次方就是呢在乘以十的零次方就是三然后再加上四乘以十的负一次方就是零点四所以整个数值呢就会得到十进制的一百二十三个数那个位置上呢十乘乘方十的一次方就是零次方这些就是我们所有的位数\n我们知道计算机跟二进制有着密不可分的这样子的一个关系那么计算机实际上它所有的数据程序最后将形成为零和一的序列串才能被计算机所识别实际上计算机只认识零和一只是这一串的零和一代表的意义不一样而已我们来看一下计算机为什么要采用二进制首先计算机采用二进制它因为首先一个就是电路非常的简单零和一可以代表电路的开和关那么计算机里面它有个逻辑电路逻辑电路通常只有两个状态所以用零和一来代表能够得到一个简单的电路第二个原因是因为计算机采用二进制的时候它的可靠性比较上两个状态表示的二进制两个数码数字的传输和处理不容易出错还有用二进制是因为它的逻辑性比较高首先计算机的工作原理是建立在逻辑运算的基础上所以逻辑代数是逻辑运算的理论根据用二进制就正好符合了逻辑性强的这样一个原理同时因为二进制数它的运算的规则比较简单所以用二进制来做计算机的这个主要的这个运算是有道理的\nhere's jonathan studying for a test and studying and stuarts and studying and he is getting his test results all that studying and he still still get inyals but but think just what re's no learning to stually but what not a might work for for learand and not it all for oers and and understarlelecwhy but of most tearted lethoding that's best for you and important to know your leararning stybut the most most popular learning styles are visual auditone for what people what of not one meds to infect well for most people one of these learning to stually but if just not wat a a lestals of different leyles to be effect tive to prefer your learning leyal so can complete and online assessment there's a wide right of of a stcial but what is of multiple choice questions however you can also deserve yyself and your previous learning styals to get an idea of how you leararbest so youa just ararout the a learing when here's in class and his teachers inlearing why thebe a watplelearning eally or have that end to go in one year and out the other but when it's teacher starusing vistals but what have ten memeing it yer to focus and understand the material so he might be a lesual learas but what have your history how have you previed learning in the past but you prefer watching the listenand and can be sting lesteal why maybe youlelearned by by doing with hds on studience if not of these seem to try you you them them to try and see which one you stend to drift tods so he learthe style and it one stto lethods ds work worwith it let's take a look at how janeto and if of have regiate leideas as a visual learner and if to stfind ds her teteful the matercode his nose he finds that helped him to organize information and internalizze it it all also creates dioram es while studing finding that they helping to to understand certain structures and ideas and jethat to watch the indeos who finds that helpful for extra infornotion riye is more of his legnate learers and likes to studs them a group and discus the material with others sometimes should return nose out leods and it helpps her hewhat what she's stuaring and he classes who be will recorhis inlecor with her teachers permission of ideas so that she can go back and listen to his notion ryal finds that he learns best by reading and right de he is kes subananal notestrereand and and just might the the reds when he's trying to mattertities and and will ll off ten writ out he just does a to to res and reread any materials his teacher has a signed the noas rehe is is that conleartic learning riyis got a lot of energy and likes doing things somedoes and hands on mattitities that but by destston certain ideas and topics somealso and turto some our materials what geis the king ds but also likes to take breaks in order to release some of her energy she also have to focus when she returns to learning for is of the students are stuarting the same materal but but y're doing to your studs but he just tato to arantee that but don't might get find rereds but but destanying their learning styes when they dto danthods that work for them when just just to find terteciand getting better rereyou she just you ggband and find might get to idea for a better and\nand inside but look at education more specifically the unted kingdom versus china both countries were part of in extraordinary televigent and and it's called the big test getting the chinese where the teaching what the british appht who one and the teines or britist shots up the reporcone what the chinese teachers the the itd teacing methods came is a stshoto the the des of british school children and the students the gged the retiters came a a shock to the horrofed britigonand so know but and the the us was wwto it as the the sist stshos of the a a stohoand ld themselves according to britain's memally the the des for wt to and and the the resstict was and rogant as the we k pand the the dis wked and but between teachers and students mellored what if the academic regime was unregent ant what is the the the of the teines to take place so so h h the the tt of and the the gt it well what the the and the the ped by the british childrets when ripped by a competitive teurver and shuh and the chinese or british teaching system come out on top the the stun the ggit and as the the inthe the the the system was the dited fwinit but would it desired so what did the tail of the test telus the chstes tewked even the the ines of the briticitehol and the students and the jumed the british childrem were the it gints the who'd teed and the english styed and if chinese school has one the the and so what did to be quite interesting for us i think of hs and the cha the aa ge mofor percts and counreds and a percent and hunt s hundred three monfour percand o o know the hcht year nine average mark for enter in thirty six and four six and chinese to be ty and and and the scithe chineing and a a dione the a s one year and and no is to a chinese to be grinking and and saand chching to a very very and one for and the inquirof will happment thank you very much and well done well the the the chse and system rereounding and five hundred monthe four hundred years and and the chinets and teachs to the time for a teteful ph and it was very very the inhand more question than answers i have to the chinese wewill of thinand to some extent it was the the ins emagintion and a edom of thinking and cial sininand and rea tetes it was very much from a cithe titec and fes it was a a and the desis to entertain and perhaps the the tity and perand well is the go get a conping and working which is the best constem the answer of coura exa s a a a bof and however the u k teacing and a really disconvered the conwts a a quesining idea to construction that first chenents is to a the and dia and the the the of a a think and a a to deciyou and for the best aa tet v london\nin the beautiful island of of sca a in the medaronian sea a boy named napolian bonapart was born but a younged to a polian was ambitious and fiercely intelligent he loved to read about great military leaders dreaming of his own battles and victors but a a lian was sent to bans for his eemps but the ickely showed a talent for military strategy he joined the french army and it wasn't long before he started to make a a coed for himself he was known for being fereness and bigliant for batle he was a time of great turmoil in france known as the french revolution and sowlian quickly rothe ed for the ranof of the ititand he wted a heerding to the for for deviplefrts against other european fronts and wanted to create the revolution but nepolian's biggest mbtand when he decided to make hifts for empperof fres he he made a visis for france and for himself he wanted to create a huge empire and for a while he almost did many poliy's army 's conicly lecothe for ume and he ruled over much of of arwas but napoli's ambition was was to the the wnphhe he made a big mistahe he manting to vadade rucia the a ggwinter was bch but napoli's army wasn't prepared for his and many soldiers didn't survive the cold and the atts this was the beginning of the end of neuropethe emobs but a series of defets but napolian was forced to his empt and was a lied a a milalian called elba but even then his ambition didn't let him rest he escaped from elba and returned to france for a brief period of ruo in the the the a a howewhen his polili's ebdiand a a a that was defeated again at the battle bonloe one of the the famous battles and history this time he was exied to a remote island and the atlantic ocean but calsasahelena where he spent the rest of his life is polilibbbais is bbbered as one of the greatest military leaders in history but also as a remindent of how ambition and deba poa a a he a liystory is full of victors and hifes power and loss and the enduring lessons of histories complex hyoes",
+      "per_clip": {
+        "zh-1351890321-1": {
+          "cer": 0.13550135501355012,
+          "errors": 50,
+          "ref_len": 369,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "同么这个欢迎来到计算机基础的知识各么今天将会开始第一章的学习第一章将介绍计算机基础的知识第一章第一节我们将讲到计算机的概述那么我们现在就开始进入计算机概术的这样子的一个内容当中去首先什么是计算机很多人对计算机有不同的定义和有不同的这个思路的"
+        },
+        "zh-1351890321-2": {
+          "cer": 0.1317365269461078,
+          "errors": 132,
+          "ref_len": 1002,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "那么按照计算机的分类来讲我们可以把计算机分为专用计算机和通用计算机所谓的专用计算机就是为了解决一类的问题而专门设计的这样一个计算机我们把它叫做电子计算机当然了它的用件和它的软件是单单为解决某一个问题而设置所以它在解决这个问题的时候它的处理速"
+        },
+        "zh-1351890321-3": {
+          "cer": 0.05185185185185185,
+          "errors": 21,
+          "ref_len": 405,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们再来看一下计算机它的特点首先计算机它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万亿次的这个计算因为计算机它的计算速度相当的快所以现在普遍应用在很多很多的领域比如说科学计算比如说气象预报等等等等这些方面另外一个特点就是计"
+        },
+        "zh-1351890321-4": {
+          "cer": 0.248107653490328,
+          "errors": 295,
+          "ref_len": 1189,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们来看一下计算机的应用领域当然大家机可以用来做科学计算或者数值计算大们还记得世界上第一台计算机或者e你ic它主要是用用用学计算一者个量机大通一做行学计算或者一个模算所以计算机啊原来开发的就是为了做科学计算或者数值计算那么如何做到这一点"
+        },
+        "zh-1351890321-5": {
+          "cer": 0.22906155398587286,
+          "errors": 227,
+          "ref_len": 991,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们今天要讲的是数字转换的这个话题首先我给大家一道脑筋急转弯请看这个问题题就是上我是一进进字题就是我西进进一一种不题如在在在题题你不不是在想那另外的八个人在哪里呢如果你是这么想的话实际上你还是用十进制的观点来看待这个问题如以你题目中的一零这"
+        },
+        "zh-1351890321-6": {
+          "cer": 0.04032258064516129,
+          "errors": 15,
+          "ref_len": 372,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们知道计算机跟二进制有着密不可分的这样子的一个关系那么计算机实际上它所有的数据程序最后将形成为零和一的序列串才能被计算机所识别实际上计算机只认识零和一只是这一串的零和一代表的意义不一样而已我们来看一下计算机为什么要采用二进制首先计算机采用"
+        },
+        "en-1911877932-1": {
+          "cer": 0.34805587013967537,
+          "errors": 922,
+          "ref_len": 2649,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "heresjonathanstudyingforatestandstudyingandstuartsandstudyingandheisgettinghistestresultsallthatstudyingandhestillstillg"
+        },
+        "en-1911877932-2": {
+          "cer": 0.48299319727891155,
+          "errors": 1065,
+          "ref_len": 2205,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "andinsidebutlookateducationmorespecificallytheuntedkingdomversuschinabothcountrieswerepartofinextraordinarytelevigentand"
+        },
+        "en-1911877932-3": {
+          "cer": 0.26866549088771313,
+          "errors": 457,
+          "ref_len": 1701,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "inthebeautifulislandofofscaainthemedaronianseaaboynamednapolianbonapartwasbornbutayoungedtoapolianwasambitiousandfiercel"
+        }
+      },
+      "clips": 9,
+      "clip_seconds": 1702.9515625,
+      "weakest_verified": "subtitle"
+    },
+    {
+      "key": "sherpa-sensevoice",
+      "backend": "sherpa-onnx",
+      "label": "sherpa-onnx SenseVoice-Small",
+      "size_mb": 1163.5462312698364,
+      "cer": 0.15804465680419003,
+      "rtf": 10.566718490414733,
+      "load_s": 0.6435108184814453,
+      "status": "ok",
+      "note": "",
+      "text": "各位同学欢迎来到计算机基础的课堂。我们今天将会开始第一章的学习。第一章将介绍计算机基础的知识。第一章第一节，我们将讲到计算机的概述。那么我们现在就开始进入计算机概述的这样子的一个内容当中去。首先什么是计算机。很多人对计算机有不同的定义和有不同的这个思路和想法。比如说有的人认为啊计算机就是一个游戏机，你可以用它来打游戏。有的人呢认为计算机是一个打印机，因为很多的文件它都能够用来编排打印出来。而实际上计算机不仅仅是我们刚才所说的那些。如果给一个定义的话，那么计算机我们可以把它认为是对各种信息进行存储和高速处理的一个电子的机器。那么对于于这个概念，我们想做两点的补充。第一个我们说计算机不仅仅是一个计算的工具。而且还是个信息处理机。同时我们也要知道，计算机不同于其他的任何机器，它能够存储程序，并能够按照程序的引导自动的存取和处理数据，输出人们想要的这样一个结果。那么这个就是一个计算机的基本的这个概念。\n那么按照计算机的分类来讲，我们可以把计算机分为专用计算机和通用计算机。所谓的专用计算机就是为了解决一类的问题，而专门设计的这样一个计算机。我们把它叫做专用计算机。当然了，它的硬件和它的软件是单单为解决某一个问题而设置，所以它在解决这个问题的时候，它的处理速度将会非常的快。另外一种叫通用计算机。这通用性计算机是为了解决各种问题，有较强的通用性而设计的这个计算机。我们现在在家里所用的以及在实验室里面，你们看到的这些我们都把它通称之为通用型计算机，所以我们可以用它来打字，可以用它来上网，可以用它来打游戏等等等等。这就是取决于你装了不同的软件，就有不同的这个应用。好，如果我们按照计算机的处理对象来分类的话，那么我们也可以简单的把它分分为三种。第一种数字式的电子计算机。第二种模拟式的电子计算机。第三种呢就是把数字和模拟两种处理对象放在一起叫混合式的电子计算机。数字式的电子计算机，它是处理非连续变化的数据为主。而这些数据在时间上它是一个又一个离散的。那么它里面的基本的部件啊运算部件就是数字和逻辑电路。模拟式的电子计算机啊，它的处理的数据那是连续变化的这样一个数据，那么它们这些数据在时间上是相连的。啊，基本上它的运算部件是由运算放大器组成的微分器积分器和通用的函数运算器等等等等。当然混合式的电子计算机就是把数字式计算机和模拟式计算机合在一起啊，它可以处理数字量也可以处理模拟量。那么如果我们按照它的规模和处理能力来分的话，那么又可以分为很多种比如说有矩型机，这个我们也把它称作为超级计算机。那么这种计算机啊，它的处理能力相当的强。当然它也占用很大的空间。啊，那么这种计算机它的价格也相当的昂昂贵。那么在出现巨型计算机之后，人们为了使得它的价格降下来又开发了一种叫小矩型机。这种小矩型机和矩型计算机相比的话，它的价格比较便宜。再往后发展又出现了一种叫做大型机也叫maframe。同时这个大型机它具有很强的管理和处理数据的这个能力。那么目前我们在中国当中大企业银行交通部门很多很多都在使用大型机。为了满足中小型企业的需要。那么计算机里面还有一种叫小型机。那么这种小型机跟我们的大型机相比呢。它的价格和它的体积就会大大的减小。当然它的处理速度也没有大型机那么快。我们现在比较熟悉的还有工作站和个人计算机。工作站就是比较高档的这个危机啊，具有很强的图形处理能力。那么应用于计算机辅助设计，散工作站等等等等。而个人计算机呢就是我们现在常用的我们所说的PC机也好，我们所说的这个 laptopptop这个电脑也好，都是个人计算机。按照这个规模和处理能力来分，就我们大概可以把计算机分为这几种内容。。\n下面我们再来看一下计算机它的特点。首先，计算机它的运算速度非常的快。我们知道现在的计算机已经能够达到每秒数万亿次的这个计算。因为计算机它的计算速度相当的快，所以现在普遍应用在很多很多的领域。比如说科学计算，比如说气象预报等等等等这些方面。另外一个特点就是计算机的精度相当的高。从理论上来讲，如果这个计算机的计算能力够强，有足够的存储空间的话，那么它在理论上它的精确度可以不受限制。还有一个呢计算机它具有存储能力比较强的这样一个特点。一个计算机能够处理的这个数据取决于它的内存有多大。一个中型规模的图书馆实际上在计算机处理起来，也是相当容易的。因为它具备一个光盘就能够存储一个小型图书馆的这样一个内容了。计算机还有另外一个特点，它就具有逻辑判断能力。它是如何做到这一点的呢，其实啊它是通过算术运算逻辑运算进行判断和比较得出一个结果。那么计算机它还有自动执行的这个功能，它不需要人工的干预。你只要把程序写好了，它将会按照这个程序自动的去执行。人只要等到它需要的时候，把这个结果获得就可以了。。\n下面我们来看一下计算机的应用领域。首先计算机可以用来做科学计算或者数值计算。大家还记得世界上第一台计算机叫做它主要是美国用来计算一个炮弹的打出去的这个轨迹以及它的落点。所以计算机啊原来开发的就是为了做科学计算或者数值计算。那么如何做到这一点呢，计算机它实际上把一个实际的问题进行一个数学模型的一个抽象然后把它转化成为一个计算机能够处理的这样一个模型。最后我们用计算机大量的对它进行一个计算，得出人们要的这样一个结果。这个就是它做科学计算或数值计算的一个原理。计算机的第二个应用领域，就是用作数据处理或者信息处理。那么我们知道现在都是在一个大数据的这样一个时代。所以计算机它能够对数据进行一个收集进行一个存储。整理进行分类统计最后进行加工检索啊，以及对它进行传播等等等等的这些对数据的一系列的活动。计算机的第三个应用领域，是过程控制或者实时控制。我们可以看到很多很多的如今在制造业当中大量的用到了这个计算机。它是利用计算机的即时采集这个检测数据，按照最优质迅速的进行控制和对对象的这样子的一个自动调节和自动检测自动控制等等等等。我们知道计算机还有另外一个作用，就是用做计算机的辅助技术，比如说有计算机辅助设计，现在的设计人员不要再把这个环境搭出来，然后才来看这个结果好不好。他现在呢可以用计算机把这个电路也好，这个艺术品也好，直接在计算机里面进行设计。你还没有做出来，你就能够看到它的一个结果。另外一个地方可以用到计算机的就是计算机辅助制造在制造业当中一个产品的成型和制造过程当中要有计算机的参与，使得这个制造能够按照它的要求，和按照它的流程进行。我们也知道计算机集成制造系统里面也用到了很多的计算机，啊，我们把这个计算机集成制造系统叫做CIMS这个系统当中，计算机呢通过控制它整个流程，使得这个集成这个系统能够得到完美的这样一个集合。计算机另外一个领域，叫做人工智能。如果大家还记得的话，在十来年前有一部美国的片子，就是以人工智能命名。它是描写一个机器人啊，通过了人工智能的这个技术获得了人类的思想，最终它学习到如何去爱。当然这个是电影当中的情节。那么现在我们的计算机的制造人工智能方面的这个成就呢，已经使得计算机基本上能够造出一个非常向人的动作的这样一个机器人。好，计算机还有更广阔的领域，就是在我们的通讯网络。相信大家对互联网已经不会再陌生。它改变了人的很多行为习惯。现在我们可以很方便的做在家里面进行网上银行的操作。进行网上定票的操作。如果你报了一些网络的课程，你甚至可以不用去教驶，就能够享受网上教学的这样子的一个啊服务。同时呢我们可以看到大家可以通过互联网获得一些医疗的这样一些信息。还有一个应用叫做网上税收。现在啊我们报税不用再到税务局去了。你只要到税务局的官方网站录入你的信息自动把税务的信息登记就可以了。还有网上出版也是一种新兴的互联网应用的这样一个形式。啊，它包括文章的收集文章的编排文章的审核，以及文章的出版都可以在线完成。我们可以看到计算机有很多很多的应用。那么今天我们就讲到这里，我们下节课在跟大家分享计算机的运算机础，谢谢大家。\n我们今天要讲的是数字转换的这个话题，首先我给大家一道脑筋急转弯，请看这个PPT世实上一共有一零种人，一种会用二进制，一种不会如果停在这里你是不是在想，那另外的8个人在哪里呢？如果你是这么想的话，实际上你还是用十进制的观点来看待这个问题。所以在题目中的一0这两个字并不代表十而是二进制的二。如果你学过计算机，你在看一个数的时候，你不单只是看这个数是什么？而且在你脑海当中马上就要反应过来，这个数到底是几进制，这就涉及了一个进制的问题，也就是我们今天学习的重点。首先要给大家介绍的是数字的基本概念。所谓的数字实际上就是逢多少进一的这样子的一个问题。比如说我们经常说的一打，那么就是12个逢1二我们就进一，那么两打就是二4个同样的问题有一周有一个月这些都是逢多少进一的这样一个问题。用一个比较科学的定义的话，那么数字是指用一组固定的数字，和一套统一的这样子的规则来表示数目的方法。在数字当中有两种不同的数字，一种叫做非进位数字。而另外一种呢叫做进位数字。作为一个典型的非进位数字。那么罗马数字就是一个很好的例子。我们可以看到罗马数字当中表示一就英文字类似I的大写这样子来表示2是两个三是三个，那么表示四呢它不再是4个了，而是用 v代表5I在它左边代表减一6呢是VI就是在右边为加X代表的是十，你们也不能猜出，如果是要代表9的话，它应该是IX另外一种数字叫做进位计数制，它表示的数值的大小与它在数目中当中的位置是非常有关系的。比如说123.45这个如果是十进制数的话，它代表的就是123点45大家会看到这个数字的时候，如果你定义为十进制的话，那么这个就是一个十进制的数。那么这个也就是一个进位的计数法。在数字当中有两个基本概念，大家要搞清楚第一个叫做奇数。所谓的奇数就是指在进位制中允许选用基本数码的个数。这个奇数实际上是跟你几进制是有关系的。多少进制它就有多少个奇数。我们现在经常用的十进制，那么就有10个奇数，也就是说有10个符号来代表不同的数值。那么这10个数字在十进制是多少呢？0123456789，这10个我们常用的数字。另外一个概念叫做位权，所谓的位权就是因为它是进位制的这样一个数字。所以你在每个位上它代表的权重是多少。我们把它叫做位权。比如说我们刚才说的那样一个例子，123.4，它代表的是一乘以1的2次方就是100二乘以1的一次方就是1三乘以1的零次方就是三，然后再加上四乘以1的负一次方就是零.4。所以整个数值呢就会得到十进制的123.4。每个位置上的十的平方十的一次方，十的零次方，这些就是我们所说的位权。\n我们知道计算机跟二进制有着密不可分的这样子的一个关系。那么计算机实际上它所有的数据程序最后将形成为零和一的序列串才能被计算机所识别。实际上计算机只认识零和一，只是这一串的零和一代表的意义不一样而已。我们来看一下计算机为什么要采用二进制。首先计算机采用二进制，它因为首先一个就是电路非常的简单。零和一可以代表电路的开和关。那么计算机里面它有个逻辑电路逻辑电路通常只有两个状态，所以用零和一来代表能够得到一个简单的电路。第二个原因是因为计算机采用二进制的时候，它的可靠性比较高。两个状态表示的二进制两个数码，数字的传输和处理不容易出错。还有用二进制是因为它的逻辑性比较强。因为计算机的工作原理是建立在逻辑运算的基础上。所以逻辑代数是逻辑运算的理论根据，用二进制就正好符合了逻辑性强的这样一个原理。同时因为二进制数它的运算的规则比较简单。所以用二进制来做计算机的这个主要的这个运算是有道理的。。\nHere's Jonathan studying for a test and studying and studying and studying and here he is getting his test results. All that studying and he still got an f Why The thing is there's no one right way to study. Some methods might work great for one person and not at all for others. everybody learns differently in order to find a study method that's best for you it's important to know your learning style. The foremost popular learning styles are visual auditory. reading writing and kinesthetic or hands on For most people, one of these methods will work best. but it's also possible for a combination of different styles to be effective. to discover your learning style you can complete an online assessment. There's a wide variety of them available consisting of multiple choice questions. However, you can also observe yourself and your previous learning experiences to get an idea of how you learn best. Let's circle back to Jonathan. When he's in class and his teacher as lecturing. he gets distracted pretty easily. words tend to go in one ear and out the other. But when his teacher starts using visuals Jonathan finds it easier to focus and understand the material. So he might be a visual learner. Now think about your history. How have you enjoyed learning in the past. Do you prefer watching over listening. Do you enjoy reading instead. or maybe you learn best by doing with handson experience. If none of these seem to grab you give them each to try and see which one you tend to drift towards Each learning style has its own study methods that work best with it. Let's take a look at how Jonathan and a few of his classmates study. as a visual learner Jonathan finds it helpful to color code his notes. he finds it helps him to organize information and internalize it better. He also creates diagrams while studying finding that they help him to better understand certain structures and ideas. Jonathan watches videos too, finding them helpful for extra information. Ruby is more of an auditory learner. She likes to study in a group and discuss the material with others. Sometimes she'll read her notes out loud because it helps her to hear what she's studying in some classes Ruby will record the lecture with her teacher's permission, of course, so that she can go back and listen to it later. Trell finds that he learns best by reading and writing. he takes substantial notes during class and reads over them often. when he's trying to memorize something, he'll often write it out. He also makes sure to read and reread any materials his teacher has assigned the class. Raya is a kinesthetic learner. She's got a lot of energy and likes doing things. Las and hands on activities help her to understand certain ideas and topics. sometimes she'll review her material while she's walking around. She also likes to take breaks in order to release some of her energy allowing her to focus when she returns to studying. All four of these students are studying the same material, but they're doing so in different ways. Now this doesn't guarantee that they'll all get the same grades, but by determining their learning style and finding study methods that work for them. they just might find themselves getting better results. global creating opportunities for a better life\nIn inside we look at education more specifically the were the British won CC up the report the Chinese teaching methods came as a childrenlious to a horrified British the50 strong class of 1 and themselves accordingssilient Street press to be disrespectful and arrogant the the big relations between mellowed even if the academic regime was unrelent needed for to take place the Chinese students were gripped by a competitive fervo would the Chinese or British teaching system come out on top the pressure began to tell English system in but would it deliver what did the which system the caron of the when'd the Chinese against those who' continued in the English styleChFor science.I have to attempt to be gracious will verywell the thinking thinking and was from a was reality to perhaps to a did though get this questioning and which is answer of, as UK have already questioningI that a or a to?\nIn the beautiful island of Corsica in the Mediterranean Sea, a boy named Napoleon Bonaparte was born from a young age, Napoleon was ambitious and fiercely intelligent. he loved to read about great military leaders dreaming of his own battles and victories. Napoleon was sent to France for his education and quickly showed a talent for military strategy he joined the French army and it wasn't long before he started to make a name for himself he was known for being fearless and brilliant and battle during a time of great turmoil in France known as the French Revolution Napoleon quickly rose through the ranks of the military. He became a hero to the people for defending France against other European countries that wanted to stop the revolution. Napoleon's biggest moment came when he decided to make himself the emperor of France. He had great visions for France and for himself. He wanted to create a huge empire. and for a while He almost did Napoleon's armyies conquered lands far and wide and he ruled over much of Europe but Napoleon's ambition also led to his downfall He made a big mistake by deciding to invade Russia. The Russian winter was harsh and Napoleon's army wasn't prepared for it. Many soldiers didn't survive the cold and the battles. This was the beginning of the end of Napoleon's empire. After a series of defeats. Napoleon was forced to give up his throne and was exiled to a small island called Elba but even then his ambition didn't let him rest. he escaped from Elba and returned to France for a brief period of rule known as the hundred days However Napoleon's comeback didn't last long. he was defeated again at the battle of Waterloo one of the most famous battles in history This time he was exiled to a remote island in the Atlantic Ocean called St. Helena where he spent the rest of his life. Napoleon Bonaparte is remembered as one of the greatest military leaders in history but also as a reminder of how ambition can both make and break a person His life story is full of victories and defeats power and loss and the enduring lessons of history's complex heroes.",
+      "per_clip": {
+        "zh-1351890321-1": {
+          "cer": 0.024390243902439025,
+          "errors": 9,
+          "ref_len": 369,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "各位同学欢迎来到计算机基础的课堂我们今天将会开始第一章的学习第一章将介绍计算机基础的知识第一章第一节我们将讲到计算机的概述那么我们现在就开始进入计算机概述的这样子的一个内容当中去首先什么是计算机很多人对计算机有不同的定义和有不同的这个思路和"
+        },
+        "zh-1351890321-2": {
+          "cer": 0.04291417165668663,
+          "errors": 43,
+          "ref_len": 1002,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "那么按照计算机的分类来讲我们可以把计算机分为专用计算机和通用计算机所谓的专用计算机就是为了解决一类的问题而专门设计的这样一个计算机我们把它叫做专用计算机当然了它的硬件和它的软件是单单为解决某一个问题而设置所以它在解决这个问题的时候它的处理速"
+        },
+        "zh-1351890321-3": {
+          "cer": 0.027160493827160494,
+          "errors": 11,
+          "ref_len": 405,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们再来看一下计算机它的特点首先计算机它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万亿次的这个计算因为计算机它的计算速度相当的快所以现在普遍应用在很多很多的领域比如说科学计算比如说气象预报等等等等这些方面另外一个特点就是计"
+        },
+        "zh-1351890321-4": {
+          "cer": 0.03280067283431455,
+          "errors": 39,
+          "ref_len": 1189,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们来看一下计算机的应用领域首先计算机可以用来做科学计算或者数值计算大家还记得世界上第一台计算机叫做它主要是美国用来计算一个炮弹的打出去的这个轨迹以及它的落点所以计算机啊原来开发的就是为了做科学计算或者数值计算那么如何做到这一点呢计算机"
+        },
+        "zh-1351890321-5": {
+          "cer": 0.06559031281533804,
+          "errors": 65,
+          "ref_len": 991,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们今天要讲的是数字转换的这个话题首先我给大家一道脑筋急转弯请看这个PPT世实上一共有一零种人一种会用二进制一种不会如果停在这里你是不是在想那另外的8个人在哪里呢如果你是这么想的话实际上你还是用十进制的观点来看待这个问题所以在题目中的一0这"
+        },
+        "zh-1351890321-6": {
+          "cer": 0.02956989247311828,
+          "errors": 11,
+          "ref_len": 372,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们知道计算机跟二进制有着密不可分的这样子的一个关系那么计算机实际上它所有的数据程序最后将形成为零和一的序列串才能被计算机所识别实际上计算机只认识零和一只是这一串的零和一代表的意义不一样而已我们来看一下计算机为什么要采用二进制首先计算机采用"
+        },
+        "en-1911877932-1": {
+          "cer": 0.016610041525103814,
+          "errors": 44,
+          "ref_len": 2649,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "HeresJonathanstudyingforatestandstudyingandstudyingandstudyingandhereheisgettinghistestresultsAllthatstudyingandhestillg"
+        },
+        "en-1911877932-2": {
+          "cer": 0.6702947845804988,
+          "errors": 1478,
+          "ref_len": 2205,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "IninsidewelookateducationmorespecificallytheweretheBritishwonCCupthereporttheChineseteachingmethodscameasachildrenlioust"
+        },
+        "en-1911877932-3": {
+          "cer": 0.011757789535567314,
+          "errors": 20,
+          "ref_len": 1701,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "InthebeautifulislandofCorsicaintheMediterraneanSeaaboynamedNapoleonBonapartewasbornfromayoungageNapoleonwasambitiousandf"
+        }
+      },
+      "clips": 9,
+      "clip_seconds": 1702.9515625,
+      "weakest_verified": "subtitle"
+    },
+    {
+      "key": "vosk-small",
+      "backend": "vosk",
+      "label": "vosk small-cn",
+      "size_mb": 99.12858486175537,
+      "cer": 0.6630524671506018,
+      "rtf": 4.784748576168679,
+      "load_s": 0.24069643020629883,
+      "status": "ok",
+      "note": "",
+      "text": "分这 同学 欢迎 来到 计算机 基础 的 课堂 我们 今天 将会 开始 第一张 的 学习 的 将 介绍 计算机 基础 的 知识第一张 第一节 我们 将 讲到 计算机 的 概述那么 我们 现在 就 开始 进入 计算机 概述 的 这样子 的 一个 内容 当中 去首先 什么 是 计算机 很多人 对 就像 其 有 不同 的 定义 和 有 不同 的 这个 思路 和 想法 比如说 有 人 认为 啊 计算机 就是 一个 游戏机 你 可以 用 它 来 打 游戏 有 人 呢 认为 计算机 是 个 打印机 因为 很多 的 文件 他 都 能够 用来 边牌 打印 出来而 实际上 计算机 不仅仅 是 我们 刚才 所说 的 那些 如果 给 一个 定义 的 话 那么 计算机 我们 可以 把 他 认为 是 对 各种 信息 计算 存储 和 高速 处理 的 一个 电子 的 机器那么 对于 这个 概念 我们 想 所 两点 的 补充一个 我 说 计算机 不仅仅 是 一个 计算 的 工具 而且 还是 个 信息处理 其同时 我们 也 要 知道 计算机 不同于 其他 的 任何 机器 他 能够 存储 程序 并 能够 按照 程序 的 引导 自动 的 存取 和 处理 数据 输出 人们 想要 的 像 结果 那么 这个 就是 一个 计算机 的 基本 的 这个 概念\n那么 爱 计算机 的 分类 来讲 我们 可以 把 计算机 分为 专用 计算机 的 通用 计算机 所谓 的 专用 计算机 就是 为了 解决 一类 的 问题 而 专门 设计 的 讲 一个 计算机 我们 把 它 叫做 专用 计算机 当然 了 他 的 硬件 和 他的 软件 是 单单 为 解决 某一 问题 设置 所以 他 在 解决 这个 问题 的 时候他 的 速度 速度 将会 非常 快另外 手 将 通用 计算机 这 通用性 计算机 是 为了 解决 各种 问题 有 较 强 的 通用性 设计 的 这个 计算机 我们 现在 在家里 所用 的 以及 在 实验室 里面 你们 看到 的 这些 我们 都 把 它 称 之 为 通用性 计算机 所以 我们 可以 用 它 来 打字费用 他们 上网 可以 用 它 来 打 游戏 等等 等等 这 就是 取决于 你 装 了 不同 的 软件 就 有 不同 的 这个 应用 着 如果 我们 按照 计算机 的 处理 对象 来 分类 的 话 那么 我们 可以 简单 地 把 的 了 分为 三种 第一种柱子 是 的 的 既 第二种 模拟 是 的 电子竞技 第三种 呢 就是 把 数字 和 模拟 两种 处理 对象 放在 一起 搅浑 合适 的 顶层 设计数字 是 的 电子 计算机 他 是 处理 非 连续 变化 的 数据 为主 而 这些 数据 在 石阶 上 他 是 一个 又 一个 离散 的 那么 它 里面 的 基本 的 部件 而 运算 部件 就是 数字 和 逻辑 典故我 你 是 的 电子竞技 啊 他 的 处理 的 数据 那 是 连续 变化 的 将 数据 那么 他们 这些 数据 在 时间 上 是 相连 的 啊 基本上 他 的 预算 部件 是 有 运算 放大器 组成 的 为 风气 积分 气 的 通用 的 函数 计算器 等等 等等当然 混合 是 的 电子 计算机 就是 把 数字 是 计算机 和 模拟 是 计算机 和 在一起 啊 他 可以 处理 数字 量 也 可以 处理 模拟 了那么 如果 我们 按照 他 的 规模 和 处理 能力 来 分 的 话 那么 又 可 分为 很多种 比如说 有 巨型 既 这个 我们 也 把 它 称作 为 超级 计算机 那么 这种 计算机 啊 他 的 处理 能力 相当 的 强当然 他 有 占用 很大 的 空间 的 那么 这种 计算机 它 的 价格 也 相当 昂贵那么 在 出现 巨型 计算机 之后 人们 为了 使得 它 的 价格 降下来 又 开发 了 一种 叫 小 罪行 系 最终 小区 其 和 剧情 计算机 相比 的话 的 价格 比较 便宜在 我 和 发展 又 出现 了 一种 叫做 大型 其 也 没 一份 同时 这个 发 信息 它 具有 很 强 的 管理 和 处理 数据 是 的 能力 那么 目前 我们 在 中国 当中 大 企业 银行 交通 部门 很多很多 都 在 使用 大型既 为了 满足 中小型 企业 的 需要 那么 计算机 里面 还 日久 叫 其 那么 就 小心机 跟 我们 的 大型 其 相比 呢 它 的 价格 和 它 的 体积 就会 大大 的 减小 当然 他 的 处理 速度 也 没有 打 经济 那么 快我们 现在 比较 熟悉 的 还有 工作站 和 个人 计算机 工作 工作站 就是 比较 高档 的 这个 危机 而 具有 很 强 的 图形 处理 能力 那么 应用于 计算机 辅助 设计 份 工作 上 等等 等等而 个人 计算机 呢 就是 我们 现在 常用 的 我们 所说 的 脾气 信息 也 好 我们 所说 的 这个 来 泡 这个 电脑 也好 都是 个人 似的 其按照 这个 规模 和 处女 能力 来 分 就 我们 大概 可以 把 计算机 分为 这 几种 内容\n下面 我们 再来 看一下 计算机 它 的 特点首先 计算机 他 的 运算 速度 非常 快我们 知道 现在 的 计算机 已经 能够 达到 每秒 送 万一 近似 的 这个 计算 因为 计算机 他 的 计算 速度 相当 的 会 说 现在 普遍 应用 在 很多很多 的 领域 比如说 科学 计算 比如说 气象预报 等等 等等 这些 方面另外 一个 特点 就是 计算机 的 精度 相当 的 高从 理论 上来 讲 如果 这个 计算机 的 计算 能力 够 强 有 足够 的 存储 空间 的 话 那么 他 在 理论 上 它 的 精确度 可以 不受 限制还有 一个 呢 计算机 它 具有 存储 能力 比较 强 的 鉴于 特点一个 计算机 能够 处理 的 这个 数据 取决于 他 的 内存 有 多 的 一个 中型 规模 的 图书馆 实际上 在 计算机 处理 起来 也是 相当 容易 的 因为 它 具备 一个 光盘 就 能够 存储 一个 小型 图书馆 的 家人 内容 了计算机 还有 另外 的 特点 它 就 具有 逻辑 判断 能力 他 是 如何 做到 这一点 的 呢 其实 啊 他 的 通过 算术 运算 逻辑 运算 进行 判断 和 比较 得出 一个 结果吗 计算机 他 还有 自动 执行 的 这个 功能它 不需要 人工 的 干预 你 只要 把 程序 写好 了 它 将会 按照 这个 程序 自动 的 去 执行 人家 等到 他 需要 的 时候 把 这个 结果 和 的 就 可以 了\n下面 我们 来 看一下 计算机 的 应用 领域首先 计算机 可 用来 做 科学 计算 或者 数值 计算大家 还记得 世界上 第一台 计算机 叫 所以 你 它 主要 是 美国 用来 计算 一个 炮弹 的 打 出去 的 这个 轨迹 以及 他 的 落点 所以 计算机 啊 原来 开发 的 就是 为了 做 科学 计算 或者 数值 计算 那么 如何 做到 这一点 呢计算机 它 实际上 把 一个 实际 的 问题 进行 数学 模型 的 一个 抽象 然后 把 它 转化 成为 一个 计算机 能够 处理 的 假药 模型 最后 我们 用 计算机 大量 的 对 他 进行 计算 得出 人们 要 的 将 的 结果这个 就是 他 做 科学 计算 和 数值 计算 的 一个 原理计算机 的 第二个 应用 领域 就是 用作 数据处理 或者 信息处理 那么 我们 知道 现在 都是 在 一个 大 数据 的 下一个 时代所以 计算机 他 能够 对 数据 进行 一个 收集 进行 存储 整理 进行 分类 统计 最后 进行 加工 检索 啊 以及 对 他 进行 传播 等等 等等 的 这些 对 数据 的 一系列 的 活动计算机 的 第三个 应用 领域 是 过程 控制 或者 实时 控制 我们 可以 看到 很多 很多 的 如今 在 制造业 当中 大量 的 用到 了 这个 计算机 它 是 利用 计算机 的 及时 采集 这个 检测 数据 按照 最 优质 迅速 地 进行控制 和 对 对象 的 这样子 的 自动 调节 和 自动 检测 自动控制 等等 等等我们 知道 计算机 还有 另外 一个 作用 就是 用作 计算机 的 辅助 技术 比如说 有 计算机 辅助 设计 现在 的 设计 人员 不要 再 把 这个 环境 答 出来 然后 才 来看 这个 结果 好不好 他 现在 呢 可以 用 计算机 把 这个 电路 也好 最 艺术品 也好直接 在 计算机 里面 进行 设计 你 还没有 做 出来 你 就能 看到 他 的 结果另外 一个 地方 可以 用 的 计算机 的 就是 计算机 辅助 至少 在 制造业 当中 一个 产品 的 成型 和 制造 过程 当中 要 有 计算机 的 参与 使得 这个 制造 能够 按照 他 的 要求 和 按照 他 的 流程 进行我们 也 知道 计算器 集成 至少 系统 里面 也 用到 了 很多 的 计算机 啊 我们 把 这个 计算机 集成 制导 系统 叫做 悲哀这个 系统 当中 计算机 呢 通过 控制 它 整个 流程 使得 这个 吉祥 这个 系统 能够 得到 完美 的 价格 集合计算机 另外 一个 领域 叫做 人工智能 如果 大家 记得 的话 在 十万年 前 有 不 美国 的 片子 就是 以 人工智能 匿名 它 是 描写 一个 机器人 啊 通过 的 人工智能 的 这个 技术 获得 了 人类 的 思想 最终 他 学习 到 如如何 去 爱 当然 这个 是 电影 当中 的 情节 那么 现在 我们 的 计算机 的 制造 的 人工智能 方面 的 这个 成就 呢 已经 是 的 计算机 基本上 能够 造出 一个 非常 之 下 人 的 动作 的 下 机器人着 计算机 还有 更 广阔 的 领域 就是 在 我们 的 通讯 网络 相信 大家 对 互联网 已经 不会 再 陌生 他 改变 了 人 的 很多 行为 习惯现在 我们 可以 很方便 地 坐 在 家 里面 进行 网上银行 的 操作 进行 网上 订票 的 操作如果 你 了 一些 网络 的 课程 你 甚至 可以 不用 去 教室 就 能够 享受 网上 教学 的 这样子 的 一个 和 同时 呢 我们 会 看到 大家 可以 通过 互联网 和 的 一些 医疗 的 讲 一些 信息还有 一个 应用 叫做 网上 税收 现在 啊 我 说 不用 再 到 税务局 去 了 你 只要 到 税务局 的 官方 网站 录入 你 的 信息 自动 把 说 我 的 信息 登记 就 可以 了还有 网上 出版 也是 一种 新兴 的 互联网 应用 的 讲 一个 形式 他 包括 文章 的 收集 文章 的 编排 文章 的 审核 以及 文章 的 出版 都 可以 在线 完成 我们 可以 看到 计算机 有 很多 很多 的 应用 那么 今天 我们 就 讲到 这里 我们 下也 可 在 跟 大家 分享 计算机 的 运算 基础的 假\n我们 记得 要 想 的 是 数字 转换 的 这个 话题首先 我 给 大家 一道 脑筋急转弯 请 看 这个 替 是 世界上 一共 有 一 林总 人 一种 会 有 爱情 是 一种 不会 如果 停 在这里 你 是 在 想 那 另外 的 八个人 在 哪里 呢如果 你 是 这么 想 的话 实际上 你 还是 时 性质 的 观点 来 看待 这个 问题 所以 在 题目 中 的 零 这 两个字 并不 代表 时 而是 二进制 的 二 如果 你 学 过 计算机 你 在 看 一个 数 的 时候 你 不 单 只是 看 这个 数 是 什么 而且 在 你 脑海 当中 马上 就要 反应 过来而 这个 数 到底 是 几近 字这 就 涉及 的 一个 近视 的 问题 也 就是 我们 今天 学习 的 重点首先 要 给 大家 介绍 的 是 素质 的 基本 概念所谓 的 数字 实际上 就是 缝 多少 进 一 的 架子 的 问题 比如说 我们 经常 说 的 一 打 那么 就是 所 爱 的 方式 十二 我们 最近 呢 那么 俩 大 就 上 一次 的 同样 的 问题 由 一周 有 一个 说 这些 都是 缝 多少 钱一 的 下 问题有 一个 比较 科学 的 定义 的 话 那么 素质 是 指 用 一组 固定 的 数字 和 一套 统一 的 架子 规则 来 表示 树木 的 方法在 数字 当中 有 两种 不同 的 数字 一种 叫做 非 敬畏 数字 而 另外 一种 了 叫 的 敬畏 数字 作为 一个 典型 的 费劲 为 数字 那么 罗马数字 就是 一个 很好 的 例子 我们 可以 看到 罗马数字 当中 表示 一 行为 因为 字 类似哎 的 大姐 架子 来 表示 二 是 两个 三 是 三个 那么 表示 四 呢 它 不再 是 四个 了 而是 泳衣 代表 五 而 在 他 左边 代表 减 一 六 呢 是 爱 就是 在 右边 为 家 孩子 四 代表 的 事实你们 也 不难 猜 出 如果 是 要 代表 酒 的话 他 应该 是 哎 哎 给另外 一种 素质 叫做 敬畏 技术 至 他 表示 的 素质 的 大小 与 他 在 树木 中 当中 的 位置 是 非常 有关系 的比如说 一二三 别 四五 这个 如果 是 实景 指数 的话 它 代表 的 就是 一百二十 三 必然 四五他 就会 看到 这个 数字 的 时候 如果 你 定义 为 实际 是 话 那么 这个 就是 一个 时 的 树 那么 这个 也 就是 一个 敬畏 的 技术 吧在 数字 当中 有 两个 基本 概念 大家 搞清楚 一个 叫做 激素 所谓 的 激素 就是 指 在 敬畏 之 中 允许 选用 基本 数码 的 个 数这个 激素 实际上 是 跟 你 挤进 是 是 有关系 的多少 性质 他 就 有 多少 个 技术 我们 现在 经常 用 的 是 镜子 那么 就 有 十个 技术 也就是说 有 十个 符号 来 代表 不同 的 素质 那么 这时 的 数字 在 失禁 是 是 多少 呢 令 一二三四五六七 八 九 这 十个 我们 常用 的 数字另外 一个 概念 叫做 为 全 所谓 的 为 全 就是 因为 他 是 敬畏 至 的 价格 素质 所以 你 在 为 上 它 代表 的 权重 是 多少 我们 把 它 叫做 维权比如说 我们 刚才 说 的 那样 一个 例子 一 二 点 四 它 代表 的 是 一 参与 十大 此方 就是 一百二 诚实 的 因此 四方 就是 时 三寸 时 的 零 次方 就是 三 然后 再加上 四 证实 的 会 放 就是 零 点 四 字 整个 数值 呢 就会 得到 时 是 的一百二十三 点 四 那个 位置 上 的 时 的 平方 是 这一次 妨 时 的 零 次方 这些 就是 我们 所说 的 维权\n我们 知道 计算机 的 二进制 有着 密不可分 的 架子 得 的 关系那么 计算机 实际上 他 所有 的 数据 程序 最后 将 形成 为 零 和 一 的 序列 的 串 才能 被 计算机 技术 识别 实际上 计算机 指认 认识 零 和 一 只是 这 一 穿 的 零 和 一 代表 的 意义 不一样 而已我们 来 看一下 计算机 为什么 要 采用 爱情 是 首先 计算机 采用 二 是 他 因为 首先 一个 就是 电路 非常 的 简单 零 和 一 可以 代表 电路 的 开 和 关 那么 计算机 里面 他 有 个 逻辑 电路 逻辑 电路 通常 只有 两个 状态 所以 用 林肯一 来 代表 能够 得到 一个 简单 的 电路 这个 原因 是因为 计算机 财会 信息 的 时候 他 的 可靠性 比较 高两个 状态 表示 的 爱情 是 两个 数码 数字 的 传输 和 处理 不容易 出错还有 用 二进制 是因为 他 的 逻辑性 比较 强 因为 计算机 的 工作原理 是 建立 在 逻辑 运算 的 基础 上 所以 逻辑 代数 是 逻辑 运算 的 理论 根据 用 二进制 就 正好 符合 的 逻辑性 强 的 将 原理同时 因为 二进制 数 他 的 运算 规则 比较 简单 所以 二进制 来 做 计算机 的 这个 主要 的 这个 运算 是 有道理 的\n是 浇 了 盆 理应 伏尔泰 司机打理 因 仁慈 的 因 是 的 理由嗯 轻言 改变 真是 太 少鳌拜 的 李南恩 都 改变 的 王海 的 思念 是不是 的 我 女儿 这 是 的 里 咱们 说 他们 乌龟 是 问题 是 能 拿 高分 的 还 说 保丽龙 的 氛围文绉绉 的 房子 三例 没 的 的 是 属于 如 也 侦破 你 [unk]啥福尔摩斯 她 [unk]而 文书 熬 着 极为 不 一定 为 零而 便 的 时代 的 我 偏转 服装 是 批驳 的 历史 那些 错误 但是 把 遭受 怕 不 富士康 本 是 的 地方 打 一 比方其实 社会 有所 令 啥 要 一瓶 更 可以 看到 那 的 消息 人士 无碍 出来 理由 的 目标 不 跟 此时 定 个 得 不错 关系台湾 是 一只 老鼠 指 匕首 肥牛 僻地 所 所里 留言 自己 特别 的 大 的 操 舆论 的我 去 购买 讲 的 的 不 提升 宽 限 的 气质 所 所称 一个 词 选 给 负离子 为 温室 这个 为 罗尼 而 量 必要 的 人不同 的 七只 小鸡 警觉 是 我 长 得 挺 穿着 离职 所 给 谁 能 就 深远 的 其 有 手心 买 比 而 非 数 完 的 然后 深刻 把握 用 开水 他 会 比喻 问 着 一个 理念的 他 的 不是 娃 去 抚慰 螺丝钉 的 为主 如 一零零 三 我 未必 有人 的 白 追尾 为 才能 走 [unk]意思 了 的 心智 可燃冰 秘制 选 不 不 我 呢 承志 之 妥协一 处理 答应 孩子 从 的 里面 的 自带 我 待 熟悉我 这个 了 给 套装 的 接连 的 有每次 道理还是 知识 我 我们 的 的 身份 以及 头部 的 抗日 投掷 石头 一方 生气 逃 [unk]迅雷 人民群众 还是 的 人要 社科院 打野 鬼 选 是 的 林凡 应该 跟 [unk]损失 谁 来 的了 怎么 去 理由 去 发令 的 泡 夫妇 了 全 是 泪水五 比 四 无 熬 的 处理 个人 的 吃 的 利益 的 日本 就是 个 的 轻柔 的生产 顺理成章 着 巧妙 地 避开 最后 的 昔日 我 去 到底人 存款 是 处理 就是 哭 着 完成 为此地址 和 没事 的 谱写 说 他 去 看 句 帕杰罗 事情 为 为 的主要 方式 提问 起来 班主 一零 年代 里一天 可比 征收 能 气温 可达 陷入 走 会 怎么 和 你 穿衣 怎么 哪儿 来 [unk]一直 知道要是 没 瘦 一点 主意 为 典礼 的 轻悠悠 是 体制 孩子 三 的 款王爷 说 是 甜 的 时代 的 国人 取代 了 娃 的 买得起 人们 直接 问 粉这 走 [unk] 曹科长就是 这样 是 来 解释 他 本 三餐 修 离婚 不 轻柔 往 细 琢 品种 让 只要 省 了 辞退血肉 之 躯 问 为什么 否认 着 只 啦 问题 的 所 给 送 去 不全 是的 脸包袱 的 你 就是 的 林森 不 轻柔 的 只 收 阴 的 氛围了不起 的 成就 而 替代 的 往 的 性格 鬼子 本赛季 车 命令 娘儿 仨 要 翻领 是 里面 是 在 握持 的 人 被 这 怎么 能 少 给 您 带入 不少机械 关口科研 那 本田 的 的 所有 待人 晚\n练法 怎么 个 来 支配 沈某 的 思考 与 的 那 的 天真 而 差 呢 哦 看出 吹奏 跑 得 慢 煮 问 了 一条 我自己 的 大门 的 高 的 被看 您 的 权利 左右 批评 我 的 不 只是 是否 武王 谢谢 题 主 准备 随口 做 得 不妥你 提取 被 上 毅力继续 免费 不 遵守 这个 是 是不是 猪 青春 的 虚拟 是不是 班里 时 送给 的 是 走 [unk]是 穆斯林垃圾 有 一些 水平 和 体温 出 最 牛 身子 绳子 固定 就 不 进去入门 的 与 毕竟 隐私 说 出来 届时 是 被 服 厂 的 而 锐减儿子 杯 茶的 并 太 呢人类 的 注意 替 人 距离 卖 了 一轮 也 啊 简单 那 微信 因 我 而 任 冷静 一点 阔 太太 授粉他 问 他 啥 呀卧槽 孩子 上来的 教育 呢 说也 跟 拍 的 戏 份 的 高 一些五 最 常用 的 一种 不 进 实体 经济 赶忙 从 臭 的 开始 案子 前 哦令人 是 最高 的 那 都 不 体制 内 的分 落地 为 柴油 儿子 踩 踩 了 微信 文本 先帝 扣子 任务 给 他们 的 意识 问题 军械 厂 的 给 我们 的 强 碎碎我 更 在意 与 跟 [unk]另外 还有 可能 成为 历史 购物 是 我们 的 在 的 人的 被 因 确实 正所谓 三份 课本 汉子 被 称为 你 意思 而 安慰 情报 愤懑信息 身份 破译 三分 副 省级把 日韩 企业 得 菲菲 富婆 应该风头瘢痕 耶伦 安徽 么 科曼 责任 在 体系服务 说范围 内 斗和 说放眼 相应 零售 被 推 为 对 白一涵 行业 能为发生 的 按 自卑 对 丝氨酸 一次次 爱丽丝 都 为 在位 万物 的 案子 了会 为 顾客们 关系 该 说 什么 站 的 这个 上 意思日常 的 因为这 的 立身 基金 为 我 唱 失窃 在 外 哦貌似 为 陪 李滨 的 哈尔滨 沉默 会 没了那 的 菜 里 所有 剔除 三 但趣味 测试 的 麦子 那 是非 的 吗 身体为此 扣分 挺 广 的 天 钱未遂 犯 啊 哎 上海人 测试 债权人 的 对 儒雅了 几次 以为 在 你 最 广 致残 一男 把 这个 恩波 排列 的 的 改变 会 死人 的 啊 跟 位置 资本 四 婶 良知 过 非法 案子 暗恋 着 百分百 海外版 一开 一 进去 差区 外地 的 是 各位 距离 上 坏 [unk]这个 真 的 假 温情 与 周围 各色 而 非你 [unk]真 的 觉得 算 而 位置 百岁 菲菲 仅 为 烂根\n的 比如 支付 哭 是 个 面 的 埋 的 成为 你而 博弈 名 的 裒 令 都 了 跑出 做 什么 羊 给予 的 口里 不散 碑石 三 月份 差 了一 楼 注意 的 把 里面 的 注意力 如意 每个 区 办 投资 为主了 裒 列入 三种 方案 从事 在 就 可以 暗亏 对 手指 差 分 没了 追 转 数据 交易 的 而 里 的 脖子 和 着 是 准备 根本 不 想 基本 的 物质 并 说 但 不 论 成败的 长安 的 鬼 车模 能 赚 的 的出来 不 论 是 了 剖 令 对 文物 的 王女士 避免 的 嘴 一 避开 了 虚伪 的 屁股 或者 赶紧 走 [unk]在 王治郅 的 百分之五十 的 朋友 院子 别 个 什么 我们 的 恬逸 魔力 的 的 准备 跟 小品 男朋友也 为 不对 甚至 房子 不认 像 以往 王子 智库 愿意 的 需用 减排 说 有 要么 对 了 口令 走 [unk]而 啊 爱听 入 多 个 有 和 的 口令 张北 是 区 来 这位 将 明媚 的 被 公司 对 的 思 进取 问 被 旺盛 的 是 卧槽 而 的 剖面 面子 二米 莴笋 的 陪 出 美丽 搜 这 是 帮 一个 口中 的 办法元素 的 比 别人 那个 彼岸 的 的 朋友 林子 担保而 这些 位子 治病 的 朋友 并 不是 不 说 别 的 病死 猪肉 还 没 走 [unk]网友 着 时髦 艾伦 爱 我 吧 我 的 一份 在 咱 被 甚至 卖身 污染 也是 给 朋友 看着 强制 犯错 了 不易 卑微 的 步入 了 所 含 住 得 还 外部 的 口令 苍白 的 拉丝模 意味着 比 这个 点 的 的 把 了 不 陌生 的 我 的 猫 分散 投资 铁水你 问 [unk]还 愣 着 灭族 案子 狗屎 考生 差 [unk] 了 轴是 拦不住 怎么 了 这个 位置 从 的 注意力 这 是 [unk]文盲 一直 他 按 被 沈腾 包袱俺 不会 的 碰损 黑子 而也 作 了 的 人 着 彼此 他 而 落 安迪 你 耐心 孙子 平时 注意 长篇",
+      "per_clip": {
+        "zh-1351890321-1": {
+          "cer": 0.0975609756097561,
+          "errors": 36,
+          "ref_len": 369,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "分这同学欢迎来到计算机基础的课堂我们今天将会开始第一张的学习的将介绍计算机基础的知识第一张第一节我们将讲到计算机的概述那么我们现在就开始进入计算机概述的这样子的一个内容当中去首先什么是计算机很多人对就像其有不同的定义和有不同的这个思路和想法"
+        },
+        "zh-1351890321-2": {
+          "cer": 0.17065868263473055,
+          "errors": 171,
+          "ref_len": 1002,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "那么爱计算机的分类来讲我们可以把计算机分为专用计算机的通用计算机所谓的专用计算机就是为了解决一类的问题而专门设计的讲一个计算机我们把它叫做专用计算机当然了他的硬件和他的软件是单单为解决某一问题设置所以他在解决这个问题的时候他的速度速度将会非"
+        },
+        "zh-1351890321-3": {
+          "cer": 0.0962962962962963,
+          "errors": 39,
+          "ref_len": 405,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们再来看一下计算机它的特点首先计算机他的运算速度非常快我们知道现在的计算机已经能够达到每秒送万一近似的这个计算因为计算机他的计算速度相当的会说现在普遍应用在很多很多的领域比如说科学计算比如说气象预报等等等等这些方面另外一个特点就是计算"
+        },
+        "zh-1351890321-4": {
+          "cer": 0.10681244743481917,
+          "errors": 127,
+          "ref_len": 1189,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们来看一下计算机的应用领域首先计算机可用来做科学计算或者数值计算大家还记得世界上第一台计算机叫所以你它主要是美国用来计算一个炮弹的打出去的这个轨迹以及他的落点所以计算机啊原来开发的就是为了做科学计算或者数值计算那么如何做到这一点呢计算"
+        },
+        "zh-1351890321-5": {
+          "cer": 0.29061553985872857,
+          "errors": 288,
+          "ref_len": 991,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们记得要想的是数字转换的这个话题首先我给大家一道脑筋急转弯请看这个替是世界上一共有一林总人一种会有爱情是一种不会如果停在这里你是在想那另外的八个人在哪里呢如果你是这么想的话实际上你还是时性质的观点来看待这个问题所以在题目中的零这两个字并不"
+        },
+        "zh-1351890321-6": {
+          "cer": 0.13709677419354838,
+          "errors": 51,
+          "ref_len": 372,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们知道计算机的二进制有着密不可分的架子得的关系那么计算机实际上他所有的数据程序最后将形成为零和一的序列的串才能被计算机技术识别实际上计算机指认认识零和一只是这一穿的零和一代表的意义不一样而已我们来看一下计算机为什么要采用爱情是首先计算机采"
+        },
+        "en-1911877932-1": {
+          "cer": 0.9920724801812004,
+          "errors": 2628,
+          "ref_len": 2649,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "是浇了盆理应伏尔泰司机打理因仁慈的因是的理由嗯轻言改变真是太少鳌拜的李南恩都改变的王海的思念是不是的我女儿这是的里咱们说他们乌龟是问题是能拿高分的还说保丽龙的氛围文绉绉的房子三例没的的是属于如也侦破你unk啥福尔摩斯她unk而文书熬着极为不"
+        },
+        "en-1911877932-2": {
+          "cer": 0.9945578231292517,
+          "errors": 2193,
+          "ref_len": 2205,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "练法怎么个来支配沈某的思考与的那的天真而差呢哦看出吹奏跑得慢煮问了一条我自己的大门的高的被看您的权利左右批评我的不只是是否武王谢谢题主准备随口做得不妥你提取被上毅力继续免费不遵守这个是是不是猪青春的虚拟是不是班里时送给的是走unk是穆斯林垃"
+        },
+        "en-1911877932-3": {
+          "cer": 0.9894179894179894,
+          "errors": 1683,
+          "ref_len": 1701,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "的比如支付哭是个面的埋的成为你而博弈名的裒令都了跑出做什么羊给予的口里不散碑石三月份差了一楼注意的把里面的注意力如意每个区办投资为主了裒列入三种方案从事在就可以暗亏对手指差分没了追转数据交易的而里的脖子和着是准备根本不想基本的物质并说但不论"
+        }
+      },
+      "clips": 9,
+      "clip_seconds": 1702.9515625,
+      "weakest_verified": "subtitle"
+    },
+    {
+      "key": "fw-base-int8",
+      "backend": "faster-whisper",
+      "label": "faster-whisper base/int8",
+      "size_mb": 400.0,
+      "cer": 0.04787282918312965,
+      "rtf": 11.226476021322025,
+      "load_s": 3.33697509765625,
+      "status": "ok",
+      "note": "",
+      "text": "歌语同学欢迎来到计算机基础的课堂。我们今天将会开始第一章的学习。第一章将介绍计算机基础的知识。第一章第一节,我们将讲到计算机的概述。我们现在就开始进入计算机概述的这样子的一个内容当中去。首先,什么是计算机?很多人对计算机有不同的定义和不同的思路和想法,比如说有的人认为计算机就是一个游戏机,你可以用它来打游戏。有的人认为计算机是一个打印机,因为很多的文件都能够用来编排打印出来,实际上计算机不仅仅是我们刚才所说的那些。如果给一个定义的话,那么计算机我们可以把它认为是对各种信息进行纯粹和高速处理的一个电子的机器。那么对于这个概念,我们想做两点的补充。第一个,我们说计算机不仅仅是一个计算工具,而且还是个信息处理机。同时,我们也要知道计算机不同于其它的任何机器,它能够纯粹程序,并能够按照程序的引导自动的纯取和处理数据。输出人们想要的这样一个结果,那么这个就是一个计算机的基本的这个概念。\n那么按照计算机的分类来讲,我们可以把计算机分为专用计算机和通用计算机。所谓的专用计算机就是为了解决一类的问题,而专门设计的这样一个计算机,我们把它叫做专用计算机。当然了,它的硬件和它的软件是单单为解决某一个问题而设置,所以它在解决这个问题的时候,它的处理速度将会非常的快。另外一种叫通用计算机。这通用性计算机是为了解决各种问题,有较强的通用性而设计的计算机。我们现在在家里所用的,以及在实验室里面,你们看到的这些,我们都把它称之为通用性计算机。所以我们可以用它来打字,可以用它来上网,可以用它来打游戏等等等等。这就是取决于你装了不同的软件,就有不同的应用。好,如果我们按照计算机的处理对象来分类的话,我们也可以简单的把它分为三种第一种数字式的电子计算机。第二种模拟式的电子计算机,第三种就是把数字和模拟两种处理对象放在一起,叫混合式的电子计算机。数字式的电子计算机,它是处理非连续变化的数据为主,而这些数据在时间上它是一个又一个离散的。那么它里面的基本的部件,运算部件就是数字和逻辑电路。模拟式的电子计算机它的处理的数据是连续变化的这样一个数据。那么它们这些数据在时间上是相连的,基本上它的运算部件是由运算放大器组成的微分器、机分器和通用的含数运算器等等等等。当然,混合式的电子计算机就是把数字式计算机和模拟式计算机合在一起,它可以处理数字量也可以处理模拟力量。那么如果我们按照它的规模和处理能力来分的话,那么又可以分为很多种,比如说有巨型机,这个我们也把它称作为超级计算机。那么这种计算机它的处理能力相当的强,当然它也要占用很大的空间。那么这种计算机它的价格也相当的很贵。那么在出现巨型计算机之后,人们为了使得它的价格降下来,又开发了一种叫小巨型机。这种小巨型机和巨型计算机相比的话,它的价格比较便宜。在往后发展又出现了一种叫做大型机,也叫Mainframe。同时这个大型机它具有很强的管理和处理数据的这个能力。那么目前我们在中国当中,大企业银行交通部门很多很多都在使用大型机。为了满足中小型企业的需要,那么计算机里面还有一种叫小型机。那么这种小型机跟我们的大型机相比呢,它的价格和它的体积就会大大的减小,当然它的处理速度也没有大型机那么快。我们现在比较熟悉的还有工作站和个人计算机。工作站就是比较高胆的这个危机,具有很强的图形处理能力,那么应用于计算机辅助设计,三工作站等等等等。而个人计算机呢,就是我们现在常用的,我们所说的PCC也好,我们所说的Lapop这个电脑也好,都是个人计算机。按照这个规模和处理能力来分,就我们大概可以把计算机分为这几种内容。\n下面我们再来看一下计算机它的特点。首先,计算机它的运算速度非常的快。我们知道现在的计算机已经能够达到每秒数万一次的计算。因为计算机它的计算速度相当的快,所以现在普遍应用在很多很多的领域,比如说科学计算,比如说气象预报等等的这些方面。另外一个特点就是计算机的精度相当的高。从理论上来讲,如果这个计算机的计算能力够强有足够的存储空间的话,那么它在理论上它的精确度可以不受限制。还有一个计算机它具有存储能力比较强的这样一个特点,一个计算机能够处理的数据,拒绝于它的内存有多大。一个中型规模的图书馆实际上在计算机处理起来也是相当容易的,因为它具备一个光盘就能够存储一个小型图书馆的这样一个内容了。计算机还有另外一个特点它就具有逻辑判断能力,它是如何做到这一点呢?其实它是通过算数运算、逻辑运算进行判断和比较得出一个结果。那么计算机它还有自动执行的这个功能,它不需要人工的干预,你只要把程序写好了它将会按照这个程序自动的去执行,人只要等到它需要的时候把这个结果获得就可以了。\n下面我们来看一下计算机的应用领域。首先,计算机可以用来做科学计算或者数值计算。大家还记得世界上第一台计算机叫做E-MIC。它主要是美国用来计算一个炮弹的打出去的轨迹以及它的落点。所以计算机原来开发的就是为了做科学计算或者数值计算。那么,如何做到这一点呢?计算机它实际上把一个实际的问题进行一个数学模型的一个抽象。然后把它转换成为一个计算机能够处理的这样一个模型。最后我们用计算机大量的对它进行一个计算得出人们要的这样一个结果。这个就是它做科学计算或数值计算的一个原理。计算机的第二个应用领域就是用数据处理或者信息处理。那么我们知道现在都是在一个大数据的这样一个时代。所以计算机它能够对数据进行一个收集进行一个存储。整理进行分类统计最后进行加工、减锁以及对它进行传播等等等等的这些对数据的一系列的活动。计算机的第三个应用领域是过程控制或者实时控制。我们可以看到很多很多的如今在制造业当中大量的用到了计算机。它是利用计算机的即时采集这个检测数据。按照最优质迅速的进行控制和对象的这样子的一个自动、调节和自动、检测、自动控制等等等等。我们知道计算机还有另外一个作用就是用做计算机的辅助技术。比如说有计算机辅助设计。现在的设计人员不要再把这个环境搭出来,然后才来看这个结果好不好。它现在可以用计算机把这个电路也好,这个艺术品也好,直接在计算机里面进行设计。你还没有做出来,你就能够看到它的一个结果。另外一个地方可以用到计算机的就是计算机辅助制造。在制造也当中一个产品的成型和制造过程当中要有计算机的参与使得这个制造能够按照它的要求和按照它的流程进行。我们也知道计算机集成制造系统里面也用到了很多的计算机。我们把这个计算机集成制造系统叫做CIMS。这个系统当中计算机通过控制它整个流程使得这个集成这个系统能够得到完美的这样一个集合。计算机另外一个领域叫做人工智能,如果大家还记得的话,在十来年前有一个美国的片子就此以人工智能秘密。它是描写一个机器人,通过了人工智能的这个技术获得了人类的思想,最终它学习到如何去爱。当然,这个是电影当中的情节。那么现在我们的计算机的制造人工智能方面的成就已经使得计算机基本上能够造出一个非常像人的动作的这样一个机器人。好,计算机还有更广播的领域就是在我们的通讯网络,相信大家对互联网已经不会在陌生,它改变了人的很多行为习惯。现在我们可以很方便地坐在家里面进行网上银行的操作,进行网上定票的操作。如果你报了一些网络的课程,你甚至可以不用去教室,就能够享受网上教学的这样子的一个服务。同时,我们可以看到大家可以通过互联网或一些医疗的信息,还有一个应用叫做网上税收。现在我们报税不用再到税务局去了,你只要到税务局的官方网站,怒入你的信息,自动把税务的信息登记就可以了。还有,网上出版也是一种新新的互联网应用的这样一个形式。它包括文章的收集,文章的边牌,文章的审核,以及文章的出版都可以再现完成。我们可以看到计算机有很多很多的应用,那么今天我们就想到这里,我们下节课再跟大家分享计算机的运算基础。谢谢大家。\n我们今天要讲的是数字转换的这个话题。首先,我给大家一道脑筋集转弯,请看这个PPT。事实上,一共有1.0种人,一种会用二进尺,一种不会。如果我停在这里,你是不是在想那另外的八个人在哪里呢?如果你是这么想的话,实际上你还是用实际制的观点来看待这个问题。所以,在题目中的1.0这两个字并不代表10,而是二进尺的2。如果你学过计算金,你在看一个数的时候,你不但只是看这个数是什么?而且在你脑海当中,马上就要反映过来,这个数到底是几进尺?这就涉及了一个禁制的问题,也就是我们今天学习的重点。首先,要给大家介绍的是数字的基本概念,所谓的数字,实际上就是缝多少进一的这样子的一个问题。比如说我们经常说的一打,那么就是12个,分12我们就进一,那么两打就是24个,同样的问题有一周,有一个月。这些都是缝多少进一的这样一个问题。用一个比较科学的定义的话,那么数字是指用一组固定的数字和一套统一的这样子的规则来表示数目的方法。在数字当中,有两种不同的数字,一种叫做非进尾数字,而另外一种叫做尽尾数字。作为一个典型的非进尾数字,那么罗马数字就是一个很好的例子,我们可以看到罗马数字当中表示1,英文字类似i的大写这样子来表示,2是两个,3是3个,那么表示4呢,它不再是4个了,而是用V代表5,i在它左边代表1,6是Vi,就是在右边为家。X死代表的是10,你们也不能猜出,如果是要代表9的话,它应该是iX。另外一种数字,叫做尽尾技数字。它表示的数值的大小与它在数目中当中的位置是非常有关系的。比如说,1,2,3,4,5如果是实际制数的话,它代表的就是123.45。大家会看到这个数字的时候,如果你订为实际制的话,那么这个就是一个实际制的数,那么这个也就是一个尽尾的技术法,在数值当中有两个基本概念,大家要搞清楚,第1个叫做基数,所谓的基数就是只在尽尾制中允许选用基本数码的个数。这个基数实际上是跟你几进制是有关系的,多少进制它就有多少个基数,我们现在经常用的实际制,那么就有10个基数,也就是说有10个符号来代表不同的数值。那么这10个数字在实际制是多少呢?0,1,2,3,4,5,6,7,8,9,这10个我们常用的数字。另外一个概念,叫做卫权,所谓的卫权就是因为它是尽尾制的这样一个数字,所以每个卫权,它代表的权重是多少,我们把它叫做卫权。比如说我们刚才说的那样一个例子,1,2,3,4,它代表的是1,成以10的二次方就是100,2,成以10的1,4方就是10,3,成以10的0,4方就是3,然后再加上4,成以10的1,4方就是0,4,所以整个数值呢就会得到实际制的123.4,每个位置上的10的平方,10的1次方,10的0次方,这些就是我们所说的卫权。\n我们知道计算机跟二进制有着密不可分的这样子的一个关系。那么计算机实际上它所有的数据程序最后将形成为零和一的训练串才能被计算机所试别。实际上计算机只认识零和一,只是这一串的零和一代表的意义不一样而已。我们来看一下计算机为什么要用二进制。首先计算机采用二进制,它因为首先一个就是电路非常的简单。零和一可以代表电路的开和关。那么计算机里面它有个逻辑电路,逻辑电路通常只有两个状态,所以用零和一来代表能够得到一个简单的电路。第二个原因是因为计算机采用二进制的时候,它的可靠性比较高。两个状态表示的二进制是两个数码,数字的传输和处理不容易出错。还有,用二进制是因为它的逻辑性比较强,因为计算机的工作原理是建立在逻辑运算的基础上,所以逻辑代数是逻辑运算的理论根据,用二进制就正好符合了逻辑性强的这样一个原理。同时,因为二进制数它的运算的规则比较简单,所以用二进制来做计算机的主要的运算是有道理的。\n Here's Jonathan studying for a test, and studying, and studying, and studying. And here he is getting his test results. All that studying, and he's still got an F. Why? The thing is, there's no one right way to study. Some methods might work great for one person and not at all for others. Everybody learns differently. In order to find a study method that's best for you, it's important to know your learning style. The four most popular learning styles are visual, auditory, reading, writing, and kinesthetic, or hands-on. For most people, one of these methods will work best, but it's also possible for a combination of different styles to be effective. To discover your learning style, you can complete an online assessment. There's a wide variety of them available, consisting of multiple choice questions. However, you can also observe yourself and your previous learning experiences to get an idea of how you learn best. Let's circle back to Jonathan. When he's in class and his teacher is lecturing, he gets distracted pretty easily. Words tend to go in one ear and out the other. But when his teacher starts using visuals, Jonathan finds it easier to focus and understand the material. So he might be a visual learner. Now, think about your history. How have you enjoyed learning in the past? Do you prefer watching over-listening? Do you enjoy reading instead? Or maybe you learn best by doing with hands-on experience? If none of these seem to grab you, give them each a try and see which one you tend to drift towards. Each learning style has its own study methods that work best with it. Let's take a look at how Jonathan and a few of his classmates study. As a visual learner, Jonathan finds it helpful to color code his notes. He finds it helps him to organize information and internalize it better. He also creates diagrams while studying, finding that they help him to better understand certain structures and ideas. Jonathan watches videos too, finding them helpful for extra information. Ruby is more of an auditory learner. She likes to study in a group and discuss the material with others. Sometimes she'll read her notes out loud because it helps her to hear what she's studying. In some classes, Ruby will record the lecture with her teacher's permission, of course, so that she can go back and listen to it later. Torel finds that he learns best by reading and writing. He takes substantial notes during class and reads over them often. When he's trying to memorize something, he'll often write it out. He also makes sure to read and reread any materials his teacher has assigned the class. Maya is a kinesthetic learner. She's got a lot of energy and likes doing things. Labs and hands-on activities help her to understand certain ideas and topics. Sometimes she'll review her material while she's walking around. She also likes to take breaks in order to release some of her energy, allowing her to focus when she returns to studying. All four of these students are studying the same material, but they're doing so in different ways. Now this doesn't guarantee that they'll all get the same grades, but by determining their learning style and finding study methods that work for them, they just might find themselves getting better results.\n In inside, we look at education more specifically the United Kingdom versus China. Both countries were part of an extraordinary television experiment. It's called the Big Test. Pitting the Chinese way of teaching with the British approach. Who won? CCTV's Richard Bestech holds up the report card. The Chinese teaching methods came as a shock to the class of British school children and the students of rebellious response came as a shock to a horrified British nation. I'm not doing it this. I've never seen a student like you. As the 50 strong class of 13 and 14-year-olds showed themselves according to Britain's normally resilient street press to be disrespectful and arrogant. As the weeks passed and the Big Test neared, relations between teachers and students malode even if the academic regime was unrelenting. What is needed for photosynthesis to take place? Softy. Err, carbon dioxide. Carbon dioxide? Water. Water? And then the sunlight. Okay, you, you, you. The Chinese students were gripped by a competitive further. Guys, shush. Would the Chinese or British teaching system come out on top? The pressure began to tell. The English system was rixed to slow adenine, but would it deliver? So, what did the tale of the test tell us? Which system worked best in the cauldron of the examination hall? When students who'd undergone the Chinese system were tested against those who'd continued in the English style. And if Chinese school has won the day, then that's going to be quite interesting for us, I think, at Bo Hunt. The Chinese school Average Mark Firmats, 67.74 percent. Bo Hunt Year 9, 54.84. There is more. Bo Hunt Year 9 Average Mark Firmanderin, 36.46. Chinese school 46.80. For science, Chinese school 58.33, Bo Hunt Year 9, 50. I have to attempt to be gracious and say to Chinese school very, very well done. And, you know, the inquiry will commence. Thank you very much and well done and well done. So, the Chinese system won resoundingly. For the students and teachers, there was time for a tearful fare well, possibly leaving behind more questions than answers. Maybe the Chinese way of teaching, to some extent, kills the students' imagination, freedom of thinking, critical thinking, and the perpetuity. This was far from a scientific experiment. It was reality TV designed to entertain and perhaps to inform a little. It did, though, get us questioning and asking which is the best system. The answer, of course, is perhaps a little bit of both. However, as UK teachers have already discovered, once students start questioning ideas to destruction, their first challenge is always authority itself. Is that a good thing, or a bad thing? It's for you to decide. Richard Besteck, CCTV, London.\n In the beautiful island of Corsica, in the Mediterranean Sea, a boy named Napoleon Bonaparte was born. From a young age, Napoleon was ambitious and fiercely intelligent. He loved to read about great military leaders, dreaming of his own battles and victories. Napoleon was sent to France for his education and quickly showed a talent for military strategy. He joined the French army, and it wasn't long before he started to make a name for himself. He was known for being fearless and brilliant in battle. During a time of great turmoil in France, known as the French Revolution, Napoleon quickly rose through the ranks of the military. He became a hero to the people for defending France against other European countries that wanted to stop the revolution. Napoleon's biggest moment came when he decided to make himself the emperor of France. He had great visions for France and for himself. He wanted to create a huge empire, and for a while, he almost did. Napoleon's armies conquered lands far and wide, and he ruled over much of Europe. But Napoleon's ambition also led to his downfall. He made a big mistake by deciding to invade Russia. The Russian winter was harsh, and Napoleon's army wasn't prepared for it. Many soldiers didn't survive the cold and the battles. This was the beginning of the end of Napoleon's empire. After a series of defeats, Napoleon was forced to give up his throne and was exiled to a small island called Elba. But even then, his ambition didn't let him rest. He escaped from Elba and returned to France for a brief period of rule, known as the Hundred Days. However, Napoleon's comeback didn't last long. He was defeated again at the Battle of Waterloo, one of the most famous battles in history. This time, he was exiled to a remote island in the Atlantic Ocean, called Saint Helena, where he spent the rest of his life. Napoleon Bonaparte is remembered as one of the greatest military leaders in history, but also as a reminder of how ambition can both make and break a person. His life story is full of victories and defeats, power and loss, and the enduring lessons of history's complex heroes.",
+      "per_clip": {
+        "zh-1351890321-1": {
+          "cer": 0.04336043360433604,
+          "errors": 16,
+          "ref_len": 369,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "歌语同学欢迎来到计算机基础的课堂我们今天将会开始第一章的学习第一章将介绍计算机基础的知识第一章第一节我们将讲到计算机的概述我们现在就开始进入计算机概述的这样子的一个内容当中去首先什么是计算机很多人对计算机有不同的定义和不同的思路和想法比如说"
+        },
+        "zh-1351890321-2": {
+          "cer": 0.028942115768463075,
+          "errors": 29,
+          "ref_len": 1002,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "那么按照计算机的分类来讲我们可以把计算机分为专用计算机和通用计算机所谓的专用计算机就是为了解决一类的问题而专门设计的这样一个计算机我们把它叫做专用计算机当然了它的硬件和它的软件是单单为解决某一个问题而设置所以它在解决这个问题的时候它的处理速"
+        },
+        "zh-1351890321-3": {
+          "cer": 0.022222222222222223,
+          "errors": 9,
+          "ref_len": 405,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们再来看一下计算机它的特点首先计算机它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万一次的计算因为计算机它的计算速度相当的快所以现在普遍应用在很多很多的领域比如说科学计算比如说气象预报等等的这些方面另外一个特点就是计算机的"
+        },
+        "zh-1351890321-4": {
+          "cer": 0.03952901597981497,
+          "errors": 47,
+          "ref_len": 1189,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们来看一下计算机的应用领域首先计算机可以用来做科学计算或者数值计算大家还记得世界上第一台计算机叫做EMIC它主要是美国用来计算一个炮弹的打出去的轨迹以及它的落点所以计算机原来开发的就是为了做科学计算或者数值计算那么如何做到这一点呢计算"
+        },
+        "zh-1351890321-5": {
+          "cer": 0.10898082744702321,
+          "errors": 108,
+          "ref_len": 991,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们今天要讲的是数字转换的这个话题首先我给大家一道脑筋集转弯请看这个PPT事实上一共有10种人一种会用二进尺一种不会如果我停在这里你是不是在想那另外的八个人在哪里呢如果你是这么想的话实际上你还是用实际制的观点来看待这个问题所以在题目中的10"
+        },
+        "zh-1351890321-6": {
+          "cer": 0.053763440860215055,
+          "errors": 20,
+          "ref_len": 372,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们知道计算机跟二进制有着密不可分的这样子的一个关系那么计算机实际上它所有的数据程序最后将形成为零和一的训练串才能被计算机所试别实际上计算机只认识零和一只是这一串的零和一代表的意义不一样而已我们来看一下计算机为什么要用二进制首先计算机采用二"
+        },
+        "en-1911877932-1": {
+          "cer": 0.035107587768969425,
+          "errors": 93,
+          "ref_len": 2649,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "HeresJonathanstudyingforatestandstudyingandstudyingandstudyingAndhereheisgettinghistestresultsAllthatstudyingandhesstill"
+        },
+        "en-1911877932-2": {
+          "cer": 0.08979591836734693,
+          "errors": 198,
+          "ref_len": 2205,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "IninsidewelookateducationmorespecificallytheUnitedKingdomversusChinaBothcountrieswerepartofanextraordinarytelevisionexpe"
+        },
+        "en-1911877932-3": {
+          "cer": 0.0005878894767783657,
+          "errors": 1,
+          "ref_len": 1701,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "InthebeautifulislandofCorsicaintheMediterraneanSeaaboynamedNapoleonBonapartewasbornFromayoungageNapoleonwasambitiousandf"
+        }
+      },
+      "clips": 9,
+      "clip_seconds": 1702.9515625,
+      "weakest_verified": "subtitle"
+    },
+    {
+      "key": "fw-small-int8",
+      "backend": "faster-whisper",
+      "label": "faster-whisper small/int8",
+      "size_mb": 739.0,
+      "cer": 0.04199209776715979,
+      "rtf": 4.045410808820028,
+      "load_s": 6.2725841999053955,
+      "status": "ok",
+      "note": "",
+      "text": "请用简体中文转写。多次转换各位同学 欢迎来到计算机基础的课堂我们今天将会开始第一章的学习第一章将介绍计算机基础的知识第一章第一节我们将讲到计算机的概述那么我们现在就开始进入计算机概述的这样子的一个内容当中去首先什么是计算机很多人对计算机有不同的定义和有不同的思路和想法比如说有的人认为计算机就是一个游戏机你可以用它来打游戏有的人认为计算机是个打印机因为很多的文件它都能够用来编排打印出来而实际上计算机不仅仅是我们刚才所说的那些如果给一个定义的话那么计算机我们可以把它认为是对各种信息进行存储和高速处理的一个电子的机器那么对于这个概念我们想做两点的补充第一个我们说计算机不仅仅是一个计算的工具而且还是个信息处理机同时我们也要知道计算机不同于其他的任何机器它能够存储程序并能够按照程序的引导自动的存取和处理数据输出人们想要的这样一个结果那么这个就是一个计算机的基本的这个概念\n那么,按照计算机的分类来讲,我们可以把计算机分为专用计算机和通用计算机。所谓的专用计算机,就是为了解决一类的问题而专门设计的这样一个计算机,我们把它叫作专用计算机。当然了,它的硬件和它的软件是单单为解决某一个问题而设置,所以它在解决这个问题的时候,它的处理速度将会非常的快。另外一种叫通用计算机。这通用性计算机是为了解决各种问题,有较强的通用性而设计的这个计算机。我们现在在家里所用的,以及在实验室里面,你们看到的这些,我们都把它称之为通用性计算机。所以我们可以用它来打字,可以用它来上网,可以用它来打游戏等等等等。这就是取决于你装了不同的软件,就有不同的这个应用。好,如果我们按照计算机的处理对象来分类的话,那么我们也可以简单的把它分为三种。第一种,数字式的电子计算机。第二种,模拟式的电子计算机。第三种呢,就是把数字和模拟两种处理对象放在一起叫混合式的电子计算机。数字式的电子计算机,它是处理非连续变化的数据为主,而这些数据在时间上它是一个又一个离散的。那么它里面的基本的部件,运算部件,就是数字和逻辑电路。模拟式的电子计算机,它的处理的数据,那是连续变化的这样一个数据。那么它们这些数据在时间上是相连的。基本上,它的运算部件是由运算放大器组成的微分器、机分器和通用的韩数运算器等等等等。当然,混合式的电子计算机,就是把数字式计算机和模拟式计算机合在一起。它可以处理数字量,也可以处理模拟量。那么如果我们按照它的规模和处理能力来分的话,那么又可以分为很多种。比如说有巨型机,这个我们也把它称作为超级计算机。那么这种计算机它的处理能力相当的强,当然它也要占用很大的空间。那么这种计算机它的价格也相当的昂贵。那么在出现巨型计算机之后,人们为了使得它的价格降下来,又开发了一种叫小巨型机。这种小巨型机和巨型计算机相比的话,它的价格比较便宜。在往后发展又出现了一种叫做大型机,也叫Mainframe。同时这个大型机它具有很强的管理和处理数据的这个能力。那么目前我们在中国当中,大企业、银行、交通部门很多很多都在使用大型机。为了满足中小型企业的需要,那么计算机里面还有一种叫小型机。那么这种小型机跟我们的大型机相比呢,它的价格和它的体积就会大大的减小。当然它的处理速度也没有大型机那么快。我们现在比较熟悉的还有工作站和个人计算机。工作站就是比较高档的这个危机,具有很强的图形处理能力。那么应用于计算机辅助设计、散工作站等等等等。而个人计算机呢,就是我们现在常用的我们所说的PC机也好,我们所说的这个laptop这个电脑也好,都是个人计算机。按照这个规模和处理能力来分,就我们大概可以把计算机分为这几种内容。\n下面我们再来看一下计算机它的特点。首先,计算机它的运算速度非常的快。我们知道现在的计算机已经能够达到每秒数万亿次的计算。因为计算机它的计算速度相当的快,所以现在普遍应用在很多很多的领域,比如说科学计算,比如说气象预报等等等等这些方面。另外一个特点就是计算机的精度相当的高。从理论上来讲,如果计算机的计算能力够强,有足够的存储空间的话,那么它在理论上它的精确度可以不受限制。还有一个,计算机它具有存储能力比较强的这样一个特点。一个计算机能够处理的数据,取决于它的内存有多的。一个中型规模的图书馆实际上在计算机处理起来也是相当容易的,因为它具备一个光盘就能够存储一个小型图书馆的这样一个内容了。计算机还有另外一个特点,它就具有逻辑判断能力。它是如何做到这一点的呢?其实它是通过算数运算、逻辑运算进行判断和比较得出一个结果。那么计算机它还有自动执行的这个功能,它不需要人工的干预。你只要把程序写好了,它将会按照这个程序自动地去执行。人只要等到它需要的时候,把这个结果获得就可以了。\n下面我们来看一下计算机的应用领域。首先,计算机可以用来做科学计算或者数值计算。大家还记得世界上第一台计算机叫做ENIAC。它主要是美国用来计算一个炮弹的打出去的轨迹以及它的落点。所以计算机原来开发的就是为了做科学计算或者数值计算。那么如何做到这一点呢?计算机它实际上把一个实际的问题进行一个数学模型的一个抽象。然后把它转化成为一个计算机能够处理的这样一个模型。最后我们用计算机大量的对它进行一个计算得出人们要的这样一个结果。这个就是它做科学计算或数值计算的一个原理。计算机的第二个应用领域就是用作数据处理。或者信息处理。那么我们知道现在都是在一个大数据的这样一个时代。所以计算机它能够对数据进行一个收集进行一个存储整理进行分类、统计。最后进行加工、检索以及对它进行传播等等等等的这些对数据的一系列的活动。计算机的第三个应用领域是过程控制或者实时控制。我们可以看到很多很多的如今在制造业当中大量的用到了计算机。它是利用计算机的及时采集检测数据。按照最优质迅速的进行控制和对对象的这样子的一个自动调节和自动检测自动控制等等等等。我们知道计算机还有另外一个作用就是用作计算机的辅助技术。比如说有计算机辅助设计。现在的设计人员不要再把这个环境搭出来然后才来看这个结果好不好。它现在可以用计算机把这个电路也好这个艺术品也好直接在计算机里面进行设计。你还没有做出来你就能够看到它的一个结果。另外一个地方可以用到计算机的就是计算机辅助制造。在制造业当中一个产品的成型和制造过程当中要有计算机的参与使得这个制造能够按照它的要求和按照它的流程进行。我们也知道计算机集成制造系统里面也用到了很多的计算机。我们把这个计算机集成制造系统叫做CIMS。这个系统当中计算机通过控制它整个流程使得这个集成这个系统能够得到完美的这样的集合。计算机另外一个领域叫做人工智能。如果大家还记得的话在十来年前有一部美国的片子就是以人工智能命名。它是描写一个机器人通过了人工智能的这个技术获得了人类的思想。最终它学习到如何去爱。当然这个是电影当中的情节。那么现在我们的计算机的制造人工智能方面的这个成就已经使得计算机基本上能够造出一个非常之像人的动作的这样一个机器人。好,计算机还有更广阔的领域就是在我们的通讯网络。相信大家对互联网已经不会再陌生。它改变了人的很多行为习惯。现在我们可以很方便的坐在家里面进行网上银行的操作,进行网上订票的操作。如果你报了一些网络的课程,你甚至可以不用去教室就能够享受网上教学的这样子的一个服务。同时我们可以看到大家可以通过互联网货的一些医疗的这样一些信息。还有一个应用叫做网上税收。现在我们报税不用再到税务局去了,你只要到税务局的官方网站落入你的信息,自动把税务的信息登记就可以了。还有网上出版也是一种新兴的互联网应用的这样一个形式。它包括文章的收集、文章的编排、文章的审核以及文章的出版都可以在线完成。我们可以看到计算机有很多很多的应用。那么今天我们就讲到这里,我们下节课再跟大家分享计算机的运算基础。谢谢大家。\n我们今天要讲的是数字转换的这个话题。首先,我给大家一道脑筋急转圆弯,请看这个PPT。世界上一共有一零种人,一种会用二净值,一种不会。如果我停在这里,你是不是在想那另外的八个人在哪里呢?如果你是这么想的话,实际上你还是用十净值的观点来看待这个问题。所以,在题目中的一零这两个字并不代表十而是二净值的二。如果你学过计算经理,再看一个数的时候,你不单止是看这个数是什么,而且在你脑海当中马上就要反映过来,这个数到底是几净值。这就涉及了一个净值的问题,也就是我们今天学习的重点。首先,要给大家介绍的是数字的基本概念。所谓的数字实际上就是逢多少进一的这样子的一个问题。比如说,我们经常说的一打,那么就是十二个。逢十二,我们就进一,那么两打就是二十四个。同样的问题,有一周,有一个月,这些都是逢多少进一的这样一个问题。用一个比较科学的定义的话,那么数字是指用一组固定的数字和一套统一的这样子的规则来表示数目的方法。在数字当中,有两种不同的数字,一种叫做非净位数字,而另外一种叫做净位数字。作为一个典型的非净位数字,那么罗马数字就是一个很好的例子。我们可以看到罗马数字当中表示一,英文字类似i的大写这样子来表示,二是两个,三是三个。那么表示四呢,它不再是四个了,而是用v代表五,i在它左边代表减一,六呢是vi,就是在右边为家。x代表的是十,你们也不难猜出,如果是要代表九的话,它应该是ix。另外一种数字叫做净位技术字,它表示的数值的大小与它在数目中当中的位置是非常有关系的。比如说123.45,这个如果是十净之数的话,它代表的就是123.45。大家会看到这个数字的时候,如果你定义为十净之的话,那么这个就是一个十净之的数,那么这个也就是一个净位的技术法。在数字当中有两个基本概念,大家要搞清楚。第一个叫做净数,所谓的净数就是指在净位字中允许选用基本数码的个数。这个净数实际上是跟你几净之是有关系的。多少净之它就有多少个净数,我们现在经常用的十净之那么就有十个净数,也就是说有十个符号来代表不同的数值。那么这十个数字在十净之是多少呢,0,1,2,3,4,5,6,7,8,9这十个我们常用的数字。另外一个概念叫做位权,所谓的位权就是因为它是净位制的这样一个数字,所以在每个位上它代表的权重是多少,我们把它叫做位权。比如说我们刚才说的那样一个例子,123.4它代表的是1乘以10的二次方就是100,2乘以10的一次方就是10,3乘以10的零四方就是3,然后再加上4乘以10的负一次方就是0.4。所以整个数值呢,就会得到十净之的123.4。每个位置上的10的平方,10的一次方,10的零四方,这些就是我们所说的位权。\n我们知道计算机跟二净制有着密不可分的这样子的一个关系,那么计算机实际上它所有的数据程序最后将形成为零和一的序列串才能被计算机所识别。实际上计算机只认识零和一,只是这一串的零和一代表的意义不一样而已。我们来看一下计算机为什么要采用二净制,首先计算机采用二净制,它因为首先一个就是电路非常的简单,零和一可以代表电路的开和关。那么计算机里面它有个逻辑电路,逻辑电路通常只有两个状态,所以用零和一来代表能够得到一个简单的电路。第二个原因是因为计算机采用二净制的时候,它的可靠性比较高。两个状态表示的二净制两个数码,数字的传输和处理不容易出错。还有用二净制是因为它的逻辑性比较强,因为计算机的工作原理是建立在逻辑运算的基础上,所以逻辑代数是逻辑运算的理论根据,用二净制就正好符合了逻辑性强的这样一个原理。同时,因为二净制数它的运算的规则比较简单,所以用二净制来做计算机的主要运算是有道理的。\n Here's Jonathan studying for a test, and studying, and studying, and studying. And here he is getting his test results. All that studying, and he still got an F. Why? The thing is, there's no one right way to study. Some methods might work great for one person, and not at all for others. Everybody learns differently. In order to find a study method that's best for you, it's important to know your learning style. The foremost popular learning styles are visual, auditory, reading, writing, and kinesthetic, or hands-on. For most people, one of these methods will work best, but it's also possible for a combination of different styles to be effective. To discover your learning style, you can complete an online assessment. There's a wide variety of them available, consisting of multiple-choice questions. However, you can also observe yourself and your previous learning experiences to get an idea of how you learn best. Let's circle back to Jonathan. When he's in class and his teacher is lecturing, he gets distracted pretty easily. Words tend to go in one ear and out the other. But when his teacher starts using visuals, Jonathan finds it easier to focus and understand the material, so he might be a visual learner. Now think about your history. How have you enjoyed learning in the past? Do you prefer watching over listening? Do you enjoy reading instead? Or maybe you learn best by doing, with hands-on experience. If none of these seem to grab you, give them each a try and see which one you tend to drift towards. Each learning style has its own study methods that work best with it. Let's take a look at how Jonathan and a few of his classmates study. As a visual learner, Jonathan finds it helpful to color code his notes. He finds it helps him to organize information and internalize it better. He also creates diagrams while studying, finding that they help him to better understand certain structures and ideas. Jonathan watches videos, too, finding them helpful for extra information. Ruby is more of an auditory learner. He likes to study in a group and discuss the material with others. Sometimes she'll read her notes out loud because it helps her to hear what she's studying. In some classes, Ruby will record the lecture, with her teacher's permission, of course, so that she can go back and listen to it later. Terrell finds that he learns best by reading and writing. He takes substantial notes during class and reads over them often. When he's trying to memorize something, he'll often write it out. He also makes sure to read and reread any materials his teacher has assigned to class. Raya is a kinesthetic learner. She's got a lot of energy and likes doing things. Labs and hands-on activities help her to understand certain ideas and topics. Sometimes she'll review her material while she's walking around. She also likes to take breaks in order to release some of her energy, allowing her to focus when she returns to studying. All four of these students are studying the same material, but they're doing so in different ways. Now, this doesn't guarantee that they'll all get the same grades, but by determining their learning style and finding study methods that work for them, they just might find themselves getting better results.\n In insight, we look at education, more specifically the United Kingdom versus China. Both countries were part of an extraordinary television experiment. It's called the Big Test, hitting the Chinese way of teaching with the British approach. Who won? CCTV's Richard Bestick holds up the report card. The Chinese teaching methods came as a shock to the class of British schoolchildren and the students' rebellious response came as a shock to a horrified British nation. I'm not doing this. I'm never seeing a student like you. As the 50-strong class of 13 and 14-year-olds showed themselves according to Britain's normally resilient Fleet Street Press to be disrespectful and arrogant. As the weeks passed and the Big Test neared, relations between teachers and students mellowed even if the academic regime was unrelenting. What is needed for photosynthesis to take place? Carbon dioxide, water, and then the sunlight. The Chinese students were gripped by a competitive fervour. Would the Chinese or British teaching system come out on top? The pressure began to tell. The English system was rehearsal and in aid, but would it deliver? So what did the tale of the test tell us? Which system worked best in the cauldron of the examination hall, when students who'd undergone the Chinese system were tested against those who'd continued in the English style? And if Chinese school has won the day, then it's going to be quite interesting for us, I think, at Bohunt. The Chinese school, average mark for maths, 67.74%. Bohunt year 9, 54.84. There is more. Bohunt year 9, average mark for Mandarin, 36.46. Chinese school, 46.88. For science, Chinese school, 58.33. Bohunt year 9, 50. I have to attempt to be gracious and say to Chinese school, very, very well done, and the inquiry will commence. Thank you very much, and well done, and well done. So the Chinese system won resoundingly. Three cheers for the teachers! Hip, hip! For the students and teachers, there was time for a tearful farewell. Possibly leaving behind more questions than answers. Maybe the Chinese way of teaching, to some extent, kills the students' imagination, freedom of thinking, critical thinking, and creativity. This was far from a scientific experiment. It was reality TV, designed to entertain and perhaps to inform a little. It did, though, get us questioning and asking which is the best system. The answer, of course, is perhaps a little bit of both. However, as UK teachers have already discovered, once students start questioning ideas to destruction, their first challenge is always authority itself. Is that a good thing or a bad thing? It's for you to decide. Richard Bestick, CCTV, London.\n In the beautiful island of Corsica, in the Mediterranean Sea, a boy named Napoleon Bonaparte was born. From a young age, Napoleon was ambitious and fiercely intelligent. He loved to read about great military leaders dreaming of his own battles and victories. Napoleon was sent to France for his education and quickly showed a talent for military strategy. He joined the French army and it wasn't long before he started to make a name for himself. He was known for being fearless and brilliant in battle. During a time of great turmoil in France, known as the French Revolution, Napoleon quickly rose through the ranks of the military. He became a hero to the people for defending France against other European countries that wanted to stop the revolution. Napoleon's biggest moment came when he decided to make himself the Emperor of France. He had great visions for France and for himself. He wanted to create a huge empire and for a while he almost did. Napoleon's armies conquered lands far and wide and he ruled over much of Europe, but Napoleon's ambition also led to his downfall. He made a big mistake by deciding to invade Russia. The Russian winter was harsh and Napoleon's army wasn't prepared for it. Many soldiers didn't survive the cold and the battles. This was the beginning of the end of Napoleon's empire. After a series of defeats, Napoleon was forced to give up his throne and was exiled to a small island called Elba. But even then, his ambition didn't let him rest. He escaped from Elba and returned to France for a brief period of rule, known as the Hundred Days. However, Napoleon's comeback didn't last long. He was defeated again at the Battle of Waterloo, one of the most famous battles in history. This time, he was exiled to a remote island in the Atlantic Ocean called Saint Helena, where he spent the rest of his life. Napoleon Bonaparte is remembered as one of the greatest military leaders in history, but also as a reminder of how ambition can both make and break a person. His life story is full of victories and defeats, power and loss, and the enduring lessons of history's complex heroes.",
+      "per_clip": {
+        "zh-1351890321-1": {
+          "cer": 0.04607046070460705,
+          "errors": 17,
+          "ref_len": 369,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "请用简体中文转写多次转换各位同学欢迎来到计算机基础的课堂我们今天将会开始第一章的学习第一章将介绍计算机基础的知识第一章第一节我们将讲到计算机的概述那么我们现在就开始进入计算机概述的这样子的一个内容当中去首先什么是计算机很多人对计算机有不同的"
+        },
+        "zh-1351890321-2": {
+          "cer": 0.027944111776447105,
+          "errors": 28,
+          "ref_len": 1002,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "那么按照计算机的分类来讲我们可以把计算机分为专用计算机和通用计算机所谓的专用计算机就是为了解决一类的问题而专门设计的这样一个计算机我们把它叫作专用计算机当然了它的硬件和它的软件是单单为解决某一个问题而设置所以它在解决这个问题的时候它的处理速"
+        },
+        "zh-1351890321-3": {
+          "cer": 0.024691358024691357,
+          "errors": 10,
+          "ref_len": 405,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们再来看一下计算机它的特点首先计算机它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万亿次的计算因为计算机它的计算速度相当的快所以现在普遍应用在很多很多的领域比如说科学计算比如说气象预报等等等等这些方面另外一个特点就是计算机"
+        },
+        "zh-1351890321-4": {
+          "cer": 0.018502943650126155,
+          "errors": 22,
+          "ref_len": 1189,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们来看一下计算机的应用领域首先计算机可以用来做科学计算或者数值计算大家还记得世界上第一台计算机叫做ENIAC它主要是美国用来计算一个炮弹的打出去的轨迹以及它的落点所以计算机原来开发的就是为了做科学计算或者数值计算那么如何做到这一点呢计"
+        },
+        "zh-1351890321-5": {
+          "cer": 0.10090817356205853,
+          "errors": 100,
+          "ref_len": 991,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们今天要讲的是数字转换的这个话题首先我给大家一道脑筋急转圆弯请看这个PPT世界上一共有一零种人一种会用二净值一种不会如果我停在这里你是不是在想那另外的八个人在哪里呢如果你是这么想的话实际上你还是用十净值的观点来看待这个问题所以在题目中的一"
+        },
+        "zh-1351890321-6": {
+          "cer": 0.06720430107526881,
+          "errors": 25,
+          "ref_len": 372,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们知道计算机跟二净制有着密不可分的这样子的一个关系那么计算机实际上它所有的数据程序最后将形成为零和一的序列串才能被计算机所识别实际上计算机只认识零和一只是这一串的零和一代表的意义不一样而已我们来看一下计算机为什么要采用二净制首先计算机采用"
+        },
+        "en-1911877932-1": {
+          "cer": 0.03586258965647414,
+          "errors": 95,
+          "ref_len": 2649,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "HeresJonathanstudyingforatestandstudyingandstudyingandstudyingAndhereheisgettinghistestresultsAllthatstudyingandhestillg"
+        },
+        "en-1911877932-2": {
+          "cer": 0.07210884353741497,
+          "errors": 159,
+          "ref_len": 2205,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "IninsightwelookateducationmorespecificallytheUnitedKingdomversusChinaBothcountrieswerepartofanextraordinarytelevisionexp"
+        },
+        "en-1911877932-3": {
+          "cer": 0.0005878894767783657,
+          "errors": 1,
+          "ref_len": 1701,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "InthebeautifulislandofCorsicaintheMediterraneanSeaaboynamedNapoleonBonapartewasbornFromayoungageNapoleonwasambitiousandf"
+        }
+      },
+      "clips": 9,
+      "clip_seconds": 1702.9515625,
+      "weakest_verified": "subtitle"
+    },
+    {
+      "key": "fw-tiny-int8",
+      "backend": "faster-whisper",
+      "label": "faster-whisper tiny/int8",
+      "size_mb": 330.0,
+      "cer": 0.09390792979876872,
+      "rtf": 16.07417232645373,
+      "load_s": 2.3927547931671143,
+      "status": "ok",
+      "note": "",
+      "text": "《新加坡》《新加坡》各位同学欢迎来到计算机机处的课堂我们今天将会开始第一张的学习第一章将介绍计算机基础的支持第一章第一节,我们将讲到计算机的概数我们现在就开始进入计算机概数的这样子的一个内容当中去首先,什么是计算机很多人对计算机有不同的定义,可以有不同的思路和想法比如说,有的人认为,计算机就是一个游戏机,你可以用它来打游戏有的人呢?计算机是个打印机,因为很多的文件,它都能够用来编排打印出来而实际上,计算机不仅仅是我们刚才说的那些如果给一个定义的话,那么计算机,我们可以把它认为是对各种信息计算纯厨和高速处理的一个电子的机器那么对于这个概念,我们想做两点的补充第一,我们说计算机不仅仅是一个计算的工具,而且还是信息处理机同时,我们也要知道计算机不同于其它的计算机它能够纯厨程序,并能够按照程序的引导自动的纯厨和处理数据数出,人们想要的这样一个结果,那么这个就是一个计算机的基本的概念\n按照计算机的分类来讲,我们可以把计算机分为专用计算机和通用计算机。所谓的专用计算机就是为了解决一类的问题,而专门设计的这样一个计算机,我们把它叫做专用计算机。当然了,它的硬件和它的软件,是单单为解决某一个问题,而设置,所以它在解决这个问题的时候,它的错理数度将会非常的快。另外一种叫通用计算机。这通用计算机是为了解决各种问题,有叫强的通用性而设计的这个计算机。我们现在在家里所用的,以及在实验室里面,你们看到的这些,我们都把它称之为通用计算机。所以我们可以用它来打字,可以用它上网,可以用它来打游戏等等等等。这就是取决于你装了不同的软件,就有不同的应用。好,如果我们按照计算机的处理对象,来分类的话,我们也可以简单的把它分为三种,第一种数字式的电子计算机。第二种模拟式的电子计算机,第三种就是把数字和模拟两种处理对象放在一起,叫会合式的电子计算机。数字式的电子计算机,它是处理非连续变化的数据为主。而这些数据,在时间上,它是一个有一个离散的。它里面的基本部件,运算部件就是数字和邏輯电子。模拟式的电子计算机,它的处理的数据是连续变化的数据。他们这些数据在时间上是相连的。基本上它的运算部件是有运算放大器,组成的微分器,机分器和通用的、寒数运算器等等等等。当然,混合式的电子计算机,就是把数字式计算机和模拟式计算机和在一起,它可以处理数字量也可以处理模拟。如果按照它的规模和处理能力来分的话,又可以分为很多种,比如说有巨型机。这个我们也把它称作为超级制算机。这种机算机,它的处理能力相当的强,当然它也要占用很大的空间,那么这种机算机,它的价格也相当的强贵。那么,在出现巨型机算机之后,人们为了使得它的价格降下来,又开发了一种叫小巨型机。这种小巨型机和巨型机相比的话,它的价格比较便宜。在我后发展,又出现了一种叫做大型机,也叫Mainframe,同时这个大型机,它具有很强的管理和处理数据的能力。那么目前,我们在中国当中,大企业、银行、交通部门,很多很多都在使用大型机。为了满足中小型企业,需要那么,机算机里面还有一种叫小型机。那么,这种小型机跟我们的大型机相比,它的价格和体积,就会大大的渏小,当然,它的处理速度也没有大型机,那么快。我们现在比较熟悉的,还有工作站和个人机算机,工作站就是比较高党的这个危机,具有很强的图形处理能力。那么,应用于机算机付出设计,散你工作站等等等等等等。而个人机算机,就是我们现在常用的,我们所说的,PCC也好,我们所说的,来跑这个电脑也好,都是个人机算机。按照这个规模和处理能力来分,就我们大概可以把机算机分为这集中内容。\n下面我们再来看一下计算其他的特点。首先,计算其它的运算速度非常的快。我们知道现在的计算机已经能够达到每秒数万亿一次的这个计算。因为计算机它的计算速度相当的快,所以现在普遍应用在很多很多的领域比较说,科学计算,比较说,计像预报等等等等,这些方面。另外一个特点,就是计算机的精度相当的高。从理论上来讲,如果这个计算机的计算能力够强有足够的全主空间的话,那么它在理论上它的精确度可以不受限制。还有一个,计算机它具有全主能力比较强,一个特点。一个计算机能够处理的数据,取决于它的内存有多大。一个中型规模的图入管,实际上在计算机处理起来也是相当容易的。因为它具备一个光盘就能够全主一个小心图入管的这样一个内容了。计算机还有另外一个特点,它就具有罗记判断能力。它是如何做到这一点呢?其实它的通过算数运算,罗记运算,进行判断和比较得出一个结果。那么,计算机,它还有自动执行的这个功能,它不需要人工的干预,你只要把程序写好了,它将会按照这个程序自动的去执行。人只要等到它需要的时候,把这个结果货的就可以了。\n下面,我们来看一下计算机的应用领域。首先,计算机可以用来做科学计算或者数值计算。大家还记得世界上第一台计算机叫做一年。它主要是美国用来计算一个炮弹的打出去的这个轨迹,以及它的落点。所以计算机,原来开发的就是为了做科学计算或者数值计算。如何做到这一点呢?计算机,它实际上把一个实际的问题进行数学模型的一个抽象。然后把它转化成为一个计算机能够处理的这样一个模型。最后,我们用计算机大量的对它进行计算得出,人们要的这样一个结果。这个就是它做科学计算或者数值计算的一个原理。计算机的第二个应用领域,就是用数值处理或者信息处理。那么我们知道现在都是在一个大数据的这样一个时代。所以计算机,它能够对数据进行一个收集,进行一个存处。整理,进行分类,统计,最后进行加工,检索,以及对它进行传播等等等等的,这些对数据的一系列的活动。计算机的第三个应用领域是过程控制或者实实控制。我们可以看到很多很多的如今在製造业当中,大量的用到了这个计算机。它是利用计算机的即使材质,这个检测数据。按照最优职,迅速的进行控制和对对象的这样子的一个自动,调解和自动,检测,自动控制等等等等。我们知道计算机还有另外一个作用,就是用作计算机的辅助技术。比如说,有计算机,辅助设计。现在的设计人员,不要再把这个环境搭出来,然后才来看这个结果好不好。它现在可以用计算机,把这个电路也好,这个艺术品也好,直接在计算机里面进行设计,你还没有做出来,你就能能看到它的结果。另外一个地方可以用到计算机的,就是计算机辅助制造。在制造业当中,一个产品的成型和制造过程当中,要有计算机的参与,使得这个制造能够按照它的要求和按照它的流程进行。我们也知道,计算机集成制造系统里面,也用到了很多计算机。我们把这个计算机集成制造系统叫做 C-I-M-S。这个系统当中,计算机通过控制,它整个流程,使得这个集成系统能够得到完美的机合。计算机另外一个领域,叫做人工智能,如果大家还记得的话,在10年前有不美国的片子,就此以人工智能秘密。它是描写一个机器人,通过了人工智能的技术,获得了人类的思想,最终它学习到如何去爱。当然,这个是电影当中的情节。现在我们的计算机的制造人工智能方面的成就,已经使得计算机集本上能够造出一个非常像人的动作,这样一个机器人。好,计算机还有更广赋的领域,就是在我们的通讯网络,相信大家对互联网已经不会在抹身,它改变了人的很多行为习惯。现在我们可以很方便地坐在家里面进行网上银行的操作。进行网上定票的操作。如果你报了一些网络的课程,你甚至可以不用去教识,就能够享受网上教学的这样子的一个服务。同时我们可以看到大家可以通过互联网或者一些医疑聊的信息。还有一个应用叫做网上税收,现在我们报税不用再到税无继续了,你只要到税无继的官方网站,陆入你的信息自动把税无的信息登记就可以了。还有网上出版也是一种新新的互联网应用的这样一个形式。包括文章的收集,文章的编排,文章的审核以及文章的出版都可以再线完成。我们可以看到计算机有很多很多的应用。那么今天我们就想到这里,我们下节课再跟大家分享计算机的运算机处。谢谢大家。\n七月朵文 通告《没报》到了此理《没报》我们今天要调着是数字转换的这个话题首先我给大家一道腦金集团 请看这个PTT事实介绍一共有10种人壹种会用二级紫壹种不会如果我听在这里妳是不是在想那另外的八个人在哪里呢如果你是这么想的话实际上你还是用实际制的观点来看的这个问题所以在题目中的10,这两个字并不代表10,22进制的2如果你学过机算经理在看一个数的时候你不但只是看这个数是什么而且在你脑海当中马上就要反映过来这个数到底是几进制这就设结了一个禁制的问题也就是我们今天学写的重点首先要给大家介绍的是数字的基本概念所谓的数字实际上就是访多少进1的这样子的一个问题比如说我们经常说的1打那么就是12个12我们就进1那么2打就是24个同样的问题有一周有一个月这些都是访多少进1的这样一个问题用一个比较科学的定义的话那么数字是只用一族固定的数字和一套统一的这样子的规则来表示数目的方法在数字当中有两种不同的数字一种叫做飞进位数字另外一种叫做禁位数字作为一个典型的飞进位数字那么罗马数字就是一个很好的例子我们可以看到罗马数字当中表示1一文字类似i的大鞋这样子来表示2是两个3是3个那么表示4呢它不再是4个了而是用v代表5i在它左边代表检疑6是vi就是在右边维架X4代表的是10你们也不能猜出如果是要代表9的话它应该是iX另外一种数字叫做禁位技术质它表示的数值的大小与它在数目中当中的位置是非常有关系的比如说123.45如果是实际质数的话它代表的就是10023.45大家会看到这个数字的时候如果你定为实际质的话那么这个就是一个实际质的数那么这个也就是一个尽未的技术法在数字当中有两个基本概念大家要搞清楚第一个叫做鸡树所谓的鸡树就是只在尽未质中允许选用鸡本树马的个树这个鸡树实际上是给你几斤质是有关系的多少斤质它就有多少个鸡树我们现在经常用的实际质那么就有10个鸡树也就是说有10个符号来代表不同的数值那么这10个数字在实际质是多少呢012345679这10个我们常用的数字另外一个概念叫做位权所谓的位权就是因为它是尽未质的这样一个数值所以你在每个位上它代表的权重是多少我们把它叫做位权比如说我们刚才说的那样一个例子11234它代表的是1成以10的2次方就是1002成以10的1次方就是103成以10的0次方就是3然后再加上4成以10的副一次方就是0.4所以整个数值呢就会得到实际质的123.4每个位置上的10的平方10的1次方10的0次方这些就是我们所说的位权\n我们知道 计算机跟二进制有什么秘不可分的这样子的关系。那么 计算机实际上它所有的数据程序最后将形成为铃和铃的训练川才能备计算机手施别。实际上计算机只认识铃和铃和铃之事,这一川的铃和铃,代表的意义不一样而已。我们来看一下计算机为什么要采用二进制。首先 计算机采用二进制,它因为首先一个就是电铃非常的简单。铃和铃可以代表电铃的开和关。那么 计算机里面它有个铃级电铃,铃级电铃通常只有两个状态,所以用铃和铃来代表能够得到一个简单的电铃。第二个原因是因为计算机采用二进制的时候,它的可靠性比较高。两个状态表示的二进是两个数码,数字的传输和处理不容易出错。还有 用二进制是因为它的邏机性比较强,因为计算机的工作原理是建立在邏机运算的基础上。所以邏机代数是邏机运算的理论根据,用二进制就正好符合了邏机性强的这样一个原理。同时,因为二进制数它的运算的规则比较简单,所以用二进制来做计算机的主要的运算是有道理的。\n Here's Jonathan studying for a test, and studying, and studying, and studying, and studying. And here he is getting his test results. All that studying and he's still got an F. Why? The thing is there's no one right way to study. Some methods might work great for one person and not at all for others. Everybody learns differently. In order to find a study method that's best for you, it's important to know your learning style. The foremost popular learning styles are visual, auditory, reading, writing, and kinesthetic, or hands-on. For most people, one of these methods will work best, but it's also possible for a combination of different styles to be effective. To discover your learning style, you can complete an online assessment. There's a wide variety of them available, consisting of multiple choice questions. However, you can also observe yourself and your previous learning experiences to get an idea of how you learn best. Let's circle back to Jonathan. When he's in class and his teacher is lecturing, he gets distracted pretty easily. Words tend to go in one year and out the other. But when his teacher starts using visuals, Jonathan finds it easier to focus and understand the material. So he might be a visual learner. Now think about your history. How have you enjoyed learning in the past? Do you prefer watching over listening? Do you enjoy reading instead? Or maybe you'll learn best by doing with hands-on experience? If none of these seem to grab you, give them each a try and see which one you tend to drift towards. Each learning style has its own study methods that work best with it. Let's take a look at how Jonathan and a few of his classmates study. As a visual learner, Jonathan finds it helpful to color code his notes. He finds it helps him to organize information and internalize it better. He also creates diagrams while studying, finding that they help him to better understand certain structures and ideas. Jonathan watches videos too, finding them helpful for extra information. Ruby is more of an auditory learner. She likes to study in a group and discuss the material with others. Sometimes she'll return notes out loud because it helps her to hear what she's studying. In some classes, Ruby will record the lecture with her teacher's permission of course so that she can go back and listen to it later. Terrell finds that he learns best by reading and writing. He takes substantial notes during class and reads over them often. When he's trying to memorize something, he'll often write it out. He also makes sure to read and reread any materials his teacher has assigned the class. Ria is a kinesthetic learner. She's got a lot of energy and likes doing things. Labs and hands-on activities help her to understand certain ideas and topics. Sometimes she'll review her material while she's walking around. She also likes to take breaks in order to release some of her energy, allowing her to focus when she returns to studying. All four of these students are studying the same material but they're doing so in different ways. Now this doesn't guarantee that they'll all get the same grades but by determining their learning style and finding study methods that work for them, they just might find themselves getting better results.\n The Chinese teaching methods came as a shock to the class of British school children, and the students are rebellious, response came as a shock to a horrifying British nation. As the 50-strong class of 13 and 14-year-olds showed themselves, according to Britain's normally resilient street press to be disrespectful and arrogant as the weeks passed, and the big test needed relations between teachers and students melode, even if the academic regime was unrelenting. What is needed for four-four-to-synthesis to take place? Softly. Carbon dioxide. Carbon dioxide. Water. Water. And then the sunlight. Okay. The Chinese students were gripped by a competitive further. I sure. Would the Chinese or British teaching system come out on top? The pressure began to tell. The English system was what I didn't know, but would it deliver? So, what did the tale of the test tell us? Which system worked best in the cauldron of the examination hall when students who'd undergone the Chinese system were tested against those who'd continued in the English style? And if Chinese school has won the day, then it's going to be quite interesting for us, I think, at Bo Hunt. The Chinese school, average mark for maths. 67.74%. Bo Hunt year 9. 54.84. There is more. Bo Hunt year 9. Average mark for Mandarin. 36.46. Chinese school. 46.80. For science, Chinese school. 58.33. Bo Hunt year 9.50. I have to attempt to be gracious and say to Chinese school very, very well done. And, you know, the inquiry will commence. Thank you very much and well done. Well done. So the Chinese system won resoundingly. Free chance for the teachers! For the students and teachers, there was time for a tearful farewell. Possibly leaving behind more questions than answers. Maybe the Chinese way of teaching to some extent, kills the students imagination, freedom of thinking, critical thinking and the creativity. This was far from a scientific experiment. It was reality TV designed to entertain and perhaps to inform a little. It did, though, get us questioning and asking which is the best system. The answer, of course, is perhaps a little bit of both. However, as UK teachers have already discovered, once students start questioning ideas to destruction, their first challenge is always authority itself. Is that a good thing or a bad thing? It's for you to decide. Richard Bestic, CCTV London.\n In the beautiful island of Corsica, in the Mediterranean Sea, a boy named Napoleon Bonaparte was born. From a young age, Napoleon was ambitious and fiercely intelligent. He loved to read about great military leaders, dreaming of his own battles and victories. Napoleon was sent to France for his education and quickly showed a talent for military strategy. He joined the French army and it wasn't long before he started to make a name for himself. He was known for being fearless and brilliant in battle. During a time of great turmoil in France, known as the French Revolution, Napoleon quickly rose through the ranks of the military. He became a hero to the people for defending France against other European countries that wanted to stop the Revolution. Napoleon's biggest moment came when he decided to make himself the Emperor of France. He had great visions for France and for himself. He wanted to create a huge empire, and for a while, he almost did. Napoleon's armies conquered lands far and wide, and he ruled over much of Europe, but Napoleon's ambition also led to his downfall. He made a big mistake by deciding to invade Russia. The Russian winter was harsh, and Napoleon's army wasn't prepared for it. Many soldiers didn't survive the cold and the battles. This was the beginning of the end of Napoleon's empire. After a series of defeats, Napoleon was forced to give up his throne and was exiled to a small island called Elba. But even then, his ambition didn't let him rest. He escaped from Elba and returned to France for a brief period of rule known as the Hundred Days. However, Napoleon's comeback didn't last long. He was defeated again at the Battle of Waterloo, one of the most famous battles in history. This time, he was exiled to a remote island in the Atlantic Ocean called Saint Helena, where he spent the rest of his life. Napoleon Bonaparte is remembered as one of the greatest military leaders in history, but also as a reminder of how ambition can both make and break a person. His life story is full of victories and defeats, power and loss, and the enduring lessons of history's complex heroes.",
+      "per_clip": {
+        "zh-1351890321-1": {
+          "cer": 0.0975609756097561,
+          "errors": 36,
+          "ref_len": 369,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "新加坡新加坡各位同学欢迎来到计算机机处的课堂我们今天将会开始第一张的学习第一章将介绍计算机基础的支持第一章第一节我们将讲到计算机的概数我们现在就开始进入计算机概数的这样子的一个内容当中去首先什么是计算机很多人对计算机有不同的定义可以有不同的"
+        },
+        "zh-1351890321-2": {
+          "cer": 0.07884231536926148,
+          "errors": 79,
+          "ref_len": 1002,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "按照计算机的分类来讲我们可以把计算机分为专用计算机和通用计算机所谓的专用计算机就是为了解决一类的问题而专门设计的这样一个计算机我们把它叫做专用计算机当然了它的硬件和它的软件是单单为解决某一个问题而设置所以它在解决这个问题的时候它的错理数度将"
+        },
+        "zh-1351890321-3": {
+          "cer": 0.08641975308641975,
+          "errors": 35,
+          "ref_len": 405,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们再来看一下计算其他的特点首先计算其它的运算速度非常的快我们知道现在的计算机已经能够达到每秒数万亿一次的这个计算因为计算机它的计算速度相当的快所以现在普遍应用在很多很多的领域比较说科学计算比较说计像预报等等等等这些方面另外一个特点就是"
+        },
+        "zh-1351890321-4": {
+          "cer": 0.07653490328006729,
+          "errors": 91,
+          "ref_len": 1189,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "下面我们来看一下计算机的应用领域首先计算机可以用来做科学计算或者数值计算大家还记得世界上第一台计算机叫做一年它主要是美国用来计算一个炮弹的打出去的这个轨迹以及它的落点所以计算机原来开发的就是为了做科学计算或者数值计算如何做到这一点呢计算机它"
+        },
+        "zh-1351890321-5": {
+          "cer": 0.17356205852674067,
+          "errors": 172,
+          "ref_len": 991,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "七月朵文通告没报到了此理没报我们今天要调着是数字转换的这个话题首先我给大家一道腦金集团请看这个PTT事实介绍一共有10种人壹种会用二级紫壹种不会如果我听在这里妳是不是在想那另外的八个人在哪里呢如果你是这么想的话实际上你还是用实际制的观点来看"
+        },
+        "zh-1351890321-6": {
+          "cer": 0.12365591397849462,
+          "errors": 46,
+          "ref_len": 372,
+          "verified": "subtitle",
+          "domain": "理工科讲课",
+          "hyp": "我们知道计算机跟二进制有什么秘不可分的这样子的关系那么计算机实际上它所有的数据程序最后将形成为铃和铃的训练川才能备计算机手施别实际上计算机只认识铃和铃和铃之事这一川的铃和铃代表的意义不一样而已我们来看一下计算机为什么要采用二进制首先计算机采"
+        },
+        "en-1911877932-1": {
+          "cer": 0.04303510758776897,
+          "errors": 114,
+          "ref_len": 2649,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "HeresJonathanstudyingforatestandstudyingandstudyingandstudyingandstudyingAndhereheisgettinghistestresultsAllthatstudying"
+        },
+        "en-1911877932-2": {
+          "cer": 0.20272108843537415,
+          "errors": 447,
+          "ref_len": 2205,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "TheChineseteachingmethodscameasashocktotheclassofBritishschoolchildrenandthestudentsarerebelliousresponsecameasashocktoa"
+        },
+        "en-1911877932-3": {
+          "cer": 0.0011757789535567313,
+          "errors": 2,
+          "ref_len": 1701,
+          "verified": "subtitle",
+          "domain": "英文讲课",
+          "hyp": "InthebeautifulislandofCorsicaintheMediterraneanSeaaboynamedNapoleonBonapartewasbornFromayoungageNapoleonwasambitiousandf"
+        }
+      },
+      "clips": 9,
+      "clip_seconds": 1702.9515625,
+      "weakest_verified": "subtitle"
+    }
+  ],
+  "pareto": [
+    "fw-small-int8",
+    "fw-base-int8",
+    "wcpp-base",
+    "wcpp-tiny"
+  ]
+}

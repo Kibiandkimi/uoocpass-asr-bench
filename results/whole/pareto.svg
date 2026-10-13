@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="system-ui,sans-serif">
+<rect width="900" height="560" fill="#fdfdfd"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="19" font-weight="600">ASR 帕累托：越靠左下越好（点越大越快）</text>
+<text x="450.0" y="546" text-anchor="middle" font-size="13">运行期占用 MB（包 + 模型）→</text>
+<text x="16" y="280.0" font-size="13" transform="rotate(-90 16 280.0)" text-anchor="middle">CER 字符错误率 ↓（越低越准）</text>
+<line x1="70" y1="490" x2="830" y2="490" stroke="#999"/>
+<line x1="70" y1="70" x2="70" y2="490" stroke="#999"/>
+<circle cx="760.9" cy="136.8" r="7.0" fill="#7f9fd0" fill-opacity="0.55" stroke="#7f9fd0"/>
+<text x="760.9" y="124.8" font-size="11" text-anchor="middle" fill="#333">vosk big-cn</text>
+<circle cx="82.2" cy="449.8" r="19.0" fill="#d62728" fill-opacity="0.55" stroke="#d62728"/>
+<text x="82.2" y="425.8" font-size="11" text-anchor="middle" fill="#333">whisper.cpp tiny (q5_0)</text>
+<circle cx="161.0" cy="338.6" r="14.0" fill="#7f9fd0" fill-opacity="0.55" stroke="#7f9fd0"/>
+<text x="161.0" y="319.6" font-size="11" text-anchor="middle" fill="#333">sherpa-onnx paraformer-zh (2023-09)</text>
+<circle cx="90.9" cy="463.5" r="9.5" fill="#d62728" fill-opacity="0.55" stroke="#d62728"/>
+<text x="90.9" y="449.0" font-size="11" text-anchor="middle" fill="#333">whisper.cpp base (q5_0)</text>
+<circle cx="416.7" cy="328.9" r="15.3" fill="#7f9fd0" fill-opacity="0.55" stroke="#7f9fd0"/>
+<text x="416.7" y="308.6" font-size="11" text-anchor="middle" fill="#333">sherpa-onnx paraformer-zh (2024-03)</text>
+<circle cx="456.8" cy="402.9" r="13.4" fill="#7f9fd0" fill-opacity="0.55" stroke="#7f9fd0"/>
+<text x="456.8" y="384.5" font-size="11" text-anchor="middle" fill="#333">sherpa-onnx SenseVoice-Small</text>
+<circle cx="103.0" cy="124.8" r="8.8" fill="#7f9fd0" fill-opacity="0.55" stroke="#7f9fd0"/>
+<text x="103.0" y="111.0" font-size="11" text-anchor="middle" fill="#333">vosk small-cn</text>
+<circle cx="203.0" cy="463.6" r="13.9" fill="#d62728" fill-opacity="0.55" stroke="#d62728"/>
+<text x="203.0" y="444.7" font-size="11" text-anchor="middle" fill="#333">faster-whisper base/int8</text>
+<circle cx="315.7" cy="466.9" r="8.2" fill="#d62728" fill-opacity="0.55" stroke="#d62728"/>
+<text x="315.7" y="453.7" font-size="11" text-anchor="middle" fill="#333">faster-whisper small/int8</text>
+<circle cx="179.7" cy="438.3" r="17.8" fill="#7f9fd0" fill-opacity="0.55" stroke="#7f9fd0"/>
+<text x="179.7" y="415.5" font-size="11" text-anchor="middle" fill="#333">faster-whisper tiny/int8</text>
+<text x="70" y="508" font-size="10" text-anchor="middle" fill="#666">0</text>
+<text x="62" y="493" font-size="10" text-anchor="end" fill="#666">0%</text>
+<text x="222" y="508" font-size="10" text-anchor="middle" fill="#666">457</text>
+<text x="62" y="409" font-size="10" text-anchor="end" fill="#666">15%</text>
+<text x="374" y="508" font-size="10" text-anchor="middle" fill="#666">914</text>
+<text x="62" y="325" font-size="10" text-anchor="end" fill="#666">31%</text>
+<text x="526" y="508" font-size="10" text-anchor="middle" fill="#666">1372</text>
+<text x="62" y="241" font-size="10" text-anchor="end" fill="#666">46%</text>
+<text x="678" y="508" font-size="10" text-anchor="middle" fill="#666">1829</text>
+<text x="62" y="157" font-size="10" text-anchor="end" fill="#666">61%</text>
+<text x="830" y="508" font-size="10" text-anchor="middle" fill="#666">2286</text>
+<text x="62" y="73" font-size="10" text-anchor="end" fill="#666">76%</text>
+</svg>
