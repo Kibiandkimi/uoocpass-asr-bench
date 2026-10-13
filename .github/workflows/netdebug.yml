@@ -4,11 +4,21 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: curl 各源
+      - uses: actions/checkout@v4
+      - name: 逐条暴露真实失败原因
         run: |
-          set -x
-          curl -sS -o /dev/null -w 'vosk: %{http_code} time=%{time_total}\n' --max-time 30 https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip || echo "vosk curl rc=$?"
-          curl -sS -o /dev/null -w 'hf: %{http_code} time=%{time_total}\n' --max-time 30 -L https://huggingface.co/api/models/ggerganov/whisper.cpp || echo "hf curl rc=$?"
-          curl -sS -o /dev/null -w 'github: %{http_code}\n' --max-time 30 -L https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-zh-2023-09-14.tar.bz2 || echo "gh curl rc=$?"
-          echo "--- 环境里的代理变量 ---"
-          env | grep -iE 'proxy|http_' || echo "（无）"
+          HF=https://huggingface.co/ggerganov/whisper.cpp/resolve/main
+          echo "=== 1) 直接 curl ggml-small-q5_1.bin ==="
+          curl -fL --retry 2 --max-time 120 -o /tmp/a.bin "$HF/ggml-small-q5_1.bin" && echo "OK $(stat -c%s /tmp/a.bin) bytes" || echo "FAIL rc=$?"
+          echo "=== 2) HF API 返回内容前 300 字符 ==="
+          curl -fsSL --max-time 60 https://huggingface.co/api/models/ggerganov/whisper.cpp | head -c 300; echo
+          echo "=== 3) hf_pick 解析结果 ==="
+          curl -fsSL --max-time 60 https://huggingface.co/api/models/ggerganov/whisper.cpp | python3 -c "
+import json,sys
+base='ggml-small'
+files=[f['rfilename'] for f in json.load(sys.stdin).get('siblings',[])]
+print('文件总数', len(files))
+print('含 ggml-small 的:', [f for f in files if 'ggml-small' in f][:8])
+"
+          echo "=== 4) 跑我脚本里的 get() 看 rc ==="
+          bash -x scripts/fetch_models.sh 2>&1 | grep -E "^\+ curl|vosk|ggml|✗|✓|!!" | head -25
