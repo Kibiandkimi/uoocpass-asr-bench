@@ -299,6 +299,12 @@ def run_candidate(c: Candidate, repeats: int, log=print) -> Candidate:
     c.rtf = payload.get("rtf", -1.0)
     c.load_s = payload.get("load_s", 0.0)
     c.text = payload.get("text", "")
+    # 这几个以前漏拷了 —— 于是子进程算好的每段明细在父进程里全丢，
+    # 报告只剩一个 micro-CER，看不出「在哪类音频上崩」。
+    c.per_clip = payload.get("per_clip") or {}
+    c.clips = int(payload.get("clips") or 0)
+    c.clip_seconds = float(payload.get("clip_seconds") or 0.0)
+    c.weakest_verified = payload.get("weakest_verified", "")
     if payload.get("size_mb"):
         c.size_mb = payload["size_mb"]
     return c
