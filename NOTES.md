@@ -1,24 +1,50 @@
-# 已知问题
+# 已修的 bug（都影响过结论，记下来防止再犯）
 
-## CI 上模型下载失败（未解决）
+## 1. `for _ in range(...)` 的 `_` 被覆盖 ⚠️ 最严重
 
-`fetch_models.sh` 在 GitHub runner 上失败，但**同一 runner 直接 curl 是成功的**：
-
-```
-curl -fL .../ggml-small-q5_1.bin   → OK 190085487 bytes   ✅
-curl -fL .../vosk-model-small-cn   → OK 43898754 bytes    ✅
-curl -fsSL .../api/models/...      → OK 4035 bytes        ✅
-bash scripts/fetch_models.sh       → 立即失败，且无输出    ❌
+```python
+for _ in range(repeats):
+    segs, _ = model.transcribe(...)   # ← 把循环变量 _ 覆盖成 TranscriptionInfo
+    if _ == 0:                        # ← 永远 False
+        per_clip[clip.id] = ...       # ← 从没执行
 ```
 
-脚本第 4 段用 `bash -x` 抓的跟踪也没能落到 CI 日志里（被 step 自身的失败截断）。
-**排查方向**（下次接着查）：
+后果：`per_clip` 恒空 → micro-CER 恒 `-1.0` → 报告里 faster-whisper 全系列
+显示 **CER -100%**，而 RTF 是「总时长 ÷ 有效耗时」，数字看着正常，很容易被骗过去。
 
-1. `get()` 里 `local url; for url in "$@"` 在 `set -u` 下对空参的处理；
-2. 成功下载后的 `mv "$dest.part" "$dest"` 与 `du` 段是否触发了 `set -e`；
-3. 脚本中间那批 `[ -d ... ] || unzip ... || true` 的返回值链；
-4. 在 CI 里加 `set -x` 到脚本内容（而不是调用时 `bash -x`），并把 stdout/stderr
-   重定向到文件后**无论如何都 cat 出来**（用 `if: always()`）。
+修法：循环变量改名 `rep`，解包用 `_info`。
 
-在此之前，whisper.cpp / vosk-big / sherpa 的 CI 结果不可靠；
-但 **faster-whisper 系列和 vosk-small 是可信的**（模型的下载路径与上面无关）。
+## 2. `run_candidate` 漏拷字段
+
+子进程 JSON 里有 `per_clip` / `clips` / `clip_seconds` / `weakest_verified`，
+父进程 `run_candidate` 只拷了 `cer` / `rtf` / `load_s` / `text` / `size_mb`。
+于是每段明细全丢，报告只剩一个 micro-CER —— **看不出模型是在哪类音频上崩的**。
+（这也是为什么 vosk 在单段 60s 时看着 20% 不错，换到 4 段变 68% 才发现问题。）
+
+## 3. artifact 没限定 run-id
+
+`actions/download-artifact` 不带 `run-id` 会把仓库里**历次**的 artifact 全捞下来，
+旧数据集（单段 60 秒）的结果混进新结果，出了一张自相矛盾的表
+（paraformer 7.05% 与 SenseVoice 8.10% 并列，前者其实是旧数据）。
+
+修法：`run-id: ${{ github.run_id }}` + `github-token`。
+
+## 4. 子进程 JSON 解析只取最后一行
+
+`json.loads(proc.stdout.splitlines()[-1])` —— 但库会往 stdout 打警告/进度，
+真正的 JSON 被夹在中间。改成**从后往前找第一个能解析的 dict**。
+
+## 5. 数据集对齐（**未修完**）
+
+平台给的 `video_url`(mp4) 与 `subtitle`(srt) **不是同一条时间轴**：
+视频带片头、SRT 从讲稿起点计时。实测「穷举法」那节：字幕 62s 讲「国王的婚姻/
+旅行商问题」，而 mp4 60s 处音频在讲「3x+y+z=100」。扫 ±180s 固定偏移也救不回来。
+
+所以现在 4 段里 **180 秒是 `subtitle-misaligned`**，这部分 CER 不可信（会虚高）。
+**修法**：不做切片、整段视频配整段字幕，CER 在完整视频上算 —— 从根上消除对齐问题。
+
+## 6. bash + curl 的模型下载在 runner 上「秒失败且无输出」
+
+同一个 runner 直接敲 `curl` 下载 190MB 完全正常，脚本里却立即失败，
+`bash -x` 的跟踪也没落到日志里。换成 Python 下载器（`scripts/fetch_models.py`）后
+一切正常，且每个 URL 的失败原因都会打进日志。**不要再回去用 bash 拼 curl。**
