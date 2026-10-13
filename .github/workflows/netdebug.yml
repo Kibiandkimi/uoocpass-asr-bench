@@ -1,5 +1,7 @@
 name: net debug
+
 on: workflow_dispatch
+
 jobs:
   probe:
     runs-on: ubuntu-latest
@@ -8,17 +10,12 @@ jobs:
       - name: 逐条暴露真实失败原因
         run: |
           HF=https://huggingface.co/ggerganov/whisper.cpp/resolve/main
-          echo "=== 1) 直接 curl ggml-small-q5_1.bin ==="
+          echo "=== 1) curl ggml-small-q5_1.bin ==="
           curl -fL --retry 2 --max-time 120 -o /tmp/a.bin "$HF/ggml-small-q5_1.bin" && echo "OK $(stat -c%s /tmp/a.bin) bytes" || echo "FAIL rc=$?"
-          echo "=== 2) HF API 返回内容前 300 字符 ==="
-          curl -fsSL --max-time 60 https://huggingface.co/api/models/ggerganov/whisper.cpp | head -c 300; echo
-          echo "=== 3) hf_pick 解析结果 ==="
-          curl -fsSL --max-time 60 https://huggingface.co/api/models/ggerganov/whisper.cpp | python3 -c "
-import json,sys
-base='ggml-small'
-files=[f['rfilename'] for f in json.load(sys.stdin).get('siblings',[])]
-print('文件总数', len(files))
-print('含 ggml-small 的:', [f for f in files if 'ggml-small' in f][:8])
-"
-          echo "=== 4) 跑我脚本里的 get() 看 rc ==="
-          bash -x scripts/fetch_models.sh 2>&1 | grep -E "^\+ curl|vosk|ggml|✗|✓|!!" | head -25
+          echo "=== 2) curl vosk small-cn ==="
+          curl -fL --retry 2 --max-time 120 -o /tmp/v.zip https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip && echo "OK $(stat -c%s /tmp/v.zip) bytes" || echo "FAIL rc=$?"
+          echo "=== 3) HF API ==="
+          curl -fsSL --max-time 60 https://huggingface.co/api/models/ggerganov/whisper.cpp -o /tmp/hf.json && echo "OK $(stat -c%s /tmp/hf.json) bytes" || echo "FAIL rc=$?"
+          python3 -c "import json; d=json.load(open('/tmp/hf.json')); fs=[f['rfilename'] for f in d.get('siblings',[])]; print('文件数',len(fs)); print('ggml-small 相关:', [f for f in fs if 'ggml-small' in f][:6])" 2>&1 | head -5
+          echo "=== 4) 脚本 fetch_models.sh 输出尾部 ==="
+          bash scripts/fetch_models.sh 2>&1 | tail -22
