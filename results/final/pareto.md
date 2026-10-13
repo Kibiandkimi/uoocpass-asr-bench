@@ -7,14 +7,15 @@
 
 | ★ | 方案 | CER ↓ | 体积 MB ↓ | RTF ↑ | 加载 |
 | --- | --- | --- | --- | --- | --- |
-| ★ | faster-whisper small/int8 | 7.05% | 739 | 2.35x | 2.6s |
-| ★ | faster-whisper base/int8 | 11.01% | 400 | 6.68x | 1.4s |
-| ★ | faster-whisper tiny/int8 | 19.82% | 330 | 12.27x | 2.3s |
+|   | faster-whisper small/int8 | 7.05% | 739 | 2.35x | 2.6s |
+| ★ | sherpa-onnx paraformer-zh | 7.05% | 274 | 20.28x | 1.2s |
+|   | faster-whisper medium/int8 | 8.81% | 1785 | 1.21x | 9.4s |
+|   | faster-whisper base/int8 | 10.13% | 400 | 10.95x | 2.8s |
+|   | vosk big-cn | 11.45% | 2078 | 4.23x | 4.9s |
+|   | faster-whisper tiny/int8 | 18.50% | 330 | 15.32x | 1.8s |
 | ★ | vosk small-cn | 20.26% | 99 | 3.52x | 0.6s |
 
 ## 帕累托前沿
 
-- **faster-whisper small/int8**：CER 7.05%，739MB，2.35x
-- **faster-whisper base/int8**：CER 11.01%，400MB，6.68x
-- **faster-whisper tiny/int8**：CER 19.82%，330MB，12.27x
+- **sherpa-onnx paraformer-zh**：CER 7.05%，274MB，20.28x
 - **vosk small-cn**：CER 20.26%，99MB，3.52x
