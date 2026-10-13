@@ -426,6 +426,76 @@ def worker(key: str, repeats: int) -> dict:
         return finish("ok", "", text, seconds / times[len(times) // 2], load_s,
                       PACKAGE_MB["vosk"] + _measure_mb(model_dir))
 
+    if key.startswith("wcpp-"):
+        size = key.split("-", 1)[1]
+        cli = os.environ.get("WHISPER_CLI") or "whisper-cli"
+        model = MODELS / f"ggml-{size}-q5_0.bin"
+        if not model.exists():
+            return finish("missing", f"缺 ggml 模型 {model.name}")
+        from shutil import which
+
+        if not (Path(cli).is_file() or which(cli)):
+            return finish("missing", f"找不到 whisper-cli（设 WHISPER_CLI 环境变量）")
+        # whisper.cpp 只吃 16k wav 文件，先写一份临时 wav
+        import tempfile
+        import wave
+
+        times, text = [], ""
+        with tempfile.TemporaryDirectory() as tmp:
+            wav = Path(tmp) / "a.wav"
+            with wave.open(str(wav), "wb") as wf:
+                wf.setnchannels(1)
+                wf.setsampwidth(2)
+                wf.setframerate(16000)
+                wf.writeframes((audio * 32767).astype("int16").tobytes())
+            for _ in range(max(1, repeats)):
+                t0 = time.time()
+                proc = subprocess.run(
+                    [cli, "-m", str(model), "-f", str(wav), "-l", "zh",
+                     "-otxt", "-of", str(Path(tmp) / "out"), "-np"],
+                    capture_output=True, text=True, timeout=1800,
+                )
+                times.append(time.time() - t0)
+                out_txt = Path(tmp) / "out.txt"
+                if out_txt.exists():
+                    text = out_txt.read_text(encoding="utf-8", errors="replace")
+                else:
+                    text = proc.stdout
+        times.sort()
+        return finish("ok", "", text, seconds / times[len(times) // 2], 0.0,
+                      PACKAGE_MB["whisper.cpp"] + _measure_mb(model))
+
+    if key.startswith("sherpa"):
+        model_dir = MODELS / "sherpa-onnx-paraformer-zh-2023-09-14"
+        if not model_dir.exists():
+            return finish("missing", f"缺模型目录 {model_dir.name}")
+        try:
+            import sherpa_onnx
+        except ImportError as exc:
+            return finish("missing", f"sherpa-onnx 未安装：{exc}")
+        onnx = next(model_dir.glob("*.onnx"), None)
+        tokens = next(model_dir.glob("tokens*.txt"), None)
+        if not onnx or not tokens:
+            return finish("missing", "模型目录里缺 .onnx / tokens.txt")
+        t0 = time.time()
+        rec = sherpa_onnx.OfflineRecognizer.from_paraformer(
+            paraformer=str(onnx), tokens=str(tokens),
+            num_threads=2, sample_rate=16000, feature_dim=80,
+            decoding_method="greedy_search",
+        )
+        load_s = time.time() - t0
+        times, text = [], ""
+        for _ in range(max(1, repeats)):
+            t0 = time.time()
+            stream = rec.create_stream()
+            stream.accept_waveform(16000, audio)
+            rec.decode_stream(stream)
+            text = stream.result.text
+            times.append(time.time() - t0)
+        times.sort()
+        return finish("ok", "", text, seconds / times[len(times) // 2], load_s,
+                      PACKAGE_MB["sherpa-onnx"] + _measure_mb(model_dir))
+
     return finish("missing", f"未实现的候选：{key}")
 
 
