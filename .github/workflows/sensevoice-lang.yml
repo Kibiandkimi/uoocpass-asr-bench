@@ -1,0 +1,74 @@
+name: SenseVoice language sweep
+
+# 定向实验：SenseVoice 在「中英混说」片段上到底为什么崩？
+# 三个候选差异只在 language 参数，其它完全一致 —— 这样才能归因到参数本身。
+on:
+  workflow_dispatch:
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [auto, zh, en]
+        subset: [all, nomixed]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 依赖
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python -m pip install -q numpy opencc sherpa-onnx
+      - name: 模型
+        run: python scripts/fetch_models.py --only sherpa
+      - name: 扫 language 参数
+        env:
+          UOOC_ASR_DATASET: audio/dataset.json
+        run: |
+          python - <<'PY'
+          import json, os, subprocess, sys, time
+          from pathlib import Path
+          sys.path.insert(0, "scripts")
+          import bench
+          import numpy as np
+          import sherpa_onnx
+
+          variant = "${{ matrix.variant }}"
+          subset = "${{ matrix.subset }}"
+          clips = bench.load_clips()
+          if subset == "nomixed":
+              clips = [c for c in clips if not c.mixed_language]
+          print(f"变体 language={variant}  子集={subset}  {len(clips)} 段")
+
+          d = Path("models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17")
+          model = next(d.glob("model*.onnx")); tokens = next(d.glob("tokens*.txt"))
+          rec = sherpa_onnx.OfflineRecognizer.from_sense_voice(
+              model=str(model), tokens=str(tokens), num_threads=2,
+              use_itn=True, language=variant)
+
+          rows, tot_err, tot_len = [], 0, 0
+          for c in clips:
+              p = subprocess.run(["ffmpeg","-v","error","-i",str(c.wav),"-ac","1",
+                                  "-ar","16000","-f","s16le","-"], capture_output=True)
+              audio = np.frombuffer(p.stdout, dtype=np.int16).astype(np.float32)/32768.0
+              st = rec.create_stream(); st.accept_waveform(16000, audio); rec.decode_stream(st)
+              hyp = st.result.text
+              m = bench._clip_metrics(c, hyp)
+              rows.append((c.id, m["cer"]))
+              tot_err += m["errors"]; tot_len += m["ref_len"]
+              print(f"   {c.id:<22} CER {m['cer']*100:6.2f}%  {bench.normalize(hyp)[:50]}")
+          micro = tot_err/tot_len if tot_len else -1
+          macro = sum(r[1] for r in rows)/len(rows) if rows else -1
+          print(f"\nlanguage={variant} subset={subset}: micro {micro*100:.2f}%  macro {macro*100:.2f}%")
+          Path(f"sv-{variant}-{subset}.json").write_text(json.dumps(
+              {"variant": variant, "subset": subset, "micro": micro, "macro": macro,
+               "rows": rows}, ensure_ascii=False, indent=1), encoding="utf-8")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sv-${{ matrix.variant }}-${{ matrix.subset }}
+          path: sv-*.json
