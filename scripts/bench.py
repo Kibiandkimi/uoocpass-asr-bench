@@ -850,5 +850,14 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
+# 模块级就装好 av 占位：不然任何 `import faster_whisper` 都可能踩到
+# 「No module named 'av'」—— 而且报错位置在第三方库里，很难看出是缺 stub。
+# （脚本自己 import 的顺序很难保证，交给模块处理最省事。）
+try:
+    install_av_stub()
+except Exception:  # noqa: BLE001
+    pass
+
+
 if __name__ == "__main__":
     sys.exit(main())

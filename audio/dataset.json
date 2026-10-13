@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "note": "整段式：每段 = 一整节视频 + 该节完整字幕。整段没有切片对齐问题（SRT 末条时间戳与音频时长实测吻合，差 1~7 秒）。verified: human=人工校对 / subtitle=官方字幕且时长吻合 / subtitle-misaligned=时间轴错位 / asr=模型草稿",
+  "note": "整段式：每段 = 一整节视频 + 该节完整字幕。整段没有切片对齐问题（SRT 末条时间戳与音频时长实测吻合，差 1~7 秒）。verified: human=人工校对 / subtitle=官方字幕且时长吻合 / subtitle-misaligned=时间轴错位 / asr=模型草稿\n\n内容校验（scripts/validate_dataset.py）：剔除错配段后剩 9 段 / 1666 秒。",
   "clips": [
     {
       "id": "zh-1351890321-1",
@@ -11,7 +11,11 @@
       "language": "zh",
       "seconds": 113,
       "verified": "subtitle",
-      "duration_diff_s": 4.1
+      "duration_diff_s": 4.1,
+      "content_check": {
+        "cer": 0.1463,
+        "verdict": "pass"
+      }
     },
     {
       "id": "zh-1351890321-2",
@@ -22,7 +26,11 @@
       "language": "zh",
       "seconds": 238,
       "verified": "subtitle",
-      "duration_diff_s": 4.8
+      "duration_diff_s": 4.8,
+      "content_check": {
+        "cer": 0.1088,
+        "verdict": "pass"
+      }
     },
     {
       "id": "zh-1351890321-3",
@@ -33,7 +41,11 @@
       "language": "zh",
       "seconds": 91,
       "verified": "subtitle",
-      "duration_diff_s": 7.4
+      "duration_diff_s": 7.4,
+      "content_check": {
+        "cer": 0.1062,
+        "verdict": "pass"
+      }
     },
     {
       "id": "zh-1351890321-4",
@@ -44,7 +56,11 @@
       "language": "zh",
       "seconds": 286,
       "verified": "subtitle",
-      "duration_diff_s": 1.4
+      "duration_diff_s": 1.4,
+      "content_check": {
+        "cer": 0.1043,
+        "verdict": "pass"
+      }
     },
     {
       "id": "zh-1351890321-5",
@@ -55,7 +71,11 @@
       "language": "zh",
       "seconds": 252,
       "verified": "subtitle",
-      "duration_diff_s": 6.1
+      "duration_diff_s": 6.1,
+      "content_check": {
+        "cer": 0.1614,
+        "verdict": "pass"
+      }
     },
     {
       "id": "zh-1351890321-6",
@@ -66,7 +86,11 @@
       "language": "zh",
       "seconds": 90,
       "verified": "subtitle",
-      "duration_diff_s": 4.2
+      "duration_diff_s": 4.2,
+      "content_check": {
+        "cer": 0.1586,
+        "verdict": "pass"
+      }
     },
     {
       "id": "en-1911877932-1",
@@ -77,7 +101,11 @@
       "language": "en",
       "seconds": 208,
       "verified": "subtitle",
-      "duration_diff_s": 3.4
+      "duration_diff_s": 3.4,
+      "content_check": {
+        "cer": 0.0034,
+        "verdict": "pass"
+      }
     },
     {
       "id": "en-1911877932-2",
@@ -88,7 +116,11 @@
       "language": "en",
       "seconds": 260,
       "verified": "subtitle",
-      "duration_diff_s": 2.1
+      "duration_diff_s": 2.1,
+      "content_check": {
+        "cer": 0.0975,
+        "verdict": "pass"
+      }
     },
     {
       "id": "en-1911877932-3",
@@ -99,7 +131,11 @@
       "language": "en",
       "seconds": 128,
       "verified": "subtitle",
-      "duration_diff_s": 2.7
+      "duration_diff_s": 2.7,
+      "content_check": {
+        "cer": 0.0029,
+        "verdict": "pass"
+      }
     }
   ]
 }
