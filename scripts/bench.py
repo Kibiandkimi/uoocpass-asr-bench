@@ -274,10 +274,24 @@ def run_candidate(c: Candidate, repeats: int, log=print) -> Candidate:
         tail = (proc.stderr or proc.stdout or "")[-400:].strip()
         c.note = tail.splitlines()[-1] if tail else f"rc={proc.returncode}"
         return c
-    try:
-        payload = json.loads(proc.stdout.strip().splitlines()[-1])
-    except (json.JSONDecodeError, IndexError):
-        c.status, c.note = "failed", "子进程没输出 JSON"
+    # 别只取「最后一行」—— faster-whisper 之类的库会往 stdout 打警告/进度，
+    # 真正的 JSON 可能被夹在中间。从后往前找第一个能解析成 dict 的行。
+    payload = None
+    for line in reversed((proc.stdout or "").splitlines()):
+        line = line.strip()
+        if not (line.startswith("{") and line.endswith("}")):
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(obj, dict) and "status" in obj:
+            payload = obj
+            break
+    if payload is None:
+        c.status = "failed"
+        tail = ((proc.stderr or "") + (proc.stdout or ""))[-300:].strip()
+        c.note = f"子进程没输出可解析的 JSON。尾部：{tail.splitlines()[-1] if tail else '（空）'}"
         return c
     c.status = payload.get("status", "failed")
     c.note = payload.get("note", "")
