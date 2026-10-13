@@ -59,6 +59,9 @@ class Clip:
     #: 之前一律写死 ``zh``，于是英文片段被强行按中文解码，
     #: 所有 Whisper 系在那一律 CER 100%，属于系统性冤枉。
     language: str = "zh"
+    #: 音频是否中英混说。单语模型处理 code-switching 会掉点，
+    #: 这类片段与单语片段混在一起算会误导 —— 用 --exclude-mixed 单独看。
+    mixed_language: bool = False
 
 
 def load_clips() -> list[Clip]:
@@ -91,6 +94,7 @@ def load_clips() -> list[Clip]:
                 source=raw.get("source", ""), domain=raw.get("domain", ""),
                 seconds=raw.get("seconds", 0.0), verified=raw.get("verified", "human"),
                 language=raw.get("language", "zh"),
+                mixed_language=bool(raw.get("mixed_language")),
             )
         )
     return clips
@@ -460,6 +464,7 @@ def write_outputs(cands: list[Candidate], outdir: Path) -> None:
 
     clips = load_clips()
     total_s = sum(c.seconds for c in clips) or 0
+    mixed = [c.id for c in clips if c.mixed_language]
     by_trust: dict[str, float] = {}
     for c in clips:
         by_trust[c.verified] = by_trust.get(c.verified, 0) + c.seconds
@@ -469,6 +474,8 @@ def write_outputs(cands: list[Candidate], outdir: Path) -> None:
         "# ASR 基准结果（准 > 小 > 快）",
         "",
         f"- 数据集：**{len(clips)} 段 / {total_s:.0f} 秒**，领域：{'、'.join(domains) or '—'}",
+        (f"- ⚠ 含中英混说片段：{', '.join(mixed)}（单语模型处理 code-switching 会掉点，"
+         f"不宜与单语片段混算）" if mixed else "- 无混说片段"),
         f"- 参考可信度：{trust_txt}",
         "  （`human`=人工校对；`subtitle`=平台官方字幕且已验证对齐；"
         "`subtitle-misaligned`=字幕时间轴错位、结果不可信；`asr`=模型草稿=循环论证）",
@@ -568,6 +575,8 @@ def worker(key: str, repeats: int) -> dict:
         return np.frombuffer(proc.stdout, dtype=np.int16).astype(np.float32) / 32768.0
 
     clips = load_clips()
+    if os.environ.get("UOOC_ASR_EXCLUDE_MIXED"):
+        clips = [c for c in clips if not c.mixed_language]
     if not clips:
         return {"status": "missing", "note": "数据集为空（audio/dataset.json）"}
     # 预先解码全部音频，避免把解码时间算进 RTF

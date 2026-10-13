@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "note": "整段式：每段 = 一整节视频 + 该节完整字幕。整段没有切片对齐问题（SRT 末条时间戳与音频时长实测吻合，差 1~7 秒）。verified: human=人工校对 / subtitle=官方字幕且时长吻合 / subtitle-misaligned=时间轴错位 / asr=模型草稿\n\n内容校验（scripts/validate_dataset.py）：剔除错配段后剩 9 段 / 1666 秒。",
+  "note": "整段式：每段 = 一整节视频 + 该节完整字幕。整段没有切片对齐问题（SRT 末条时间戳与音频时长实测吻合，差 1~7 秒）。verified: human=人工校对 / subtitle=官方字幕且时长吻合 / subtitle-misaligned=时间轴错位 / asr=模型草稿\n\n内容校验（scripts/validate_dataset.py）：剔除错配段后剩 9 段 / 1666 秒。\n\n注：en-1911877932-2 标了 mixed_language —— 中英混说，考的是 code-switching 能力，统计时可单独看（--exclude-mixed）。",
   "clips": [
     {
       "id": "zh-1351890321-1",
@@ -120,7 +120,9 @@
       "content_check": {
         "cer": 0.0975,
         "verdict": "pass"
-      }
+      },
+      "mixed_language": true,
+      "note": "音频是**中英混说**（记录片里的中国课堂片段夹中文数字，如「九五四八四」）。参考文本按混说原文，但模型只能用单一语言解码 → 这一段考的是**模型处理 code-switching 的能力**，与单语片段不可直接比较。"
     },
     {
       "id": "en-1911877932-3",
