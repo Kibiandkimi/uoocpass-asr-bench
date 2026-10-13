@@ -392,20 +392,34 @@ def write_outputs(cands: list[Candidate], outdir: Path) -> None:
     for c in sorted(cands, key=lambda x: (not x.ok, x.cer if x.ok else 9e9)):
         if c.ok:
             mark = "★" if c in front else " "
-            rows.append(f"| {mark} | {c.label} | {c.cer*100:.2f}% | {c.size_mb:.0f} | {c.rtf:.2f}x | {c.load_s:.1f}s |")
+            warn = "" if c.weakest_verified in ("human", "subtitle") else f" ⚠{c.weakest_verified}"
+            rows.append(
+                f"| {mark}{warn} | {c.label} | {c.cer*100:.2f}% | {c.size_mb:.0f} | "
+                f"{c.rtf:.2f}x | {c.load_s:.1f}s | {c.clips}/{c.clip_seconds:.0f}s |"
+            )
         else:
             rows.append(f"| | {c.label} | — | {c.size_mb:.0f} | — | — | {c.status}: {c.note[:40]} |")
 
+    clips = load_clips()
+    total_s = sum(c.seconds for c in clips) or 0
+    by_trust: dict[str, float] = {}
+    for c in clips:
+        by_trust[c.verified] = by_trust.get(c.verified, 0) + c.seconds
+    trust_txt = "、".join(f"{k} {v:.0f}s" for k, v in sorted(by_trust.items()))
+    domains = sorted({c.domain for c in clips if c.domain})
     md = [
         "# ASR 基准结果（准 > 小 > 快）",
         "",
-        f"- 音频：`{AUDIO.name}`（60 秒中文课程讲课）",
-        f"- 参考文本：{len(normalize(REF.read_text(encoding='utf-8')))} 字（人工校对）",
+        f"- 数据集：**{len(clips)} 段 / {total_s:.0f} 秒**，领域：{'、'.join(domains) or '—'}",
+        f"- 参考可信度：{trust_txt}",
+        "  （`human`=人工校对；`subtitle`=平台官方字幕且已验证对齐；"
+        "`subtitle-misaligned`=字幕时间轴错位、结果不可信；`asr`=模型草稿=循环论证）",
         "- ★ = 三维帕累托前沿上的方案",
-        "- CER = 字符错误率（越低越准）；size = 包 + 模型实际占用；rtf = 实时倍率（越大越快）",
+        "- CER = 字符错误率（micro：总编辑距离/总参考长度，越低越准）；"
+        "size = 包 + 模型实际占用；rtf = 实时倍率（越大越快）",
         "",
-        "| ★ | 方案 | CER ↓ | 体积 MB ↓ | RTF ↑ | 加载 |",
-        "| --- | --- | --- | --- | --- | --- |",
+        "| ★ | 方案 | CER ↓ | 体积 MB ↓ | RTF ↑ | 加载 | 段/秒 |",
+        "| --- | --- | --- | --- | --- | --- | --- |",
         *rows,
         "",
         "## 帕累托前沿",

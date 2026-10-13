@@ -95,9 +95,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      # ⚠️ 必须限定 run-id：不限定的话 download-artifact 会把仓库里**历次**的
+      # artifact 全捞下来，旧数据集（单段 60 秒）的结果会混进新结果里，
+      # 上一版就因此出了一张自相矛盾的表（paraformer 7.05% 与 SenseVoice 8.10%
+      # 并列，前者其实是旧数据）。
       - uses: actions/download-artifact@v4
         with:
           path: results
+          run-id: ${{ github.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: 合并并出图
         run: python scripts/merge_results.py --root results --out results/final
       - uses: actions/upload-artifact@v4
