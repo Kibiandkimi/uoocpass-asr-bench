@@ -551,16 +551,19 @@ def worker(key: str, repeats: int) -> dict:
         per_clip: dict = {}
         elapsed: list[float] = []
         texts: list[str] = []
-        for _ in range(max(1, repeats)):
+        # ⚠️ 这个循环变量**不能叫 _`** —— 下面 `segs, info = model.transcribe(...)`
+        # 以前写成 `segs, _ = ...`，把 `_` 覆盖成 TranscriptionInfo，
+        # 于是 `if _ == 0` 永远为假，per_clip 一直空、CER 报 -100%。
+        for rep in range(max(1, repeats)):
             for clip, audio in decoded:
                 t0 = time.time()
-                segs, _ = model.transcribe(
+                segs, _info = model.transcribe(
                     audio, language="zh", beam_size=5, vad_filter=False,
                     initial_prompt="以下是普通话课程的简体中文讲稿，请用简体中文转写。",
                 )
                 text = "".join(seg.text for seg in segs)
                 elapsed.append(time.time() - t0)
-                if _ == 0:  # 只留第一次的输出做展示与比对
+                if rep == 0:  # 只留第一次的输出做展示与比对
                     texts.append(text)
                     per_clip[clip.id] = _clip_metrics(clip, text)
         rtf = total_seconds / sum(sorted(elapsed)[: len(decoded)])
@@ -583,7 +586,7 @@ def worker(key: str, repeats: int) -> dict:
         per_clip: dict = {}
         elapsed: list[float] = []
         texts: list[str] = []
-        for _ in range(max(1, repeats)):
+        for rep in range(max(1, repeats)):
             for clip, audio in decoded:
                 pcm = (audio * 32767).astype("int16").tobytes()
                 t0 = time.time()
@@ -596,7 +599,7 @@ def worker(key: str, repeats: int) -> dict:
                 parts.append(json.loads(rec.FinalResult()).get("text", ""))
                 text = "".join(parts)
                 elapsed.append(time.time() - t0)
-                if _ == 0:
+                if rep == 0:
                     texts.append(text)
                     per_clip[clip.id] = _clip_metrics(clip, text)
         rtf = total_seconds / sum(sorted(elapsed)[: len(decoded)])
@@ -621,7 +624,7 @@ def worker(key: str, repeats: int) -> dict:
         elapsed: list[float] = []
         texts: list[str] = []
         with tempfile.TemporaryDirectory() as tmp:
-            for _ in range(max(1, repeats)):
+            for rep in range(max(1, repeats)):
                 for clip, audio in decoded:
                     wav = Path(tmp) / "a.wav"
                     with wave.open(str(wav), "wb") as wf:
@@ -639,7 +642,7 @@ def worker(key: str, repeats: int) -> dict:
                     out_txt = Path(tmp) / "out.txt"
                     text = (out_txt.read_text(encoding="utf-8", errors="replace")
                             if out_txt.exists() else proc.stdout)
-                    if _ == 0:
+                    if rep == 0:
                         texts.append(text)
                         per_clip[clip.id] = _clip_metrics(clip, text)
         rtf = total_seconds / sum(sorted(elapsed)[: len(decoded)])
@@ -704,7 +707,7 @@ def worker(key: str, repeats: int) -> dict:
         per_clip: dict = {}
         elapsed: list[float] = []
         texts: list[str] = []
-        for _ in range(max(1, repeats)):
+        for rep in range(max(1, repeats)):
             for clip, audio in decoded:
                 t0 = time.time()
                 stream = rec.create_stream()
@@ -712,7 +715,7 @@ def worker(key: str, repeats: int) -> dict:
                 rec.decode_stream(stream)
                 text = stream.result.text
                 elapsed.append(time.time() - t0)
-                if _ == 0:
+                if rep == 0:
                     texts.append(text)
                     per_clip[clip.id] = _clip_metrics(clip, text)
         rtf = total_seconds / sum(sorted(elapsed)[: len(decoded)])
