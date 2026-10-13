@@ -7,15 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 逐条暴露真实失败原因
+      - name: 跟踪 fetch_models.sh
         run: |
-          HF=https://huggingface.co/ggerganov/whisper.cpp/resolve/main
-          echo "=== 1) curl ggml-small-q5_1.bin ==="
-          curl -fL --retry 2 --max-time 120 -o /tmp/a.bin "$HF/ggml-small-q5_1.bin" && echo "OK $(stat -c%s /tmp/a.bin) bytes" || echo "FAIL rc=$?"
-          echo "=== 2) curl vosk small-cn ==="
-          curl -fL --retry 2 --max-time 120 -o /tmp/v.zip https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip && echo "OK $(stat -c%s /tmp/v.zip) bytes" || echo "FAIL rc=$?"
-          echo "=== 3) HF API ==="
-          curl -fsSL --max-time 60 https://huggingface.co/api/models/ggerganov/whisper.cpp -o /tmp/hf.json && echo "OK $(stat -c%s /tmp/hf.json) bytes" || echo "FAIL rc=$?"
-          python3 -c "import json; d=json.load(open('/tmp/hf.json')); fs=[f['rfilename'] for f in d.get('siblings',[])]; print('文件数',len(fs)); print('ggml-small 相关:', [f for f in fs if 'ggml-small' in f][:6])" 2>&1 | head -5
-          echo "=== 4) 脚本 fetch_models.sh 输出尾部 ==="
-          bash scripts/fetch_models.sh 2>&1 | tail -22
+          echo "=== bash -x 跑到失败为止 ==="
+          bash -x scripts/fetch_models.sh > /tmp/out.txt 2> /tmp/err.txt
+          echo "rc=$?"
+          echo "--- stdout 尾部 ---"
+          tail -30 /tmp/out.txt
+          echo "--- stderr 尾部（含 -x 跟踪） ---"
+          tail -60 /tmp/err.txt
