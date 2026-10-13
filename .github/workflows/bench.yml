@@ -58,8 +58,9 @@ jobs:
           echo "WHISPER_CLI=/tmp/wcpp/build/bin/whisper-cli" >> "$GITHUB_ENV"
 
       - name: 取模型
+        # 不再 `|| true` 吞失败：上一版把 404 静默掉，三个 wcpp 候选全白跑
         run: |
-          bash scripts/fetch_models.sh || true
+          bash scripts/fetch_models.sh
           du -sh models/* 2>/dev/null | head -20
 
       - name: 跑基准
