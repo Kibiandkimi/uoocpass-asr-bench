@@ -200,6 +200,40 @@ def run_candidate(c: Candidate, repeats: int, log=print) -> Candidate:
     return c
 
 
+def install_av_stub() -> None:
+    """让 ``import faster_whisper`` 通过 —— 它顶层 ``import av``（PyAV）没有守卫。
+
+    PyAV 只用于**文件解码**，而本基准传的是 numpy 数组，永远不走那条路。
+    少装它能省 128MB（27MB 包 + 101MB FFmpeg 共享库）。真被调用会抛错，
+    不会静默算错。这段逻辑与 ``uooc/asr.py`` 里的一致 —— 基准仓库特意
+    **不依赖主项目**，所以这里要自带一份。
+    """
+    import sys
+    import types
+
+    if "av" in sys.modules:
+        return
+    try:
+        import av  # noqa: F401
+
+        return
+    except ImportError:
+        pass
+    av = types.ModuleType("av")
+    av.__version__ = "stub"
+    av.open = lambda *_a, **_k: (_ for _ in ()).throw(RuntimeError("av 占位模块被调用了"))
+    for name in ("av.audio", "av.audio.resampler", "av.audio.fifo", "av.error"):
+        sys.modules[name] = types.ModuleType(name)
+    sys.modules["av.audio.resampler"].AudioResampler = type("AudioResampler", (), {})
+    sys.modules["av.audio.fifo"].AudioFifo = type("AudioFifo", (), {})
+    sys.modules["av.error"].InvalidDataError = type("InvalidDataError", (Exception,), {})
+    sys.modules["av.audio"].resampler = sys.modules["av.audio.resampler"]
+    sys.modules["av.audio"].fifo = sys.modules["av.audio.fifo"]
+    av.audio = sys.modules["av.audio"]
+    av.error = sys.modules["av.error"]
+    sys.modules["av"] = av
+
+
 def _measure_mb(*paths: Path | str) -> float:
     total = 0
     for p in paths:
@@ -369,11 +403,8 @@ def worker(key: str, repeats: int) -> dict:
 
     if key.startswith("fw-"):
         _, size, ct = key.split("-", 2)
-        sys.path.insert(0, "/home/kibi/Work/UOOCPass")
+        install_av_stub()
         try:
-            from uooc.asr import ensure_asr_importable
-
-            ensure_asr_importable()
             from faster_whisper import WhisperModel
         except Exception as exc:  # noqa: BLE001
             return finish("missing", f"faster-whisper 不可用：{exc}")
@@ -387,7 +418,7 @@ def worker(key: str, repeats: int) -> dict:
         for _ in range(max(1, repeats)):
             t0 = time.time()
             segs, _ = model.transcribe(
-                audio, language="zh", beam_size=5,
+                audio, language="zh", beam_size=5, vad_filter=False,
                 initial_prompt="以下是普通话课程的简体中文讲稿，请用简体中文转写。",
             )
             text = "".join(s.text for s in segs)
